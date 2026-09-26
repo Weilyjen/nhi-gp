@@ -28,5 +28,15 @@
     "features": "週六開診 131 家 • 週日開診 25 家 • 平日夜診 130 家",
     "path": "234/index.html",
     "updated_at": "2026-09-27"
+  },
+  {
+    "zipcode": "804",
+    "city": "高雄市",
+    "town": "鼓山區",
+    "clinics_count": 84,
+    "roc_month": "民國 115 年 9 月",
+    "features": "週六開診 67 家 • 週日開診 15 家 • 平日夜診 70 家",
+    "path": "804/index.html",
+    "updated_at": "2026-09-27"
   }
 ]
