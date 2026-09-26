@@ -53,7 +53,7 @@
 
         <div class="section-header">
             <div class="section-title">📍 已發布行政區專題門診網頁</div>
-            <input type="text" id="filterInput" class="search-box" placeholder="🔍 搜尋縣市或鄉鎮市區...">
+            <input type="text" id="filterInput" class="search-box" placeholder="🔍 搜尋郵遞區號 (如 108)、縣市或鄉鎮市區...">
         </div>
 
         <div class="grid" id="regionGrid"></div>
@@ -66,11 +66,12 @@
     <script>
         const DEFAULT_REGIONS = [
             {
+                zipcode: "108",
                 city: "臺北市",
                 town: "萬華區",
                 clinics_count: 71,
                 roc_month: "民國 115 年 9 月",
-                path: "臺北市/萬華區/index.html",
+                path: "108/index.html",
                 features: "週六開診 38 家 • 平日夜診 52 家"
             }
         ];
@@ -85,7 +86,7 @@
                 <a href="${r.path}" class="region-card">
                     <div>
                         <div class="region-name">
-                            <span>${r.city} ${r.town}</span>
+                            <span><span style="color:#38bdf8; font-weight:800; margin-right:4px;">[${r.zipcode || ''}]</span> ${r.city} ${r.town}</span>
                             <span style="font-size:12px; color:#38bdf8; font-weight:normal;">${r.clinics_count ? r.clinics_count + ' 家診所' : ''}</span>
                         </div>
                         <div class="region-meta">
@@ -116,7 +117,7 @@
 
         document.getElementById("filterInput").addEventListener("input", (e) => {
             const q = e.target.value.trim().toLowerCase();
-            const filtered = allRegions.filter(r => (r.city + ' ' + r.town).toLowerCase().includes(q));
+            const filtered = allRegions.filter(r => ((r.zipcode || '') + ' ' + r.city + ' ' + r.town).toLowerCase().includes(q));
             renderRegions(filtered);
         });
     </script>
