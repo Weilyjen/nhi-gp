@@ -19,50 +19,106 @@
         }
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', 'Noto Sans TC', sans-serif; }
         body { background: linear-gradient(135deg, #070a12 0%, #0c1222 50%, #171c38 100%); color: var(--text-main); min-height: 100vh; padding: 30px 20px; }
-        .container { max-width: 1000px; margin: 0 auto; }
-        header { text-align: center; margin-bottom: 36px; padding: 30px 20px; background: rgba(15, 23, 42, 0.8); border-radius: 20px; border: 1px solid var(--card-border); backdrop-filter: blur(14px); }
-        h1 { font-size: 28px; font-weight: 800; background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 10px; }
+        .container { max-width: 1080px; margin: 0 auto; }
+        header { text-align: center; margin-bottom: 30px; padding: 32px 24px; background: rgba(15, 23, 42, 0.85); border-radius: 20px; border: 1px solid var(--card-border); backdrop-filter: blur(14px); box-shadow: 0 10px 30px rgba(0,0,0,0.35); }
+        h1 { font-size: 28px; font-weight: 800; background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 12px; }
         .subtitle { color: var(--text-sub); font-size: 14.5px; line-height: 1.6; }
-        .badge-bar { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-top: 14px; }
+        .badge-bar { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-top: 16px; }
         .badge { background: rgba(56, 189, 248, 0.15); border: 1px solid rgba(56, 189, 248, 0.3); color: #38bdf8; padding: 4px 12px; border-radius: 9999px; font-size: 12px; font-weight: 600; }
-        .section-title { font-size: 18px; font-weight: 700; color: #e2e8f0; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; margin-bottom: 36px; }
-        .region-card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 16px; padding: 20px; text-decoration: none; color: inherit; transition: all 0.2s; display: flex; flex-direction: column; justify-content: space-between; }
-        .region-card:hover { transform: translateY(-3px); border-color: var(--accent); box-shadow: 0 10px 25px rgba(0,0,0,0.3); }
-        .region-name { font-size: 18px; font-weight: 700; color: #fff; margin-bottom: 6px; }
-        .region-meta { font-size: 13px; color: var(--text-sub); margin-bottom: 12px; }
-        .card-btn { background: rgba(56, 189, 248, 0.15); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.3); padding: 6px 12px; border-radius: 8px; font-size: 13px; font-weight: 600; text-align: center; }
-        footer { text-align: center; color: var(--text-sub); font-size: 13px; margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--card-border); }
+        .section-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; flex-wrap: wrap; gap: 12px; }
+        .section-title { font-size: 19px; font-weight: 700; color: #e2e8f0; display: flex; align-items: center; gap: 8px; }
+        .search-box { background: rgba(15, 23, 42, 0.9); border: 1px solid rgba(255,255,255,0.14); padding: 8px 14px; border-radius: 10px; color: #fff; font-size: 13.5px; outline: none; min-width: 220px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 18px; margin-bottom: 36px; }
+        .region-card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 18px; padding: 22px; text-decoration: none; color: inherit; transition: all 0.2s; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 4px 14px rgba(0,0,0,0.2); }
+        .region-card:hover { transform: translateY(-3px); border-color: var(--accent); box-shadow: 0 12px 30px rgba(0,0,0,0.4); }
+        .region-name { font-size: 20px; font-weight: 700; color: #fff; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center; }
+        .region-meta { font-size: 13px; color: var(--text-sub); line-height: 1.6; margin-bottom: 16px; }
+        .card-btn { background: rgba(56, 189, 248, 0.15); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.3); padding: 8px 14px; border-radius: 10px; font-size: 13px; font-weight: 700; text-align: center; transition: all 0.2s; }
+        .region-card:hover .card-btn { background: #0284c7; color: #fff; border-color: #38bdf8; }
+        footer { text-align: center; color: var(--text-sub); font-size: 13px; margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--card-border); }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
             <h1>🏥 全台健保西醫基層診所門診全覽</h1>
-            <p class="subtitle">依據健保署特約醫事機構公開資訊 · 100% 零廣告 · 免費公開查詢服務<br>提供各鄉鎮西醫基層門診科別、掛號費行情、預防保健服務與 7 天早中晚時段全覽</p>
+            <p class="subtitle">依據衛生福利部中央健康保險署特約醫事機構公開資訊 · 100% 零廣告 · 免費公開查詢服務<br>提供各鄉鎮西醫基層門診科別、掛號費行情、預防保健服務與 7 天早中晚時段全覽</p>
             <div class="badge-bar">
                 <span class="badge">🏛️ 院所層級：基層醫療單位</span>
                 <span class="badge">🩺 型態別：西醫</span>
                 <span class="badge">🚪 服務項目：門診診療</span>
-                <span class="badge">🛡️ 零病患個資 · 純官方公眾資料</span>
+                <span class="badge">🛡️ 零病患個資 · 每月更新一次</span>
             </div>
         </header>
 
-        <div class="section-title">📍 已發布行政區專題門診網頁</div>
-        <div class="grid" id="regionGrid">
-            <!-- 預設收錄萬華區 -->
-            <a href="臺北市/萬華區/index.html" class="region-card">
-                <div>
-                    <div class="region-name">臺北市 萬華區</div>
-                    <div class="region-meta">收錄 71 家特約西醫基層診所<br>更新：民國 115 年 9 月 (最新版)</div>
-                </div>
-                <div class="card-btn">進入門診全覽 ❯</div>
-            </a>
+        <div class="section-header">
+            <div class="section-title">📍 已發布行政區專題門診網頁</div>
+            <input type="text" id="filterInput" class="search-box" placeholder="🔍 搜尋縣市或鄉鎮市區...">
         </div>
+
+        <div class="grid" id="regionGrid"></div>
 
         <footer>
             <p>本平台為公益醫療資訊彙整工具，資料每個月依健保署官方公告更新一次。<br>© 2026 全台健保基層西醫門診資訊網 · 無廣告純淨閱讀</p>
         </footer>
     </div>
+
+    <script>
+        const DEFAULT_REGIONS = [
+            {
+                city: "臺北市",
+                town: "萬華區",
+                clinics_count: 71,
+                roc_month: "民國 115 年 9 月",
+                path: "臺北市/萬華區/index.html",
+                features: "週六開診 38 家 • 平日夜診 52 家"
+            }
+        ];
+
+        function renderRegions(list) {
+            const grid = document.getElementById("regionGrid");
+            if (!list || list.length === 0) {
+                grid.innerHTML = '<div style="grid-column: 1 / -1; text-align:center; padding:40px; color:#94a3b8;">查無相符的行政區</div>';
+                return;
+            }
+            grid.innerHTML = list.map(r => `
+                <a href="${r.path}" class="region-card">
+                    <div>
+                        <div class="region-name">
+                            <span>${r.city} ${r.town}</span>
+                            <span style="font-size:12px; color:#38bdf8; font-weight:normal;">${r.clinics_count ? r.clinics_count + ' 家診所' : ''}</span>
+                        </div>
+                        <div class="region-meta">
+                            <div>📅 資料期別：${r.roc_month || '最新版'}</div>
+                            <div>💡 重點特色：${r.features || '西醫基層門診全時段'}</div>
+                        </div>
+                    </div>
+                    <div class="card-btn">進入門診全覽 ❯</div>
+                </a>
+            `).join('');
+        }
+
+        let allRegions = DEFAULT_REGIONS;
+
+        fetch('regions.json')
+            .then(res => res.json())
+            .then(data => {
+                if (Array.isArray(data) && data.length > 0) {
+                    allRegions = data;
+                    renderRegions(allRegions);
+                } else {
+                    renderRegions(DEFAULT_REGIONS);
+                }
+            })
+            .catch(() => {
+                renderRegions(DEFAULT_REGIONS);
+            });
+
+        document.getElementById("filterInput").addEventListener("input", (e) => {
+            const q = e.target.value.trim().toLowerCase();
+            const filtered = allRegions.filter(r => (r.city + ' ' + r.town).toLowerCase().includes(q));
+            renderRegions(filtered);
+        });
+    </script>
 </body>
 </html>
