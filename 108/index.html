@@ -272,9 +272,16 @@
             justify-content: space-between;
         }
 
+        .search-box-wrap {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            flex: 1;
+            min-width: 320px;
+        }
+
         .search-container {
             flex: 1;
-            min-width: 300px;
             position: relative;
         }
 
@@ -321,6 +328,62 @@
 
         .clear-search:hover {
             color: #fff;
+        }
+
+        .btn-search-primary {
+            background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+            border: 1px solid #38bdf8;
+            color: #fff;
+            padding: 11px 22px;
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            white-space: nowrap;
+            box-shadow: 0 4px 14px rgba(2, 132, 199, 0.35);
+        }
+
+        .btn-search-primary:hover {
+            background: #0284c7;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(2, 132, 199, 0.5);
+        }
+
+        .schedule-filter-box {
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 14px;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .sub-actions {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .text-link-btn {
+            background: transparent;
+            border: none;
+            color: #38bdf8;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            padding: 2px 6px;
+            border-radius: 4px;
+            transition: all 0.2s;
+        }
+
+        .text-link-btn:hover {
+            background: rgba(56, 189, 248, 0.15);
+            text-decoration: underline;
         }
 
         .view-sort-group {
@@ -966,7 +1029,7 @@
                     <span>🩺 <strong>型態別</strong>：<span class="badge-cond">西醫</span></span>
                     <span>🚪 <strong>服務項目</strong>：<span class="badge-cond">門診診療</span></span>
                     <span>📅 <strong>查詢年月</strong>：<span class="badge-cond" style="background:rgba(16,185,129,0.15); color:#34d399; border-color:rgba(52,211,153,0.3);">民國 115 年 9 月 (2026-09)</span></span>
-                    <span>🕒 <strong>更新時間</strong>：2026-09-27 01:39</span>
+                    <span>🕒 <strong>更新時間</strong>：2026-09-27 02:08</span>
                 </div>
             </div>
             <div class="header-actions">
@@ -978,7 +1041,7 @@
                 <button class="action-btn share-btn" onclick="handleShare()" title="分享此門診資訊網頁給親朋好友">
                     <span>📤 分享</span>
                 </button>
-                <a href="NHI_GP_20260927_013950_108_臺北市_萬華區.csv" download class="action-btn csv-btn" title="下載 Excel 相容 CSV">
+                <a href="NHI_GP_20260927_020803_108_臺北市_萬華區.csv" download class="action-btn csv-btn" title="下載 Excel 相容 CSV">
                     📥 下載 CSV
                 </a>
             </div>
@@ -1032,10 +1095,13 @@
         <div class="filter-panel">
             <!-- 搜尋與控制主列 -->
             <div class="control-row">
-                <div class="search-container">
-                    <span class="search-icon">🔍</span>
-                    <input type="text" id="searchInput" class="search-input" placeholder="即時搜尋診所名稱、代碼、科別、路名、電話或備註...">
-                    <button id="clearSearch" class="clear-search" onclick="clearSearchInput()" title="清空搜尋">✕</button>
+                <div class="search-box-wrap">
+                    <div class="search-container">
+                        <span class="search-icon">🔍</span>
+                        <input type="text" id="searchInput" class="search-input" placeholder="即時搜尋診所名稱、代碼、科別、路名、電話或備註..." onkeydown="if(event.key==='Enter') executeSearch()">
+                        <button id="clearSearch" class="clear-search" onclick="clearSearchInput()" title="清空搜尋">✕</button>
+                    </div>
+                    <button id="btnSearch" class="btn-search-primary" onclick="executeSearch()">🔍 搜尋</button>
                 </div>
                 <div class="view-sort-group">
                     <select id="feeSelect" class="select-ctrl" onchange="onFeeChange(this.value)">
@@ -1056,61 +1122,80 @@
                     </select>
 
                     <div class="view-btn-group">
-                        <button id="btnViewCards" class="view-btn active" onclick="switchView('cards')">📇 卡片</button>
-                        <button id="btnViewTable" class="view-btn" onclick="switchView('table')">📋 表格</button>
+                        <button id="btnViewCards" class="view-btn active" onclick="switchView('cards')">📇 卡片視圖</button>
+                        <button id="btnViewTable" class="view-btn" onclick="switchView('table')">📋 表格視圖</button>
                     </div>
                 </div>
             </div>
 
-            <!-- 1. 診療科別快篩列 -->
+            <!-- 1. 診療科別篩選 (可複選) -->
             <div class="filter-section">
                 <div class="filter-label-row">
-                    <span>🩺 診療科別篩選 (點選快速過濾)：</span>
+                    <span>🩺 診療科別篩選 (可複選)：</span>
+                    <div class="sub-actions">
+                        <button class="text-link-btn" onclick="clearSpecialties()" style="color:#f87171;">重設全部科別</button>
+                    </div>
                 </div>
                 <div class="chip-scroll" id="specialtyChips"></div>
             </div>
 
-            <!-- 2. 看診時段矩陣快篩 -->
+            <!-- 2. 看診時段矩陣與星期/時段複選快篩 (Schedule Filter) -->
             <div class="filter-section">
-                <div class="filter-label-row">
-                    <span>🕒 開診時段快篩 (支援現在開診與各星期時段)：</span>
-                </div>
-                <div class="grid-filters-row">
-                    <div class="chip-scroll" id="periodQuickChips">
-                        <button class="chip-btn active" data-period="all" onclick="setPeriodQuick('all')">不限時段</button>
-                        <button class="chip-btn" data-period="open_now" onclick="setPeriodQuick('open_now')" style="border-color:#10b981; color:#34d399;">🟢 現在開診中 (Open Now)</button>
-                        <button class="chip-btn" data-period="sat" onclick="setPeriodQuick('sat')">週六有開</button>
-                        <button class="chip-btn" data-period="sun" onclick="setPeriodQuick('sun')">週日有開</button>
-                        <button class="chip-btn" data-period="night" onclick="setPeriodQuick('night')">夜間門診</button>
-                        <button class="chip-btn" data-period="weekday_day" onclick="setPeriodQuick('weekday_day')">平日白天 (一至五)</button>
+                <div class="schedule-filter-box">
+                    <!-- 時段快捷情境快選 -->
+                    <div>
+                        <div class="filter-label-row" style="margin-bottom:8px;">
+                            <span>🕒 快速情境快選：</span>
+                        </div>
+                        <div class="chip-scroll" id="periodQuickChips">
+                            <button class="chip-btn active" data-period="all" onclick="setPeriodQuick('all')">不限時段</button>
+                            <button class="chip-btn" data-period="open_now" onclick="setPeriodQuick('open_now')" style="border-color:#10b981; color:#34d399;">🟢 現在開診中 (Open Now)</button>
+                            <button class="chip-btn" data-period="sat" onclick="setPeriodQuick('sat')">週六有開</button>
+                            <button class="chip-btn" data-period="sun" onclick="setPeriodQuick('sun')">週日有開</button>
+                            <button class="chip-btn" data-period="night" onclick="setPeriodQuick('night')">夜間門診</button>
+                            <button class="chip-btn" data-period="weekday_day" onclick="setPeriodQuick('weekday_day')">平日白天 (一至五)</button>
+                        </div>
                     </div>
 
-                    <!-- 精確指定星期幾與時段 -->
-                    <div style="display:flex; gap:8px; align-items:center; margin-left:auto;">
-                        <select id="daySelect" class="select-ctrl" style="padding:6px 10px; font-size:12.5px;" onchange="onCustomDayChange(this.value)">
-                            <option value="all">📅 任意星期</option>
-                            <option value="0">週一</option>
-                            <option value="1">週二</option>
-                            <option value="2">週三</option>
-                            <option value="3">週四</option>
-                            <option value="4">週五</option>
-                            <option value="5">週六</option>
-                            <option value="6">週日</option>
-                        </select>
-                        <select id="slotSelect" class="select-ctrl" style="padding:6px 10px; font-size:12.5px;" onchange="onCustomSlotChange(this.value)">
-                            <option value="all">⏰ 任意時段</option>
-                            <option value="0">上午診 (早)</option>
-                            <option value="1">下午診 (午)</option>
-                            <option value="2">夜間診 (晚)</option>
-                        </select>
+                    <!-- 星期複選 (Mon ~ Sun) -->
+                    <div>
+                        <div class="filter-label-row" style="margin-bottom:8px;">
+                            <span>📅 看診星期 (可複選/多選)：</span>
+                            <div class="sub-actions">
+                                <button class="text-link-btn" onclick="selectDaysPreset('weekday')">平日(一~五)</button>
+                                <span style="color:var(--text-muted); font-size:11px;">|</span>
+                                <button class="text-link-btn" onclick="selectDaysPreset('weekend')">週末(六、日)</button>
+                                <span style="color:var(--text-muted); font-size:11px;">|</span>
+                                <button class="text-link-btn" onclick="selectDaysPreset('all')">全選</button>
+                                <span style="color:var(--text-muted); font-size:11px;">|</span>
+                                <button class="text-link-btn" onclick="selectDaysPreset('none')" style="color:#f87171;">清空</button>
+                            </div>
+                        </div>
+                        <div class="chip-scroll" id="dayMultiChips"></div>
+                    </div>
+
+                    <!-- 時段複選 (早 / 午 / 晚) -->
+                    <div>
+                        <div class="filter-label-row" style="margin-bottom:8px;">
+                            <span>⏰ 看診時段 (可複選，早/午/晚)：</span>
+                            <div class="sub-actions">
+                                <button class="text-link-btn" onclick="selectSlotsPreset('all')">全選時段</button>
+                                <span style="color:var(--text-muted); font-size:11px;">|</span>
+                                <button class="text-link-btn" onclick="selectSlotsPreset('none')" style="color:#f87171;">清空時段</button>
+                            </div>
+                        </div>
+                        <div class="chip-scroll" id="slotMultiChips"></div>
                     </div>
                 </div>
             </div>
 
-            <!-- 3. 預防保健與專案服務篩選 -->
+            <!-- 3. 預防保健與專案服務篩選 (可複選) -->
             <div class="filter-section">
                 <div class="filter-label-row">
-                    <span>🛡️ 預防保健與疫苗專案服務：</span>
+                    <span>🛡️ 預防保健與疫苗專案服務 (可複選)：</span>
+                    <div class="sub-actions">
+                        <button class="text-link-btn" onclick="clearPreSrv()" style="color:#f87171;">重設全部服務</button>
+                    </div>
                 </div>
                 <div class="chip-scroll" id="preSrvChips"></div>
             </div>
@@ -1191,14 +1276,14 @@
         const ROC_MONTH = "民國 115 年 9 月";
         const ONLINE_URL = `https://weilyjen.github.io/nhi-gp/${REGION_ZIP}/index.html`;
 
-        // 複合篩選狀態模型
+        // 複合篩選狀態模型 (支援複選)
         const state = {
             keyword: "",
-            specialty: "all",
+            selectedSpecialties: new Set(),
             periodQuick: "all", // all, open_now, sat, sun, night, weekday_day
-            customDay: "all",   // all, 0..6
-            customSlot: "all",  // all, 0, 1, 2
-            preSrv: "all",
+            selectedDays: new Set(), // 0..6 (0=Mon, ..., 6=Sun)
+            selectedSlots: new Set(), // 0..2 (0=早, 1=午, 2=晚)
+            selectedPreSrv: new Set(),
             feeRange: "all",    // all, free, le150, le200, le250, ge250
             sortBy: "default",  // default, fee_asc, fee_desc, sessions_desc, name_asc
             viewMode: "cards"   // cards, table
@@ -1214,27 +1299,60 @@
         const activeTagsContainer = document.getElementById("activeTagsContainer");
         const feeSelect = document.getElementById("feeSelect");
         const sortSelect = document.getElementById("sortSelect");
-        const daySelect = document.getElementById("daySelect");
-        const slotSelect = document.getElementById("slotSelect");
         const specialtyChipsContainer = document.getElementById("specialtyChips");
         const preSrvChipsContainer = document.getElementById("preSrvChips");
+        const dayMultiChipsContainer = document.getElementById("dayMultiChips");
+        const slotMultiChipsContainer = document.getElementById("slotMultiChips");
 
-        // 初始化診療科別標籤
+        const DAY_NAMES = ['週一', '週二', '週三', '週四', '週五', '週六', '週日'];
+        const SLOT_NAMES = [
+            { id: 0, name: '🌅 上午診 (早 07:30~12:30)' },
+            { id: 1, name: '☀️ 下午診 (午 12:30~17:30)' },
+            { id: 2, name: '🌙 夜間診 (晚 17:30~22:30)' }
+        ];
+
+        // 初始化/渲染星期複選標籤
+        function initDayChips() {
+            let html = '';
+            DAY_NAMES.forEach((dayName, idx) => {
+                const isSelected = state.selectedDays.has(idx);
+                html += `<button class="chip-btn ${isSelected ? 'active' : ''}" onclick="toggleDay(${idx})">${dayName}</button>`;
+            });
+            dayMultiChipsContainer.innerHTML = html;
+        }
+
+        // 初始化/渲染時段複選標籤
+        function initSlotChips() {
+            let html = '';
+            SLOT_NAMES.forEach(slot => {
+                const isSelected = state.selectedSlots.has(slot.id);
+                html += `<button class="chip-btn ${isSelected ? 'active' : ''}" onclick="toggleSlot(${slot.id})">${slot.name}</button>`;
+            });
+            slotMultiChipsContainer.innerHTML = html;
+        }
+
+        // 初始化/渲染診療科別標籤 (支援複選)
         function initSpecialtyChips() {
-            let html = `<button class="chip-btn ${state.specialty === 'all' ? 'active' : ''}" onclick="setSpecialty('all')">全部科別 <span class="chip-count">${TOTAL_COUNT}</span></button>`;
+            const isAll = state.selectedSpecialties.size === 0;
+            let html = `<button class="chip-btn ${isAll ? 'active' : ''}" onclick="clearSpecialties()">全部科別 <span class="chip-count">${TOTAL_COUNT}</span></button>`;
             SPECIALTIES.forEach(([name, count]) => {
-                html += `<button class="chip-btn ${state.specialty === name ? 'active' : ''}" onclick="setSpecialty('${name}')">${name} <span class="chip-count">${count}</span></button>`;
+                const isSelected = state.selectedSpecialties.has(name);
+                html += `<button class="chip-btn ${isSelected ? 'active' : ''}" onclick="toggleSpecialty('${name}')">${name} <span class="chip-count">${count}</span></button>`;
             });
             specialtyChipsContainer.innerHTML = html;
         }
 
-        // 初始化預防保健與服務標籤
+        // 初始化/渲染預防保健與服務標籤 (支援複選)
         function initPreSrvChips() {
-            let html = `<button class="chip-btn ${state.preSrv === 'all' ? 'active' : ''}" onclick="setPreSrv('all')">全部服務</button>`;
-            html += `<button class="chip-btn ${state.preSrv === 'flu' ? 'active' : ''}" onclick="setPreSrv('flu')" style="border-color:#38bdf8; color:#7dd3fc;">💉 流感疫苗專責</button>`;
-            html += `<button class="chip-btn ${state.preSrv === 'chronic' ? 'active' : ''}" onclick="setPreSrv('chronic')" style="border-color:#a855f7; color:#d8b4fe;">🩺 健保慢病照護網</button>`;
+            const isAll = state.selectedPreSrv.size === 0;
+            let html = `<button class="chip-btn ${isAll ? 'active' : ''}" onclick="clearPreSrv()">全部服務</button>`;
+            const fluActive = state.selectedPreSrv.has('flu');
+            const chronicActive = state.selectedPreSrv.has('chronic');
+            html += `<button class="chip-btn ${fluActive ? 'active' : ''}" onclick="togglePreSrv('flu')" style="border-color:#38bdf8; color:#7dd3fc;">💉 流感疫苗專責</button>`;
+            html += `<button class="chip-btn ${chronicActive ? 'active' : ''}" onclick="togglePreSrv('chronic')" style="border-color:#a855f7; color:#d8b4fe;">🩺 健保慢病照護網</button>`;
             PRE_SRVS.forEach(([name, count]) => {
-                html += `<button class="chip-btn ${state.preSrv === name ? 'active' : ''}" onclick="setPreSrv('${name}')">${name} <span class="chip-count">${count}</span></button>`;
+                const isSelected = state.selectedPreSrv.has(name);
+                html += `<button class="chip-btn ${isSelected ? 'active' : ''}" onclick="togglePreSrv('${name}')">${name} <span class="chip-count">${count}</span></button>`;
             });
             preSrvChipsContainer.innerHTML = html;
         }
@@ -1259,19 +1377,20 @@
         // 核心複合篩選與排序邏輯
         function getFilteredClinics() {
             let list = CLINICS.filter(c => {
-                // 1. 關鍵字搜尋
+                // 1. 關鍵字搜尋 (診所名稱、代碼、科別、地址、電話、備註、方案、預防保健)
                 if (state.keyword) {
                     const q = state.keyword.toLowerCase();
-                    const target = (c.name + ' ' + c.id + ' ' + c.func_type + ' ' + c.addr + ' ' + c.tel + ' ' + c.fee_remark + ' ' + c.plans + ' ' + c.pre_srv).toLowerCase();
+                    const target = (c.name + ' ' + c.id + ' ' + c.func_type + ' ' + c.addr + ' ' + c.tel + ' ' + (c.fee_remark || '') + ' ' + (c.plans || '') + ' ' + (c.pre_srv || '')).toLowerCase();
                     if (!target.includes(q)) return false;
                 }
 
-                // 2. 科別篩選
-                if (state.specialty !== 'all') {
-                    if (!c.func_type.includes(state.specialty)) return false;
+                // 2. 科別複選篩選 (選中多個科別時，只要符合其中任一個即可)
+                if (state.selectedSpecialties.size > 0) {
+                    const match = Array.from(state.selectedSpecialties).some(sp => c.func_type.includes(sp));
+                    if (!match) return false;
                 }
 
-                // 3. 快捷時段篩選
+                // 3. 快捷情境時段篩選
                 if (state.periodQuick === 'open_now' && !isOpenNow(c.schedule)) return false;
                 if (state.periodQuick === 'sat' && !c.has_sat) return false;
                 if (state.periodQuick === 'sun' && !c.has_sun) return false;
@@ -1287,36 +1406,63 @@
                     if (!hasWeekdayDay) return false;
                 }
 
-                // 4. 精確星期與時段
-                if (state.customDay !== 'all') {
-                    const d = parseInt(state.customDay);
-                    if (state.customSlot !== 'all') {
-                        const s = parseInt(state.customSlot);
-                        const val = c.schedule[d][s];
-                        if (!val || val === '休診') return false;
-                    } else {
-                        const hasAny = (c.schedule[d][0] && c.schedule[d][0] !== '休診') ||
-                                       (c.schedule[d][1] && c.schedule[d][1] !== '休診') ||
-                                       (c.schedule[d][2] && c.schedule[d][2] !== '休診');
-                        if (!hasAny) return false;
-                    }
-                } else if (state.customSlot !== 'all') {
-                    const s = parseInt(state.customSlot);
-                    let hasSlot = false;
-                    for (let d = 0; d < 7; d++) {
-                        if (c.schedule[d][s] && c.schedule[d][s] !== '休診') {
-                            hasSlot = true;
-                            break;
+                // 4. 星期複選與時段複選交叉比對
+                const daysSelected = state.selectedDays.size > 0;
+                const slotsSelected = state.selectedSlots.size > 0;
+
+                if (daysSelected && slotsSelected) {
+                    // 必須在選取的星期與選取的時段交叉組合中，至少有一個時段有開診
+                    let hasMatch = false;
+                    for (const d of state.selectedDays) {
+                        for (const s of state.selectedSlots) {
+                            const val = c.schedule[d][s];
+                            if (val && val !== '休診') {
+                                hasMatch = true;
+                                break;
+                            }
                         }
+                        if (hasMatch) break;
                     }
-                    if (!hasSlot) return false;
+                    if (!hasMatch) return false;
+                } else if (daysSelected && !slotsSelected) {
+                    // 只有選星期：選取的星期中，至少有任一時段有開診
+                    let hasMatch = false;
+                    for (const d of state.selectedDays) {
+                        for (let s = 0; s < 3; s++) {
+                            const val = c.schedule[d][s];
+                            if (val && val !== '休診') {
+                                hasMatch = true;
+                                break;
+                            }
+                        }
+                        if (hasMatch) break;
+                    }
+                    if (!hasMatch) return false;
+                } else if (!daysSelected && slotsSelected) {
+                    // 只有選時段：在選取的時段中，一週內至少有任一天有開診
+                    let hasMatch = false;
+                    for (let d = 0; d < 7; d++) {
+                        for (const s of state.selectedSlots) {
+                            const val = c.schedule[d][s];
+                            if (val && val !== '休診') {
+                                hasMatch = true;
+                                break;
+                            }
+                        }
+                        if (hasMatch) break;
+                    }
+                    if (!hasMatch) return false;
                 }
 
-                // 5. 預防保健與專案服務
-                if (state.preSrv === 'flu' && c.flu !== '是') return false;
-                if (state.preSrv === 'chronic' && (!c.plans || c.plans.length === 0)) return false;
-                if (state.preSrv !== 'all' && state.preSrv !== 'flu' && state.preSrv !== 'chronic') {
-                    if (!c.pre_srv.includes(state.preSrv)) return false;
+                // 5. 預防保健與專案服務複選
+                if (state.selectedPreSrv.size > 0) {
+                    let hasMatch = false;
+                    for (const ps of state.selectedPreSrv) {
+                        if (ps === 'flu' && c.flu === '是') { hasMatch = true; break; }
+                        if (ps === 'chronic' && c.plans && c.plans.length > 0) { hasMatch = true; break; }
+                        if (c.pre_srv && c.pre_srv.includes(ps)) { hasMatch = true; break; }
+                    }
+                    if (!hasMatch) return false;
                 }
 
                 // 6. 掛號費範圍
@@ -1405,11 +1551,11 @@
                 tableHtml += '</tbody></table>';
 
                 const specTags = c.func_type.split('、').map(s => s.trim()).filter(Boolean).map(s => 
-                    `<span class="spec-tag" onclick="setSpecialty('${s}')" title="點擊快篩【${s}】">${s}</span>`
+                    `<span class="spec-tag" onclick="toggleSpecialty('${s}')" title="點擊切換篩選【${s}】">${s}</span>`
                 ).join('');
 
                 const preTags = c.pre_srv.split('、').map(p => p.trim()).filter(p => p && p !== '無提供').map(p => 
-                    `<span class="pre-tag" onclick="setPreSrv('${p}')" title="點擊快篩【${p}】">${p}</span>`
+                    `<span class="pre-tag" onclick="togglePreSrv('${p}')" title="點擊切換篩選【${p}】">${p}</span>`
                 ).join('');
 
                 return `
@@ -1501,8 +1647,9 @@
             if (state.keyword) {
                 tags.push(`關鍵字: "${state.keyword}"<span class="tag-remove" onclick="clearSearchInput()">✕</span>`);
             }
-            if (state.specialty !== 'all') {
-                tags.push(`科別: ${state.specialty}<span class="tag-remove" onclick="setSpecialty('all')">✕</span>`);
+            if (state.selectedSpecialties.size > 0) {
+                const spStr = Array.from(state.selectedSpecialties).join('、');
+                tags.push(`科別: ${spStr}<span class="tag-remove" onclick="clearSpecialties()">✕</span>`);
             }
             if (state.periodQuick !== 'all') {
                 const map = {
@@ -1512,19 +1659,20 @@
                     night: '夜間看診',
                     weekday_day: '平日白天'
                 };
-                tags.push(`時段: ${map[state.periodQuick] || state.periodQuick}<span class="tag-remove" onclick="setPeriodQuick('all')">✕</span>`);
+                tags.push(`時段快選: ${map[state.periodQuick] || state.periodQuick}<span class="tag-remove" onclick="setPeriodQuick('all')">✕</span>`);
             }
-            if (state.customDay !== 'all') {
-                const days = ['週一', '週二', '週三', '週四', '週五', '週六', '週日'];
-                tags.push(`星期: ${days[parseInt(state.customDay)]}<span class="tag-remove" onclick="onCustomDayChange('all')">✕</span>`);
+            if (state.selectedDays.size > 0) {
+                const dayStr = Array.from(state.selectedDays).sort().map(d => DAY_NAMES[d]).join('、');
+                tags.push(`星期: ${dayStr}<span class="tag-remove" onclick="selectDaysPreset('none')">✕</span>`);
             }
-            if (state.customSlot !== 'all') {
-                const slots = ['上午診(早)', '下午診(午)', '夜間診(晚)'];
-                tags.push(`時段: ${slots[parseInt(state.customSlot)]}<span class="tag-remove" onclick="onCustomSlotChange('all')">✕</span>`);
+            if (state.selectedSlots.size > 0) {
+                const slotShort = ['早診', '午診', '晚診'];
+                const slotStr = Array.from(state.selectedSlots).sort().map(s => slotShort[s]).join('、');
+                tags.push(`時段: ${slotStr}<span class="tag-remove" onclick="selectSlotsPreset('none')">✕</span>`);
             }
-            if (state.preSrv !== 'all') {
-                const pLabel = state.preSrv === 'flu' ? '流感疫苗專責' : (state.preSrv === 'chronic' ? '慢病照護網' : state.preSrv);
-                tags.push(`服務: ${pLabel}<span class="tag-remove" onclick="setPreSrv('all')">✕</span>`);
+            if (state.selectedPreSrv.size > 0) {
+                const psNames = Array.from(state.selectedPreSrv).map(p => p === 'flu' ? '流感疫苗' : (p === 'chronic' ? '慢病網' : p)).join('、');
+                tags.push(`服務: ${psNames}<span class="tag-remove" onclick="clearPreSrv()">✕</span>`);
             }
             if (state.feeRange !== 'all') {
                 const fMap = {
@@ -1540,36 +1688,105 @@
             activeTagsContainer.innerHTML = tags.map(t => `<span class="filter-tag-chip">${t}</span>`).join('');
         }
 
-        // 操作處理函式
-        function setSpecialty(sp) {
-            state.specialty = sp;
+        // 搜尋操作函式
+        function executeSearch() {
+            state.keyword = searchInput.value.trim();
+            clearSearchBtn.style.display = state.keyword ? "block" : "none";
+            render();
+        }
+
+        function clearSearchInput() {
+            state.keyword = "";
+            searchInput.value = "";
+            clearSearchBtn.style.display = "none";
+            render();
+        }
+
+        // 星期與時段複選操作
+        function toggleDay(d) {
+            if (state.selectedDays.has(d)) {
+                state.selectedDays.delete(d);
+            } else {
+                state.selectedDays.add(d);
+            }
+            initDayChips();
+            render();
+        }
+
+        function selectDaysPreset(type) {
+            if (type === 'weekday') {
+                state.selectedDays = new Set([0, 1, 2, 3, 4]);
+            } else if (type === 'weekend') {
+                state.selectedDays = new Set([5, 6]);
+            } else if (type === 'all') {
+                state.selectedDays = new Set([0, 1, 2, 3, 4, 5, 6]);
+            } else if (type === 'none') {
+                state.selectedDays.clear();
+            }
+            initDayChips();
+            render();
+        }
+
+        function toggleSlot(s) {
+            if (state.selectedSlots.has(s)) {
+                state.selectedSlots.delete(s);
+            } else {
+                state.selectedSlots.add(s);
+            }
+            initSlotChips();
+            render();
+        }
+
+        function selectSlotsPreset(type) {
+            if (type === 'all') {
+                state.selectedSlots = new Set([0, 1, 2]);
+            } else if (type === 'none') {
+                state.selectedSlots.clear();
+            }
+            initSlotChips();
+            render();
+        }
+
+        // 科別複選操作
+        function toggleSpecialty(sp) {
+            if (state.selectedSpecialties.has(sp)) {
+                state.selectedSpecialties.delete(sp);
+            } else {
+                state.selectedSpecialties.add(sp);
+            }
             initSpecialtyChips();
             render();
         }
 
-        function setPreSrv(ps) {
-            state.preSrv = ps;
+        function clearSpecialties() {
+            state.selectedSpecialties.clear();
+            initSpecialtyChips();
+            render();
+        }
+
+        // 預防保健複選操作
+        function togglePreSrv(ps) {
+            if (state.selectedPreSrv.has(ps)) {
+                state.selectedPreSrv.delete(ps);
+            } else {
+                state.selectedPreSrv.add(ps);
+            }
             initPreSrvChips();
             render();
         }
 
+        function clearPreSrv() {
+            state.selectedPreSrv.clear();
+            initPreSrvChips();
+            render();
+        }
+
+        // 時段快捷與其他操作
         function setPeriodQuick(p) {
             state.periodQuick = p;
             document.querySelectorAll("#periodQuickChips .chip-btn").forEach(btn => {
                 btn.classList.toggle("active", btn.dataset.period === p);
             });
-            render();
-        }
-
-        function onCustomDayChange(val) {
-            state.customDay = val;
-            daySelect.value = val;
-            render();
-        }
-
-        function onCustomSlotChange(val) {
-            state.customSlot = val;
-            slotSelect.value = val;
             render();
         }
 
@@ -1592,20 +1809,13 @@
             render();
         }
 
-        function clearSearchInput() {
-            state.keyword = "";
-            searchInput.value = "";
-            clearSearchBtn.style.display = "none";
-            render();
-        }
-
         function resetAllFilters() {
             state.keyword = "";
-            state.specialty = "all";
+            state.selectedSpecialties.clear();
             state.periodQuick = "all";
-            state.customDay = "all";
-            state.customSlot = "all";
-            state.preSrv = "all";
+            state.selectedDays.clear();
+            state.selectedSlots.clear();
+            state.selectedPreSrv.clear();
             state.feeRange = "all";
             state.sortBy = "default";
 
@@ -1613,9 +1823,9 @@
             clearSearchBtn.style.display = "none";
             feeSelect.value = "all";
             sortSelect.value = "default";
-            daySelect.value = "all";
-            slotSelect.value = "all";
 
+            initDayChips();
+            initSlotChips();
             initSpecialtyChips();
             initPreSrvChips();
             document.querySelectorAll("#periodQuickChips .chip-btn").forEach(btn => {
@@ -1682,11 +1892,11 @@
             updateLikeUI();
         }
 
-        // 社群分享機制
+        // 社群分享機制 (保證安全無字串換行語法錯誤)
         function handleShare() {
             const shareTitle = `🏥 【${REGION_ZIP}】${REGION_CITY} ${REGION_TOWN} 健保西醫基層診所門診全覽 (${ROC_MONTH})`;
-            const shareText = `查詢【${REGION_ZIP}】${REGION_CITY} ${REGION_TOWN} 基層門診科別、掛號費行情、預防保健與 7 天看診時段：
-${ONLINE_URL}`;
+            const shareIntro = `查詢【${REGION_ZIP}】${REGION_CITY} ${REGION_TOWN} 基層門診科別、掛號費行情、預防保健與 7 天看診時段：`;
+            const shareText = [shareIntro, ONLINE_URL].join(String.fromCharCode(10));
 
             if (navigator.share) {
                 navigator.share({
@@ -1713,8 +1923,7 @@ ${ONLINE_URL}`;
 
         function shareToLine() {
             const shareTitle = `🏥 ${REGION_CITY} ${REGION_TOWN} 健保西醫基層診所門診全覽 (${ROC_MONTH})`;
-            const fullText = shareTitle + "
-" + ONLINE_URL;
+            const fullText = [shareTitle, ONLINE_URL].join(String.fromCharCode(10));
             window.open("https://social-plugins.line.me/lineit/share?url=" + encodeURIComponent(ONLINE_URL) + "&text=" + encodeURIComponent(fullText), "_blank");
         }
 
@@ -1744,7 +1953,7 @@ ${ONLINE_URL}`;
             setTimeout(() => { toast.className = toast.className.replace("show", ""); }, 3000);
         }
 
-        // 監聽搜尋輸入
+        // 監聽搜尋輸入 (即時輸入即時篩選)
         searchInput.addEventListener("input", (e) => {
             state.keyword = e.target.value.trim();
             clearSearchBtn.style.display = state.keyword ? "block" : "none";
@@ -1753,6 +1962,8 @@ ${ONLINE_URL}`;
 
         // 初始化執行
         window.addEventListener("DOMContentLoaded", () => {
+            initDayChips();
+            initSlotChips();
             initSpecialtyChips();
             initPreSrvChips();
             initLikes();
