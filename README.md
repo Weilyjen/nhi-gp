@@ -16,3 +16,8 @@
    - 支援 7 天開診時段矩陣篩選、現在開診中 (Open Now) 一鍵速查
    - 一鍵撥號、Google 地圖一鍵導航、健保品質公開查詢
    - 支援線上按讚 ❤️ 與社群分享 📤 (LINE、Facebook、Telegram、複製連結)
+
+## 🌐 網址結構規範 (3 碼郵遞區號)
+- **各行政區專頁**：`https://weilyjen.github.io/nhi-gp/{郵遞區號}/index.html`
+  - 例：臺北市萬華區（108）👉 [https://weilyjen.github.io/nhi-gp/108/index.html](https://weilyjen.github.io/nhi-gp/108/index.html)
+- **全台各區索引首頁**：👉 [https://weilyjen.github.io/nhi-gp/](https://weilyjen.github.io/nhi-gp/)
