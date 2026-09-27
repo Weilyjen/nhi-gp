@@ -26,12 +26,16 @@
         .badge-bar { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-top: 16px; }
         .badge { background: rgba(56, 189, 248, 0.15); border: 1px solid rgba(56, 189, 248, 0.3); color: #38bdf8; padding: 4px 12px; border-radius: 9999px; font-size: 12px; font-weight: 600; }
         .section-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; flex-wrap: wrap; gap: 12px; }
+        .section-title-wrap { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
         .section-title { font-size: 19px; font-weight: 700; color: #e2e8f0; display: flex; align-items: center; gap: 8px; }
-        .search-box { background: rgba(15, 23, 42, 0.9); border: 1px solid rgba(255,255,255,0.14); padding: 8px 14px; border-radius: 10px; color: #fff; font-size: 13.5px; outline: none; min-width: 220px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 18px; margin-bottom: 36px; }
+        .sort-hint { background: rgba(56, 189, 248, 0.12); border: 1px solid rgba(56, 189, 248, 0.25); color: #38bdf8; font-size: 11.5px; padding: 3px 9px; border-radius: 6px; font-weight: 600; }
+        .search-box { background: rgba(15, 23, 42, 0.9); border: 1px solid rgba(255,255,255,0.14); padding: 9px 16px; border-radius: 12px; color: #fff; font-size: 13.5px; outline: none; min-width: 260px; transition: all 0.2s; }
+        .search-box:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2); }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 18px; margin-bottom: 36px; }
         .region-card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 18px; padding: 22px; text-decoration: none; color: inherit; transition: all 0.2s; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 4px 14px rgba(0,0,0,0.2); }
         .region-card:hover { transform: translateY(-3px); border-color: var(--accent); box-shadow: 0 12px 30px rgba(0,0,0,0.4); }
         .region-name { font-size: 20px; font-weight: 700; color: #fff; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center; }
+        .zip-pill { background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); color: #fff; font-size: 13.5px; font-weight: 800; padding: 2px 10px; border-radius: 8px; margin-right: 8px; letter-spacing: 0.5px; box-shadow: 0 2px 8px rgba(2, 132, 199, 0.35); }
         .region-meta { font-size: 13px; color: var(--text-sub); line-height: 1.6; margin-bottom: 16px; }
         .card-btn { background: rgba(56, 189, 248, 0.15); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.3); padding: 8px 14px; border-radius: 10px; font-size: 13px; font-weight: 700; text-align: center; transition: all 0.2s; }
         .region-card:hover .card-btn { background: #0284c7; color: #fff; border-color: #38bdf8; }
@@ -52,8 +56,11 @@
         </header>
 
         <div class="section-header">
-            <div class="section-title">📍 已發布行政區專題門診網頁</div>
-            <input type="text" id="filterInput" class="search-box" placeholder="🔍 搜尋郵遞區號 (如 108)、縣市或鄉鎮市區...">
+            <div class="section-title-wrap">
+                <div class="section-title">📍 已發布行政區專題門診網頁</div>
+                <span class="sort-hint">🔢 依 3 碼郵遞區號排序</span>
+            </div>
+            <input type="text" id="filterInput" class="search-box" placeholder="🔍 搜尋郵遞區號 (如 108)、縣市或鄉鎮...">
         </div>
 
         <div class="grid" id="regionGrid"></div>
@@ -72,9 +79,45 @@
                 clinics_count: 71,
                 roc_month: "民國 115 年 9 月",
                 path: "108/index.html",
-                features: "週六開診 38 家 • 平日夜診 52 家"
+                features: "週六開診 62 家 • 週日開診 16 家 • 平日夜診 58 家"
+            },
+            {
+                zipcode: "234",
+                city: "新北市",
+                town: "永和區",
+                clinics_count: 138,
+                roc_month: "民國 115 年 9 月",
+                path: "234/index.html",
+                features: "週六開診 131 家 • 週日開診 25 家 • 平日夜診 130 家"
+            },
+            {
+                zipcode: "744",
+                city: "臺南市",
+                town: "新市區",
+                clinics_count: 20,
+                roc_month: "民國 115 年 9 月",
+                path: "744/index.html",
+                features: "週六開診 16 家 • 週日開診 2 家 • 平日夜診 15 家"
+            },
+            {
+                zipcode: "804",
+                city: "高雄市",
+                town: "鼓山區",
+                clinics_count: 84,
+                roc_month: "民國 115 年 9 月",
+                path: "804/index.html",
+                features: "週六開診 67 家 • 週日開診 15 家 • 平日夜診 70 家"
             }
         ];
+
+        // 依 3 碼郵遞區號由小到大排序 (例如: 108 -> 234 -> 744 -> 804)
+        function sortByZipcode(items) {
+            return [...items].sort((a, b) => {
+                const zipA = parseInt(a.zipcode || '9999', 10);
+                const zipB = parseInt(b.zipcode || '9999', 10);
+                return zipA - zipB;
+            });
+        }
 
         function renderRegions(list) {
             const grid = document.getElementById("regionGrid");
@@ -82,11 +125,12 @@
                 grid.innerHTML = '<div style="grid-column: 1 / -1; text-align:center; padding:40px; color:#94a3b8;">查無相符的行政區</div>';
                 return;
             }
-            grid.innerHTML = list.map(r => `
+            const sorted = sortByZipcode(list);
+            grid.innerHTML = sorted.map(r => `
                 <a href="${r.path}" class="region-card">
                     <div>
                         <div class="region-name">
-                            <span><span style="color:#38bdf8; font-weight:800; margin-right:4px;">[${r.zipcode || ''}]</span> ${r.city} ${r.town}</span>
+                            <span><span class="zip-pill">${r.zipcode || ''}</span> ${r.city} ${r.town}</span>
                             <span style="font-size:12px; color:#38bdf8; font-weight:normal;">${r.clinics_count ? r.clinics_count + ' 家診所' : ''}</span>
                         </div>
                         <div class="region-meta">
@@ -99,20 +143,20 @@
             `).join('');
         }
 
-        let allRegions = DEFAULT_REGIONS;
+        let allRegions = sortByZipcode(DEFAULT_REGIONS);
 
         fetch('regions.json')
             .then(res => res.json())
             .then(data => {
                 if (Array.isArray(data) && data.length > 0) {
-                    allRegions = data;
+                    allRegions = sortByZipcode(data);
                     renderRegions(allRegions);
                 } else {
-                    renderRegions(DEFAULT_REGIONS);
+                    renderRegions(allRegions);
                 }
             })
             .catch(() => {
-                renderRegions(DEFAULT_REGIONS);
+                renderRegions(allRegions);
             });
 
         document.getElementById("filterInput").addEventListener("input", (e) => {

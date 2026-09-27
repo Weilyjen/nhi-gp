@@ -10,16 +10,6 @@
     "updated_at": "2026-09-27"
   },
   {
-    "zipcode": "744",
-    "city": "臺南市",
-    "town": "新市區",
-    "clinics_count": 20,
-    "roc_month": "民國 115 年 9 月",
-    "features": "週六開診 16 家 • 週日開診 2 家 • 平日夜診 15 家",
-    "path": "744/index.html",
-    "updated_at": "2026-09-27"
-  },
-  {
     "zipcode": "234",
     "city": "新北市",
     "town": "永和區",
@@ -27,6 +17,16 @@
     "roc_month": "民國 115 年 9 月",
     "features": "週六開診 131 家 • 週日開診 25 家 • 平日夜診 130 家",
     "path": "234/index.html",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "zipcode": "744",
+    "city": "臺南市",
+    "town": "新市區",
+    "clinics_count": 20,
+    "roc_month": "民國 115 年 9 月",
+    "features": "週六開診 16 家 • 週日開診 2 家 • 平日夜診 15 家",
+    "path": "744/index.html",
     "updated_at": "2026-09-27"
   },
   {
