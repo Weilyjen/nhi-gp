@@ -30,6 +30,16 @@
     "updated_at": "2026-09-27"
   },
   {
+    "zipcode": "111",
+    "city": "臺北市",
+    "town": "士林區",
+    "clinics_count": 109,
+    "roc_month": "民國 115 年 9 月",
+    "features": "週六開診 94 家 • 週日開診 15 家 • 平日夜診 97 家",
+    "path": "111/index.html",
+    "updated_at": "2026-09-27"
+  },
+  {
     "zipcode": "114",
     "city": "臺北市",
     "town": "內湖區",
