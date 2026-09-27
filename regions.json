@@ -60,6 +60,16 @@
     "updated_at": "2026-09-27"
   },
   {
+    "zipcode": "235",
+    "city": "新北市",
+    "town": "中和區",
+    "clinics_count": 169,
+    "roc_month": "民國 115 年 9 月",
+    "features": "週六開診 158 家 • 週日開診 32 家 • 平日夜診 151 家",
+    "path": "235/index.html",
+    "updated_at": "2026-09-27"
+  },
+  {
     "zipcode": "241",
     "city": "新北市",
     "town": "三重區",
