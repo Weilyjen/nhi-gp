@@ -39,6 +39,85 @@
         .region-meta { font-size: 13px; color: var(--text-sub); line-height: 1.6; margin-bottom: 16px; }
         .card-btn { background: rgba(56, 189, 248, 0.15); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.3); padding: 8px 14px; border-radius: 10px; font-size: 13px; font-weight: 700; text-align: center; transition: all 0.2s; }
         .region-card:hover .card-btn { background: #0284c7; color: #fff; border-color: #38bdf8; }
+
+        /* 臉書敲碗與互動橫幅 (Facebook Banner) */
+        .fb-request-banner {
+            background: linear-gradient(135deg, rgba(24, 119, 242, 0.16) 0%, rgba(56, 189, 248, 0.12) 100%);
+            border: 1px solid rgba(56, 189, 248, 0.35);
+            border-radius: 18px;
+            padding: 18px 24px;
+            margin-bottom: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+            transition: all 0.2s;
+        }
+        .fb-request-banner:hover {
+            border-color: rgba(56, 189, 248, 0.55);
+            box-shadow: 0 12px 32px rgba(24, 119, 242, 0.25);
+        }
+        .fb-banner-content {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .fb-icon-wrap {
+            font-size: 26px;
+            background: rgba(24, 119, 242, 0.25);
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 14px;
+            border: 1px solid rgba(24, 119, 242, 0.4);
+            flex-shrink: 0;
+        }
+        .fb-title {
+            font-size: 16.5px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 4px;
+        }
+        .fb-sub {
+            font-size: 13px;
+            color: #94a3b8;
+            line-height: 1.5;
+        }
+        .fb-action-btn {
+            background: linear-gradient(135deg, #1877f2 0%, #0d65d9 100%);
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            white-space: nowrap;
+            box-shadow: 0 4px 14px rgba(24, 119, 242, 0.4);
+            transition: all 0.2s;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+        }
+        .fb-action-btn:hover {
+            background: #1877f2;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(24, 119, 242, 0.6);
+        }
+        @media (max-width: 768px) {
+            .fb-request-banner {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .fb-action-btn {
+                justify-content: center;
+            }
+        }
+
         footer { text-align: center; color: var(--text-sub); font-size: 13px; margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--card-border); }
     </style>
 </head>
@@ -55,6 +134,20 @@
             </div>
         </header>
 
+        <!-- 臉書互動敲碗橫幅 (Facebook Community Banner) -->
+        <div class="fb-request-banner">
+            <div class="fb-banner-content">
+                <div class="fb-icon-wrap">💬</div>
+                <div class="fb-text-wrap">
+                    <div class="fb-title">如果您想知道其他區域，請到臉書留言、按讚！</div>
+                    <div class="fb-sub">尚未收錄您所在的鄉鎮市區？歡迎前往 Facebook 貼文留言告知我們，我們將優先為您分析並更新上線。</div>
+                </div>
+            </div>
+            <a href="https://www.facebook.com/share/p/189jEYxXRh/" target="_blank" rel="noopener noreferrer" class="fb-action-btn">
+                <span>📘</span> 前往臉書留言、按讚 ❯
+            </a>
+        </div>
+
         <div class="section-header">
             <div class="section-title-wrap">
                 <div class="section-title">📍 已發布行政區專題門診網頁</div>
@@ -66,6 +159,7 @@
         <div class="grid" id="regionGrid"></div>
 
         <footer>
+            <p style="margin-bottom:8px; font-size:13.5px;">📢 如果您想知道其他區域，請到<a href="https://www.facebook.com/share/p/189jEYxXRh/" target="_blank" rel="noopener noreferrer" style="color:#38bdf8; font-weight:700; text-decoration:underline; margin:0 4px;">臉書留言、按讚</a>，我們將優先為您彙整上線！</p>
             <p>本平台為公益醫療資訊彙整工具，資料每個月依健保署官方公告更新一次。<br>© 2026 全台健保基層西醫門診資訊網 · 無廣告純淨閱讀</p>
         </footer>
     </div>
@@ -122,7 +216,12 @@
         function renderRegions(list) {
             const grid = document.getElementById("regionGrid");
             if (!list || list.length === 0) {
-                grid.innerHTML = '<div style="grid-column: 1 / -1; text-align:center; padding:40px; color:#94a3b8;">查無相符的行政區</div>';
+                grid.innerHTML = `
+                    <div style="grid-column: 1 / -1; text-align:center; padding:40px; color:#94a3b8; background:rgba(15,23,42,0.6); border-radius:16px; border:1px dashed var(--card-border);">
+                        <div style="font-size:18px; color:#fff; font-weight:700; margin-bottom:8px;">🔍 查無相符的行政區</div>
+                        <p style="margin-bottom:16px; font-size:14px;">目前尚未發布此區域門診全覽。如果您想知道其他區域，請到臉書留言、按讚！</p>
+                        <a href="https://www.facebook.com/share/p/189jEYxXRh/" target="_blank" rel="noopener noreferrer" class="fb-action-btn" style="display:inline-flex;">📘 前往臉書留言、按讚</a>
+                    </div>`;
                 return;
             }
             const sorted = sortByZipcode(list);
