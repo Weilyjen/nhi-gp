@@ -30,6 +30,16 @@
     "updated_at": "2026-09-27"
   },
   {
+    "zipcode": "241",
+    "city": "新北市",
+    "town": "三重區",
+    "clinics_count": 184,
+    "roc_month": "民國 115 年 9 月",
+    "features": "週六開診 174 家 • 週日開診 36 家 • 平日夜診 170 家",
+    "path": "241/index.html",
+    "updated_at": "2026-09-27"
+  },
+  {
     "zipcode": "744",
     "city": "臺南市",
     "town": "新市區",
