@@ -1,5 +1,15 @@
 [
   {
+    "zipcode": "100",
+    "city": "臺北市",
+    "town": "中正區",
+    "clinics_count": 87,
+    "roc_month": "民國 115 年 9 月",
+    "features": "週六開診 72 家 • 週日開診 4 家 • 平日夜診 65 家",
+    "path": "100/index.html",
+    "updated_at": "2026-09-27"
+  },
+  {
     "zipcode": "108",
     "city": "臺北市",
     "town": "萬華區",
