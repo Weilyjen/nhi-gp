@@ -198,5 +198,15 @@
     "features": "週六開診 67 家 • 週日開診 15 家 • 平日夜診 70 家",
     "path": "804/index.html",
     "updated_at": "2026-09-27"
+  },
+  {
+    "zipcode": "900",
+    "city": "屏東縣",
+    "town": "屏東市",
+    "clinics_count": 132,
+    "roc_month": "民國 115 年 9 月",
+    "features": "週六開診 122 家 • 週日開診 12 家 • 平日夜診 113 家",
+    "path": "900/index.html",
+    "updated_at": "2026-09-27"
   }
 ]
