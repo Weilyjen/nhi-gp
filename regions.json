@@ -160,6 +160,16 @@
     "updated_at": "2026-09-27"
   },
   {
+    "zipcode": "624",
+    "city": "嘉義縣",
+    "town": "義竹鄉",
+    "clinics_count": 5,
+    "roc_month": "民國 115 年 9 月",
+    "features": "週六開診 4 家 • 週日開診 1 家 • 平日夜診 1 家",
+    "path": "624/index.html",
+    "updated_at": "2026-09-27"
+  },
+  {
     "zipcode": "701",
     "city": "臺南市",
     "town": "東區",
