@@ -130,6 +130,16 @@
     "updated_at": "2026-09-27"
   },
   {
+    "zipcode": "710",
+    "city": "臺南市",
+    "town": "永康區",
+    "clinics_count": 126,
+    "roc_month": "民國 115 年 9 月",
+    "features": "週六開診 109 家 • 週日開診 16 家 • 平日夜診 114 家",
+    "path": "710/index.html",
+    "updated_at": "2026-09-27"
+  },
+  {
     "zipcode": "744",
     "city": "臺南市",
     "town": "新市區",
