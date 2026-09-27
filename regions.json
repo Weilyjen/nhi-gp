@@ -110,6 +110,16 @@
     "updated_at": "2026-09-27"
   },
   {
+    "zipcode": "351",
+    "city": "苗栗縣",
+    "town": "頭份市",
+    "clinics_count": 41,
+    "roc_month": "民國 115 年 9 月",
+    "features": "週六開診 32 家 • 週日開診 2 家 • 平日夜診 36 家",
+    "path": "351/index.html",
+    "updated_at": "2026-09-27"
+  },
+  {
     "zipcode": "744",
     "city": "臺南市",
     "town": "新市區",
