@@ -40,6 +40,16 @@
     "updated_at": "2026-09-27"
   },
   {
+    "zipcode": "334",
+    "city": "桃園市",
+    "town": "八德區",
+    "clinics_count": 75,
+    "roc_month": "民國 115 年 9 月",
+    "features": "週六開診 68 家 • 週日開診 20 家 • 平日夜診 67 家",
+    "path": "334/index.html",
+    "updated_at": "2026-09-27"
+  },
+  {
     "zipcode": "744",
     "city": "臺南市",
     "town": "新市區",
