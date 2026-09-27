@@ -1,0 +1,2062 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>健保西醫基層診所門診全覽 - [701] 臺南市 東區 (民國 115 年 9 月)</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0284c7;
+            --primary-dark: #0369a1;
+            --primary-light: #e0f2fe;
+            --accent: #0ea5e9;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --bg: #0b0f19;
+            --card-bg: rgba(22, 30, 49, 0.75);
+            --card-border: rgba(255, 255, 255, 0.08);
+            --text-main: #f8fafc;
+            --text-sub: #94a3b8;
+            --text-muted: #64748b;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Plus Jakarta Sans', 'Noto Sans TC', -apple-system, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #070a12 0%, #0c1222 50%, #171c38 100%);
+            color: var(--text-main);
+            min-height: 100vh;
+            padding: 24px;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 1440px;
+            margin: 0 auto;
+        }
+
+        /* 回到全台首頁導航條 (Top Portal Navigation Bar) */
+        .portal-nav-bar {
+            background: linear-gradient(135deg, rgba(2, 132, 199, 0.22) 0%, rgba(99, 102, 241, 0.16) 100%);
+            border: 1px solid rgba(56, 189, 248, 0.35);
+            border-radius: 14px;
+            padding: 12px 20px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+        }
+
+        .portal-nav-text {
+            font-size: 14px;
+            color: #e2e8f0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .portal-nav-link {
+            color: #38bdf8;
+            font-weight: 700;
+            text-decoration: underline;
+            transition: color 0.2s;
+        }
+
+        .portal-nav-link:hover {
+            color: #7dd3fc;
+        }
+
+        .portal-nav-btn {
+            background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+            color: #fff;
+            padding: 7px 16px;
+            border-radius: 10px;
+            font-size: 13px;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            white-space: nowrap;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.2s;
+            box-shadow: 0 2px 8px rgba(2, 132, 199, 0.35);
+        }
+
+        .portal-nav-btn:hover {
+            background: #0284c7;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 14px rgba(2, 132, 199, 0.5);
+        }
+
+        @media (max-width: 640px) {
+            .portal-nav-bar {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .portal-nav-btn {
+                justify-content: center;
+            }
+        }
+
+        /* Header */
+        header {
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(16px);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 24px 32px;
+            margin-bottom: 24px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .header-title h1 {
+            font-size: 26px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .header-meta {
+            font-size: 13.5px;
+            color: var(--text-sub);
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .badge-cond {
+            background: rgba(14, 165, 233, 0.15);
+            color: #38bdf8;
+            padding: 3px 10px;
+            border-radius: 9999px;
+            font-size: 12px;
+            font-weight: 600;
+            border: 1px solid rgba(56, 189, 248, 0.3);
+        }
+
+        /* Header Actions (按讚與社群分享按鈕列) */
+        .header-actions {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .action-btn {
+            background: rgba(30, 41, 59, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            color: #fff;
+            padding: 9px 16px;
+            border-radius: 12px;
+            font-size: 13.5px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            text-decoration: none;
+            user-select: none;
+        }
+
+        .action-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 14px rgba(0,0,0,0.3);
+        }
+
+        .like-btn {
+            background: rgba(244, 63, 94, 0.12);
+            border-color: rgba(244, 63, 94, 0.3);
+            color: #fda4af;
+        }
+
+        .like-btn:hover {
+            background: rgba(244, 63, 94, 0.25);
+            color: #fff;
+            border-color: #f43f5e;
+        }
+
+        .like-btn.liked {
+            background: linear-gradient(135deg, #e11d48 0%, #be123c 100%);
+            border-color: #fb7185;
+            color: #fff;
+            box-shadow: 0 4px 16px rgba(225, 29, 72, 0.4);
+        }
+
+        .like-btn.liked .heart-icon {
+            animation: heartbeat 0.4s ease-in-out;
+        }
+
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.35); }
+            100% { transform: scale(1); }
+        }
+
+        .share-btn {
+            background: rgba(14, 165, 233, 0.15);
+            border-color: rgba(14, 165, 233, 0.35);
+            color: #7dd3fc;
+        }
+
+        .share-btn:hover {
+            background: #0284c7;
+            border-color: #38bdf8;
+            color: #fff;
+        }
+
+        .csv-btn {
+            background: rgba(16, 185, 129, 0.15);
+            border-color: rgba(16, 185, 129, 0.35);
+            color: #6ee7b7;
+        }
+
+        .csv-btn:hover {
+            background: #059669;
+            border-color: #34d399;
+            color: #fff;
+        }
+
+        /* Stats Cards (可點擊聯動篩選) */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .stat-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 18px 20px;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+            user-select: none;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-3px);
+            border-color: rgba(56, 189, 248, 0.4);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--primary);
+        }
+
+        .stat-card.sat::before { background: #38bdf8; }
+        .stat-card.sun::before { background: #f43f5e; }
+        .stat-card.night::before { background: #a855f7; }
+        .stat-card.fee::before { background: #10b981; }
+
+        .stat-label {
+            font-size: 13px;
+            color: var(--text-sub);
+            margin-bottom: 6px;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .stat-hint {
+            font-size: 11px;
+            color: #38bdf8;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+
+        .stat-card:hover .stat-hint {
+            opacity: 1;
+        }
+
+        .stat-val {
+            font-size: 26px;
+            font-weight: 800;
+            color: #fff;
+        }
+
+        .stat-sub {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+
+        /* 複合多維度篩選與查詢工具箱 */
+        .filter-panel {
+            background: var(--card-bg);
+            backdrop-filter: blur(14px);
+            border: 1px solid var(--card-border);
+            border-radius: 18px;
+            padding: 22px;
+            margin-bottom: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+        }
+
+        .control-row {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .search-box-wrap {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            flex: 1;
+            min-width: 320px;
+        }
+
+        .search-container {
+            flex: 1;
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            background: rgba(15, 23, 42, 0.9);
+            border: 1px solid rgba(255,255,255,0.14);
+            border-radius: 12px;
+            padding: 12px 40px 12px 42px;
+            color: #fff;
+            font-size: 14.5px;
+            outline: none;
+            transition: all 0.2s;
+        }
+
+        .search-input:focus {
+            border-color: #38bdf8;
+            box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
+            background: rgba(15, 23, 42, 1);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            font-size: 16px;
+            pointer-events: none;
+        }
+
+        .clear-search {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+            font-size: 16px;
+            display: none;
+        }
+
+        .clear-search:hover {
+            color: #fff;
+        }
+
+        .btn-search-primary {
+            background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+            border: 1px solid #38bdf8;
+            color: #fff;
+            padding: 11px 22px;
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            white-space: nowrap;
+            box-shadow: 0 4px 14px rgba(2, 132, 199, 0.35);
+        }
+
+        .btn-search-primary:hover {
+            background: #0284c7;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(2, 132, 199, 0.5);
+        }
+
+        .schedule-filter-box {
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 14px;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .sub-actions {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .text-link-btn {
+            background: transparent;
+            border: none;
+            color: #38bdf8;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            padding: 2px 6px;
+            border-radius: 4px;
+            transition: all 0.2s;
+        }
+
+        .text-link-btn:hover {
+            background: rgba(56, 189, 248, 0.15);
+            text-decoration: underline;
+        }
+
+        .view-sort-group {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .select-ctrl {
+            background: rgba(15, 23, 42, 0.9);
+            border: 1px solid rgba(255,255,255,0.14);
+            color: #e2e8f0;
+            padding: 10px 14px;
+            border-radius: 10px;
+            font-size: 13.5px;
+            outline: none;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .select-ctrl:focus {
+            border-color: #38bdf8;
+        }
+
+        .view-btn-group {
+            display: flex;
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .view-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-sub);
+            padding: 8px 14px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .view-btn.active {
+            background: #0284c7;
+            color: #fff;
+        }
+
+        /* 標籤篩選列 */
+        .filter-section {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            padding-top: 12px;
+        }
+
+        .filter-label-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12.5px;
+            font-weight: 700;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .chip-scroll {
+            display: flex;
+            gap: 7px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .chip-btn {
+            background: rgba(30, 41, 59, 0.85);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: var(--text-sub);
+            padding: 6px 12px;
+            border-radius: 9999px;
+            font-size: 12.5px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            user-select: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            white-space: nowrap;
+        }
+
+        .chip-btn:hover {
+            background: rgba(255,255,255,0.1);
+            color: #fff;
+            transform: translateY(-1px);
+        }
+
+        .chip-btn.active {
+            background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+            border-color: #38bdf8;
+            color: #fff;
+            font-weight: 700;
+            box-shadow: 0 2px 10px rgba(2, 132, 199, 0.35);
+        }
+
+        .chip-count {
+            font-size: 11px;
+            opacity: 0.75;
+            background: rgba(0,0,0,0.25);
+            padding: 1px 6px;
+            border-radius: 10px;
+        }
+
+        /* 矩陣時段與進階篩選選單 */
+        .grid-filters-row {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        /* 目前套用的篩選條件狀態列 (Active Filters Bar) */
+        .active-filters-bar {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            padding: 10px 14px;
+            background: rgba(15, 23, 42, 0.6);
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.06);
+            font-size: 13px;
+        }
+
+        .match-count {
+            color: #38bdf8;
+            font-weight: 700;
+        }
+
+        .filter-tag-chip {
+            background: rgba(56, 189, 248, 0.15);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            color: #bae6fd;
+            padding: 3px 8px;
+            border-radius: 6px;
+            font-size: 12px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .tag-remove {
+            cursor: pointer;
+            font-size: 14px;
+            color: #38bdf8;
+            font-weight: bold;
+        }
+
+        .tag-remove:hover {
+            color: #fff;
+        }
+
+        .reset-all-btn {
+            margin-left: auto;
+            background: transparent;
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            color: #f87171;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .reset-all-btn:hover {
+            background: rgba(239, 68, 68, 0.15);
+            color: #fca5a5;
+        }
+
+        /* 視圖一：卡片式列表 (Clinics Grid) */
+        .clinics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(430px, 1fr));
+            gap: 20px;
+        }
+
+        @media (max-width: 640px) {
+            .clinics-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .clinic-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--card-border);
+            border-radius: 18px;
+            padding: 22px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .clinic-card:hover {
+            transform: translateY(-3px);
+            border-color: rgba(56, 189, 248, 0.4);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.4);
+        }
+
+        .card-top {
+            margin-bottom: 16px;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 8px;
+        }
+
+        .clinic-name {
+            font-size: 19px;
+            font-weight: 700;
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.2s;
+            line-height: 1.3;
+        }
+
+        .clinic-name:hover {
+            color: #38bdf8;
+        }
+
+        .card-badges {
+            display: flex;
+            gap: 6px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .fee-badge {
+            background: rgba(16, 185, 129, 0.15);
+            color: #34d399;
+            border: 1px solid rgba(52, 211, 153, 0.3);
+            padding: 3px 9px;
+            border-radius: 8px;
+            font-size: 12.5px;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        .sessions-badge {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border: 1px solid rgba(165, 180, 252, 0.25);
+            padding: 3px 8px;
+            border-radius: 8px;
+            font-size: 11.5px;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .clinic-id {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .info-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            font-size: 13.5px;
+            color: var(--text-sub);
+            margin-bottom: 6px;
+        }
+
+        .info-row a {
+            color: var(--text-sub);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .info-row a:hover {
+            color: #38bdf8;
+            text-decoration: underline;
+        }
+
+        .tags-wrapper {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+            margin: 12px 0 10px 0;
+        }
+
+        .spec-tag {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border: 1px solid rgba(165, 180, 252, 0.2);
+            padding: 2px 7px;
+            border-radius: 6px;
+            font-size: 11.5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .spec-tag:hover {
+            background: rgba(99, 102, 241, 0.3);
+            color: #fff;
+        }
+
+        .pre-tag {
+            background: rgba(245, 158, 11, 0.15);
+            color: #fcd34d;
+            border: 1px solid rgba(252, 211, 77, 0.2);
+            padding: 2px 7px;
+            border-radius: 6px;
+            font-size: 11.5px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .pre-tag:hover {
+            background: rgba(245, 158, 11, 0.3);
+            color: #fff;
+        }
+
+        /* 門診時段表 */
+        .timetable {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 11px;
+            margin-top: 12px;
+            border-radius: 8px;
+            overflow: hidden;
+            background: rgba(15, 23, 42, 0.65);
+        }
+
+        .timetable th {
+            background: rgba(30, 41, 59, 0.9);
+            color: var(--text-muted);
+            padding: 5px 2px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .timetable td {
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding: 5px 2px;
+            text-align: center;
+            color: var(--text-sub);
+        }
+
+        .timetable .t-open {
+            background: rgba(14, 165, 233, 0.15);
+            color: #7dd3fc;
+            font-weight: 700;
+            border-radius: 4px;
+        }
+
+        .timetable .t-close {
+            color: rgba(255,255,255,0.16);
+        }
+
+        .card-footer {
+            border-top: 1px solid rgba(255,255,255,0.08);
+            padding-top: 14px;
+            margin-top: 14px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+        }
+
+        .card-btn {
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.12);
+            color: #fff;
+            padding: 6px 12px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 12.5px;
+        }
+
+        .card-btn:hover {
+            background: #0284c7;
+            border-color: #38bdf8;
+        }
+
+        /* 視圖二：緊湊表格模式 (Table View) */
+        .table-view-container {
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            overflow-x: auto;
+            display: none;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13.5px;
+            white-space: nowrap;
+        }
+
+        .data-table th {
+            background: rgba(15, 23, 42, 0.95);
+            color: #94a3b8;
+            padding: 14px 16px;
+            font-weight: 600;
+            text-align: left;
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        .data-table td {
+            padding: 12px 16px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            color: var(--text-main);
+        }
+
+        .data-table tr:hover td {
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .check-badge {
+            display: inline-block;
+            padding: 2px 7px;
+            border-radius: 6px;
+            font-size: 11.5px;
+            font-weight: 700;
+        }
+        .check-yes { background: rgba(16, 185, 129, 0.15); color: #34d399; }
+        .check-no { background: rgba(255,255,255,0.05); color: #64748b; }
+
+        /* 空白狀態 */
+        .empty-state {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 70px 20px;
+            background: var(--card-bg);
+            border-radius: 16px;
+            border: 1px solid var(--card-border);
+            color: var(--text-muted);
+        }
+
+        .empty-state h3 {
+            color: #f1f5f9;
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        /* 社群分享彈窗 (Share Modal) */
+        .share-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.65);
+            backdrop-filter: blur(8px);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .share-modal-content {
+            background: rgba(15, 23, 42, 0.95);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 20px;
+            padding: 26px;
+            max-width: 440px;
+            width: 100%;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+            position: relative;
+            animation: modalSlideIn 0.25s ease-out;
+        }
+
+        @keyframes modalSlideIn {
+            from { opacity: 0; transform: translateY(20px) scale(0.96); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        .share-modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .share-modal-header h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .modal-close {
+            background: transparent;
+            border: none;
+            color: var(--text-sub);
+            font-size: 20px;
+            cursor: pointer;
+            line-height: 1;
+        }
+
+        .modal-close:hover {
+            color: #fff;
+        }
+
+        .share-desc {
+            font-size: 13.5px;
+            color: var(--text-sub);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .share-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-bottom: 14px;
+        }
+
+        .share-option-btn {
+            padding: 12px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 13.5px;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.2s;
+            user-select: none;
+        }
+
+        .share-option-btn.line-btn {
+            background: rgba(6, 199, 85, 0.15);
+            border-color: rgba(6, 199, 85, 0.4);
+            color: #4ade80;
+        }
+        .share-option-btn.line-btn:hover {
+            background: #06c755;
+            color: #fff;
+        }
+
+        .share-option-btn.fb-btn {
+            background: rgba(24, 119, 242, 0.15);
+            border-color: rgba(24, 119, 242, 0.4);
+            color: #60a5fa;
+        }
+        .share-option-btn.fb-btn:hover {
+            background: #1877f2;
+            color: #fff;
+        }
+
+        .share-option-btn.tg-btn {
+            background: rgba(41, 169, 234, 0.15);
+            border-color: rgba(41, 169, 234, 0.4);
+            color: #38bdf8;
+        }
+        .share-option-btn.tg-btn:hover {
+            background: #29a9ea;
+            color: #fff;
+        }
+
+        .share-option-btn.copy-btn {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.2);
+            color: #e2e8f0;
+        }
+        .share-option-btn.copy-btn:hover {
+            background: #475569;
+            color: #fff;
+        }
+
+        /* Toast 提示 */
+        .toast {
+            visibility: hidden;
+            min-width: 250px;
+            background-color: #0284c7;
+            color: #fff;
+            text-align: center;
+            border-radius: 10px;
+            padding: 12px 20px;
+            position: fixed;
+            z-index: 10000;
+            left: 50%;
+            bottom: 30px;
+            transform: translateX(-50%);
+            font-size: 14px;
+            font-weight: 600;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+        }
+
+        .toast.show {
+            visibility: visible;
+            animation: toastFadeIn 0.3s, toastFadeOut 0.3s 2.7s;
+        }
+
+        @keyframes toastFadeIn {
+            from { bottom: 10px; opacity: 0; }
+            to { bottom: 30px; opacity: 1; }
+        }
+
+        @keyframes toastFadeOut {
+            from { bottom: 30px; opacity: 1; }
+            to { bottom: 10px; opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 回到全台首頁導航條 (Portal Navigation Bar) -->
+        <div class="portal-nav-bar">
+            <div class="portal-nav-text">
+                <span>🌐 <strong>想知道其他區域的資料嗎？</strong>請點擊</span>
+                <a href="https://weilyjen.github.io/nhi-gp/" class="portal-nav-link">https://weilyjen.github.io/nhi-gp/</a>
+            </div>
+            <a href="https://weilyjen.github.io/nhi-gp/" class="portal-nav-btn">
+                <span>🏠</span> 想知道其他區域的資料嗎？ ❯
+            </a>
+        </div>
+
+        <!-- Header (含查詢年月標記、按讚、分享與下載) -->
+        <header>
+            <div class="header-title">
+                <h1>🏥 [701] 臺南市 東區 西醫基層診所門診全覽</h1>
+                <div class="header-meta">
+                    <span>📍 <strong>行政區與郵遞區號</strong>：[701] 臺南市 東區</span>
+                    <span>🏛️ <strong>院所層級</strong>：<span class="badge-cond">基層醫療單位</span></span>
+                    <span>🩺 <strong>型態別</strong>：<span class="badge-cond">西醫</span></span>
+                    <span>🚪 <strong>服務項目</strong>：<span class="badge-cond">門診診療</span></span>
+                    <span>📅 <strong>查詢年月</strong>：<span class="badge-cond" style="background:rgba(16,185,129,0.15); color:#34d399; border-color:rgba(52,211,153,0.3);">民國 115 年 9 月 (2026-09)</span></span>
+                    <span>🕒 <strong>更新時間</strong>：2026-09-27 14:54</span>
+                </div>
+            </div>
+            <div class="header-actions">
+                <a href="https://weilyjen.github.io/nhi-gp/" class="action-btn" style="background:rgba(2, 132, 199, 0.18); border-color:rgba(56, 189, 248, 0.35); color:#38bdf8;" title="回到全台各鄉鎮市區門診全覽主頁">
+                    <span>🏠</span> 想知道其他區域的資料嗎？
+                </a>
+                <button id="likeBtn" class="action-btn like-btn" onclick="toggleLike()" title="覺得此門診資訊實用，點個讚鼓勵！">
+                    <span class="heart-icon">❤️</span>
+                    <span id="likeText">讚</span>
+                    <span id="likeCount" class="action-count">0</span>
+                </button>
+                <button class="action-btn share-btn" onclick="handleShare()" title="分享此門診資訊網頁給親朋好友">
+                    <span>📤 分享</span>
+                </button>
+                <a href="NHI_GP_20260927_92084_8556694932.csv" download class="action-btn csv-btn" title="下載 Excel 相容 CSV">
+                    📥 下載 CSV
+                </a>
+            </div>
+        </header>
+
+        <!-- Stats Grid (可點擊進行聯動篩選) -->
+        <div class="stats-grid">
+            <div class="stat-card" onclick="resetAllFilters()" title="點擊重設所有篩選條件">
+                <div class="stat-label">
+                    <span>診所總家數</span>
+                    <span class="stat-hint">重設全部 ↺</span>
+                </div>
+                <div class="stat-val">134 <span style="font-size:16px; font-weight:500;">家</span></div>
+                <div class="stat-sub">東區健保特約西醫基層</div>
+            </div>
+            <div class="stat-card fee" onclick="quickFeeSort()" title="點擊依掛號費由低到高排序">
+                <div class="stat-label">
+                    <span>門診掛號費行情</span>
+                    <span class="stat-hint">低至高排序 ↗</span>
+                </div>
+                <div class="stat-val">148.8 <span style="font-size:16px; font-weight:500;">元</span></div>
+                <div class="stat-sub">中位數：150 元</div>
+            </div>
+            <div class="stat-card sat" onclick="quickSetPeriod('sat')" title="點擊快速篩選週六有開診的院所">
+                <div class="stat-label">
+                    <span>週六開診院所</span>
+                    <span class="stat-hint">點擊快篩 ❯</span>
+                </div>
+                <div class="stat-val">121 <span style="font-size:16px; font-weight:500;">家</span></div>
+                <div class="stat-sub">佔比 90.3%</div>
+            </div>
+            <div class="stat-card sun" onclick="quickSetPeriod('sun')" title="點擊快速篩選週日有開診的院所">
+                <div class="stat-label">
+                    <span>週日開診院所</span>
+                    <span class="stat-hint">點擊快篩 ❯</span>
+                </div>
+                <div class="stat-val">21 <span style="font-size:16px; font-weight:500;">家</span></div>
+                <div class="stat-sub">佔比 15.7%</div>
+            </div>
+            <div class="stat-card night" onclick="quickSetPeriod('night')" title="點擊快速篩選夜間有開診的院所">
+                <div class="stat-label">
+                    <span>夜間門診院所</span>
+                    <span class="stat-hint">點擊快篩 ❯</span>
+                </div>
+                <div class="stat-val">117 <span style="font-size:16px; font-weight:500;">家</span></div>
+                <div class="stat-sub">佔比 87.3%</div>
+            </div>
+        </div>
+
+        <!-- 複合多維度篩選與查詢工具箱 -->
+        <div class="filter-panel">
+            <!-- 搜尋與控制主列 -->
+            <div class="control-row">
+                <div class="search-box-wrap">
+                    <div class="search-container">
+                        <span class="search-icon">🔍</span>
+                        <input type="text" id="searchInput" class="search-input" placeholder="即時搜尋診所名稱、代碼、科別、路名、電話或備註..." onkeydown="if(event.key==='Enter') executeSearch()">
+                        <button id="clearSearch" class="clear-search" onclick="clearSearchInput()" title="清空搜尋">✕</button>
+                    </div>
+                    <button id="btnSearch" class="btn-search-primary" onclick="executeSearch()">🔍 搜尋</button>
+                </div>
+                <div class="view-sort-group">
+                    <select id="feeSelect" class="select-ctrl" onchange="onFeeChange(this.value)">
+                        <option value="all">💰 掛號費：不限區間</option>
+                        <option value="free">免費 / 免收掛號費</option>
+                        <option value="le150">150 元以下 (含)</option>
+                        <option value="le200">200 元以下 (含)</option>
+                        <option value="le250">250 元以下 (含)</option>
+                        <option value="ge250">250 元以上</option>
+                    </select>
+
+                    <select id="sortSelect" class="select-ctrl" onchange="onSortChange(this.value)">
+                        <option value="default">📊 排序：預設排序</option>
+                        <option value="fee_asc">掛號費：由低到高 ↗</option>
+                        <option value="fee_desc">掛號費：由高到低 ↘</option>
+                        <option value="sessions_desc">開診診次：由多到少 🕒</option>
+                        <option value="name_asc">診所名稱：筆劃 A-Z</option>
+                    </select>
+
+                    <div class="view-btn-group">
+                        <button id="btnViewCards" class="view-btn active" onclick="switchView('cards')">📇 卡片視圖</button>
+                        <button id="btnViewTable" class="view-btn" onclick="switchView('table')">📋 表格視圖</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 1. 診療科別篩選 (可複選) -->
+            <div class="filter-section">
+                <div class="filter-label-row">
+                    <span>🩺 診療科別篩選 (可複選)：</span>
+                    <div class="sub-actions">
+                        <button class="text-link-btn" onclick="clearSpecialties()" style="color:#f87171;">重設全部科別</button>
+                    </div>
+                </div>
+                <div class="chip-scroll" id="specialtyChips"></div>
+            </div>
+
+            <!-- 2. 看診時段矩陣與星期/時段複選快篩 (Schedule Filter) -->
+            <div class="filter-section">
+                <div class="schedule-filter-box">
+                    <!-- 時段快捷情境快選 -->
+                    <div>
+                        <div class="filter-label-row" style="margin-bottom:8px;">
+                            <span>🕒 快速情境快選：</span>
+                        </div>
+                        <div class="chip-scroll" id="periodQuickChips">
+                            <button class="chip-btn active" data-period="all" onclick="setPeriodQuick('all')">不限時段</button>
+                            <button class="chip-btn" data-period="open_now" onclick="setPeriodQuick('open_now')" style="border-color:#10b981; color:#34d399;">🟢 現在開診中 (Open Now)</button>
+                            <button class="chip-btn" data-period="sat" onclick="setPeriodQuick('sat')">週六有開</button>
+                            <button class="chip-btn" data-period="sun" onclick="setPeriodQuick('sun')">週日有開</button>
+                            <button class="chip-btn" data-period="night" onclick="setPeriodQuick('night')">夜間門診</button>
+                            <button class="chip-btn" data-period="weekday_day" onclick="setPeriodQuick('weekday_day')">平日白天 (一至五)</button>
+                        </div>
+                    </div>
+
+                    <!-- 星期複選 (Mon ~ Sun) -->
+                    <div>
+                        <div class="filter-label-row" style="margin-bottom:8px;">
+                            <span>📅 看診星期 (可複選/多選)：</span>
+                            <div class="sub-actions">
+                                <button class="text-link-btn" onclick="selectDaysPreset('weekday')">平日(一~五)</button>
+                                <span style="color:var(--text-muted); font-size:11px;">|</span>
+                                <button class="text-link-btn" onclick="selectDaysPreset('weekend')">週末(六、日)</button>
+                                <span style="color:var(--text-muted); font-size:11px;">|</span>
+                                <button class="text-link-btn" onclick="selectDaysPreset('all')">全選</button>
+                                <span style="color:var(--text-muted); font-size:11px;">|</span>
+                                <button class="text-link-btn" onclick="selectDaysPreset('none')" style="color:#f87171;">清空</button>
+                            </div>
+                        </div>
+                        <div class="chip-scroll" id="dayMultiChips"></div>
+                    </div>
+
+                    <!-- 時段複選 (早 / 午 / 晚) -->
+                    <div>
+                        <div class="filter-label-row" style="margin-bottom:8px;">
+                            <span>⏰ 看診時段 (可複選，早/午/晚)：</span>
+                            <div class="sub-actions">
+                                <button class="text-link-btn" onclick="selectSlotsPreset('all')">全選時段</button>
+                                <span style="color:var(--text-muted); font-size:11px;">|</span>
+                                <button class="text-link-btn" onclick="selectSlotsPreset('none')" style="color:#f87171;">清空時段</button>
+                            </div>
+                        </div>
+                        <div class="chip-scroll" id="slotMultiChips"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. 預防保健與專案服務篩選 (可複選) -->
+            <div class="filter-section">
+                <div class="filter-label-row">
+                    <span>🛡️ 預防保健與疫苗專案服務 (可複選)：</span>
+                    <div class="sub-actions">
+                        <button class="text-link-btn" onclick="clearPreSrv()" style="color:#f87171;">重設全部服務</button>
+                    </div>
+                </div>
+                <div class="chip-scroll" id="preSrvChips"></div>
+            </div>
+
+            <!-- 4. 目前套用的篩選條件與命中計數 -->
+            <div class="active-filters-bar" id="activeFiltersBar">
+                <span>搜尋結果：<strong class="match-count" id="matchCount">0</strong> / 134 家診所</span>
+                <div id="activeTagsContainer" style="display:flex; gap:6px; flex-wrap:wrap; align-items:center;"></div>
+                <button class="reset-all-btn" onclick="resetAllFilters()">🔄 清除所有條件</button>
+            </div>
+        </div>
+
+        <!-- 視圖一：診所卡片列表 -->
+        <div class="clinics-grid" id="clinicsContainer"></div>
+
+        <!-- 視圖二：緊湊表格列表 -->
+        <div class="table-view-container" id="tableContainer">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>診所名稱</th>
+                        <th>醫事代碼</th>
+                        <th>電話</th>
+                        <th>診療科別</th>
+                        <th>門診掛號費</th>
+                        <th>週六</th>
+                        <th>週日</th>
+                        <th>夜診</th>
+                        <th>每週診次</th>
+                        <th>預防保健項目</th>
+                        <th>地址 / 操作</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody"></tbody>
+            </table>
+        </div>
+
+        <!-- 頁尾主頁連結與臉書互動備註 -->
+        <footer style="text-align:center; margin-top:36px; padding:24px 16px; border-top:1px solid var(--card-border); color:var(--text-sub); font-size:13.5px; line-height:1.7;">
+            <p style="margin-bottom:8px;">🌐 <strong>想知道其他區域的資料嗎？</strong>請點擊回主頁：<a href="https://weilyjen.github.io/nhi-gp/" style="color:#38bdf8; font-weight:700; text-decoration:underline;">https://weilyjen.github.io/nhi-gp/</a></p>
+            <p>💬 如果您想知道其他區域，請到<a href="https://www.facebook.com/share/1CQdm2vnsv/" target="_blank" rel="noopener noreferrer" style="color:#38bdf8; font-weight:700; text-decoration:underline; margin:0 4px;">臉書留言、按讚</a>，我們將優先為您彙整上線！</p>
+        </footer>
+    </div>
+
+    <!-- 社群分享對話框 (Share Modal) -->
+    <div id="shareModal" class="share-modal" onclick="closeShareModal(event)">
+        <div class="share-modal-content" onclick="event.stopPropagation()">
+            <div class="share-modal-header">
+                <h3>📤 分享【臺南市 東區 門診全覽】</h3>
+                <button class="modal-close" onclick="closeShareModal()">✕</button>
+            </div>
+            <p class="share-desc">這是一份 100% 免費、無廣告的官方公開門診資訊，歡迎分享給需要就醫或查詢看診時段的朋友：</p>
+            <div class="share-grid">
+                <button class="share-option-btn line-btn" onclick="shareToLine()">
+                    <span>💬</span> LINE 分享
+                </button>
+                <button class="share-option-btn fb-btn" onclick="shareToFB()">
+                    <span>📘</span> Facebook 分享
+                </button>
+                <button class="share-option-btn tg-btn" onclick="shareToTG()">
+                    <span>✈️</span> Telegram 分享
+                </button>
+                <button class="share-option-btn copy-btn" onclick="copyShareUrl()">
+                    <span>🔗</span> 複製連結
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast 提示 -->
+    <div id="toast" class="toast">已複製連結到剪貼簿！</div>
+
+    <script>
+        const CLINICS = [{"id": "3521012610", "name": "丁慶雄耳鼻喉科診所", "tel": "06-2371000", "addr": "臺南市東區裕農路６１３號１樓", "func_type": "耳鼻喉科(耳鼻喉頭頸外科)", "pre_srv": "成人預防保健、口腔黏膜檢查、定量免疫法糞便潛血檢查", "plans": "居家醫療整合照護計畫、慢性阻塞性肺病醫療給付改善方案、氣喘醫療給付改善方案、虛擬健保卡服務", "flu": "是", "opd_fee": "200元", "opd_fee_num": 200, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["0830-1200", "1513-1800", "1830-2100"], ["0830-1200", "1513-1800", "1830-2100"], ["0830-1200", "1513-1800", "1830-2100"], ["0830-1200", "1513-1800", "1830-2100"], ["0830-1200", "休診", "1830-2100"], ["0830-1200", "1513-1800", "休診"], ["休診", "休診", "休診"]], "open_sessions": 16, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3521012610"}, {"id": "3505321249", "name": "上愉診所", "tel": "06-2680666", "addr": "臺南市東區崇善里中華東路三段１３３號１、２樓", "func_type": "兒科", "pre_srv": "糞便抗原檢測胃幽門螺旋桿菌服務、兒童預防保健、成人預防保健、口腔黏膜檢查、定量免疫法糞便潛血檢查", "plans": "兒童發展篩檢服務方案", "flu": "否", "opd_fee": "150元", "opd_fee_num": 150, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": true, "has_night": true, "schedule": [["0800-1200", "1430-1730", "1800-2100"], ["0800-1200", "1430-1730", "1800-2100"], ["0800-1200", "1430-1730", "1800-2100"], ["0800-1200", "1430-1730", "1800-2100"], ["0800-1200", "1430-1730", "1800-2100"], ["0800-1200", "1430-1730", "休診"], ["0800-1200", "休診", "1700-2000"]], "open_sessions": 19, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3505321249"}, {"id": "3521013609", "name": "佑誠復健科診所", "tel": "06-2899373", "addr": "臺南市東區中華東路３段２２０-２２２號１樓", "func_type": "復健科", "pre_srv": "-", "plans": "家庭醫師整合性照護計畫、居家醫療整合照護計畫", "flu": "否", "opd_fee": "150元", "opd_fee_num": 150, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["0900-1200", "1400-1700", "1800-2030"], ["0900-1200", "1400-1700", "休診"], ["休診", "1400-1700", "1800-2030"], ["0900-1200", "1400-1700", "休診"], ["休診", "1400-1700", "1800-2030"], ["0900-1200", "休診", "休診"], ["休診", "休診", "休診"]], "open_sessions": 12, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3521013609"}, {"id": "3521013680", "name": "佳一家庭診所", "tel": "06-2360513", "addr": "臺南市東區東光路１段１３２號１樓", "func_type": "家醫科", "pre_srv": "糞便抗原檢測胃幽門螺旋桿菌服務、成人預防保健、口腔黏膜檢查、定量免疫法糞便潛血檢查", "plans": "代謝症候群防治計畫、家庭醫師整合性照護計畫、居家醫療整合照護計畫、糖尿病及初期慢性腎臟病照護整合方案─初期慢性腎臟病、虛擬健保卡服務", "flu": "是", "opd_fee": "150元", "opd_fee_num": 150, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": false, "has_sun": true, "has_night": true, "schedule": [["0900-1200", "1500-1800", "1800-2100"], ["0900-1200", "休診", "休診"], ["0900-1200", "1500-1800", "1800-2100"], ["0900-1200", "1500-1800", "休診"], ["0900-1200", "1500-1800", "1800-2100"], ["休診", "休診", "休診"], ["0830-1200", "休診", "休診"]], "open_sessions": 13, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3521013680"}, {"id": "3505320528", "name": "佳宜內科診所", "tel": "06-2603020", "addr": "臺南市東區崇明里大同路二段６１５號１、２樓", "func_type": "內科", "pre_srv": "成人預防保健", "plans": "-", "flu": "否", "opd_fee": "100元", "opd_fee_num": 100, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["看診", "看診", "看診"], ["看診", "看診", "休診"], ["看診", "看診", "看診"], ["看診", "看診", "休診"], ["看診", "看診", "看診"], ["看診", "看診", "休診"], ["休診", "休診", "休診"]], "open_sessions": 15, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3505320528"}, {"id": "3521013591", "name": "侯世婷小兒科診所", "tel": "06-3369131", "addr": "臺南市東區崇善路５１１號１樓", "func_type": "兒科", "pre_srv": "糞便抗原檢測胃幽門螺旋桿菌服務、兒童預防保健、成人預防保健、口腔黏膜檢查", "plans": "C型肝炎全口服新藥健保給付執行計畫、代謝症候群防治計畫、兒童發展篩檢服務方案、兒童衛教指導服務方案、家庭醫師整合性照護計畫、居家醫療整合照護計畫、糖尿病及初期慢性腎臟病照護整合方案─初期慢性腎臟病、糖尿病及初期慢性腎臟病照護整合方案─糖尿病合併初期慢性腎臟病、虛擬健保卡服務", "flu": "是", "opd_fee": "150元", "opd_fee_num": 150, "emg_fee": "院所未提供資料", "fee_remark": "上午8:30-12:00 下午及晚上15:30-21:00", "fee_url": "-", "has_sat": true, "has_sun": true, "has_night": true, "schedule": [["0830-1200", "1530-1830", "1830-2100"], ["0830-1200", "1530-1830", "1830-2100"], ["0830-1200", "1530-1830", "1830-2100"], ["0830-1200", "1530-1830", "1830-2100"], ["0830-1200", "1530-1830", "1830-2100"], ["0830-1200", "1530-1830", "1830-2100"], ["休診", "1530-1830", "1830-2100"]], "open_sessions": 20, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3521013591"}, {"id": "3521012978", "name": "侯忠義診所", "tel": "06-2376069", "addr": "臺南市東區裕農路１３７號１樓", "func_type": "家醫科", "pre_srv": "兒童預防保健、成人預防保健、婦女子宮頸抹片檢查、定量免疫法糞便潛血檢查", "plans": "代謝症候群防治計畫、家庭醫師整合性照護計畫", "flu": "否", "opd_fee": "150元", "opd_fee_num": 150, "emg_fee": "院所未提供資料", "fee_remark": "9/25只看上午診;9/28只看晚上診;其他時間預約專線0931793957;(明年116年~門診時段上午8:30開始;夜診20:30結束;星期三全日休診)", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["0800-1200", "休診", "1800-2100"], ["0800-1200", "休診", "1800-2100"], ["0800-1200", "休診", "1800-2100"], ["0800-1200", "休診", "1800-2100"], ["0800-1200", "休診", "1800-2100"], ["0800-1200", "休診", "休診"], ["休診", "休診", "休診"]], "open_sessions": 11, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3521012978"}, {"id": "3505320582", "name": "信合美眼科診所", "tel": "06-2080011", "addr": "臺南市東區龍山里林森路一段３７９號１－２樓", "func_type": "眼科", "pre_srv": "-", "plans": "-", "flu": "否", "opd_fee": "100元", "opd_fee_num": 100, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["看診", "看診", "看診"], ["看診", "看診", "看診"], ["看診", "看診", "看診"], ["看診", "看診", "看診"], ["看診", "看診", "看診"], ["看診", "看診", "休診"], ["休診", "休診", "休診"]], "open_sessions": 17, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3505320582"}, {"id": "3505321212", "name": "健恆診所", "tel": "06-2675001", "addr": "臺南市東區崇成里崇德路６８２號１－３樓", "func_type": "內科", "pre_srv": "糞便抗原檢測胃幽門螺旋桿菌服務、成人預防保健、定量免疫法糞便潛血檢查", "plans": "C型肝炎全口服新藥健保給付執行計畫、代謝症候群防治計畫、家庭醫師整合性照護計畫、糖尿病及初期慢性腎臟病照護整合方案─初期慢性腎臟病、糖尿病及初期慢性腎臟病照護整合方案─糖尿病、糖尿病及初期慢性腎臟病照護整合方案─糖尿病合併初期慢性腎臟病、肝炎醫療給付改善方案", "flu": "否", "opd_fee": "250元", "opd_fee_num": 250, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["0800-1200", "1500-1800", "1830-2130"], ["0800-1200", "1500-1800", "1830-2130"], ["0800-1200", "1500-1800", "1830-2130"], ["0800-1200", "1500-1800", "1830-2130"], ["0800-1200", "1500-1800", "1830-2130"], ["0800-1200", "1500-1800", "休診"], ["休診", "休診", "休診"]], "open_sessions": 17, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3505321212"}, {"id": "3505321187", "name": "全裕診所", "tel": "06-2080298", "addr": "臺南市東區富強里裕農路３０２號１－２樓", "func_type": "家醫科", "pre_srv": "兒童預防保健、成人預防保健、定量免疫法糞便潛血檢查", "plans": "代謝症候群防治計畫、家庭醫師整合性照護計畫、居家醫療整合照護計畫、糖尿病及初期慢性腎臟病照護整合方案─初期慢性腎臟病、糖尿病及初期慢性腎臟病照護整合方案─糖尿病、糖尿病及初期慢性腎臟病照護整合方案─糖尿病合併初期慢性腎臟病", "flu": "否", "opd_fee": "200元", "opd_fee_num": 200, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["0830-1200", "1500-1800", "1830-2030"], ["0830-1200", "1500-1800", "1830-2030"], ["0830-1200", "1500-1800", "1830-2030"], ["0830-1200", "1500-1800", "1830-2030"], ["休診", "休診", "休診"], ["0830-1200", "休診", "休診"], ["休診", "休診", "休診"]], "open_sessions": 13, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3505321187"}, {"id": "3505320804", "name": "冠安內科診所", "tel": "06-2088985", "addr": "臺南市東區龍山里長榮路１段１８２號１－２樓", "func_type": "內科", "pre_srv": "成人預防保健、定量免疫法糞便潛血檢查", "plans": "C型肝炎全口服新藥健保給付執行計畫、代謝症候群防治計畫、家庭醫師整合性照護計畫、居家醫療整合照護計畫、肝炎醫療給付改善方案", "flu": "是", "opd_fee": "150元", "opd_fee_num": 150, "emg_fee": "0元", "fee_remark": "65歲以上未滿12歲減收", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["0830-1200", "1500-1800", "1830-2100"], ["0830-1200", "1500-1800", "1830-2100"], ["0830-1200", "1500-1800", "1830-2100"], ["0830-1200", "1500-1800", "1830-2100"], ["0830-1200", "1500-1800", "1830-2100"], ["0830-1200", "1500-1800", "休診"], ["休診", "休診", "休診"]], "open_sessions": 17, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3505320804"}, {"id": "3505321123", "name": "台南澄清眼科診所", "tel": "06-2088318", "addr": "臺南市東區中西里長榮路二段３００號１－３樓", "func_type": "眼科", "pre_srv": "-", "plans": "-", "flu": "否", "opd_fee": "150元", "opd_fee_num": 150, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["0900-1200", "1400-1700", "1800-2100"], ["0900-1200", "1400-1700", "1800-2100"], ["0900-1200", "1400-1700", "1800-2100"], ["0900-1200", "1400-1700", "1800-2100"], ["0900-1200", "1400-1700", "1800-2100"], ["0900-1200", "1400-1700", "休診"], ["休診", "休診", "休診"]], "open_sessions": 17, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3505321123"}, {"id": "3505320939", "name": "合樂診所", "tel": "06-2156966", "addr": "臺南市東區大福里大同路二段１９９號１、２樓", "func_type": "不分科、神經科", "pre_srv": "成人預防保健、定量免疫法糞便潛血檢查", "plans": "家庭醫師整合性照護計畫、居家醫療整合照護計畫", "flu": "否", "opd_fee": "200元", "opd_fee_num": 200, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["0800-1200", "1400-1700", "1800-2100"], ["0800-1200", "1400-1700", "1800-2100"], ["0800-1200", "1400-1700", "1800-2100"], ["0800-1200", "1400-1700", "1800-2100"], ["0800-1200", "1400-1700", "1800-2100"], ["0800-1200", "休診", "休診"], ["休診", "休診", "休診"]], "open_sessions": 16, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3505320939"}, {"id": "3505320822", "name": "名徠診所", "tel": "06-2675111", "addr": "臺南市東區東聖里中華東路２段１０５號１樓", "func_type": "家醫科", "pre_srv": "-", "plans": "-", "flu": "否", "opd_fee": "院所未提供資料", "opd_fee_num": null, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": true, "has_night": true, "schedule": [["0900-1200", "1500-1800", "1800-2100"], ["休診", "1500-1800", "1800-2100"], ["0900-1200", "休診", "休診"], ["休診", "休診", "休診"], ["0900-1200", "1500-1800", "1800-2100"], ["0900-1200", "休診", "休診"], ["0900-1200", "休診", "休診"]], "open_sessions": 11, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3505320822"}, {"id": "3521010563", "name": "吳峻賢婦產科診所", "tel": "06-2698822", "addr": "臺南市東區東門路二段３６０號", "func_type": "婦產科", "pre_srv": "婦女人類乳突病毒檢測服務、糞便抗原檢測胃幽門螺旋桿菌服務、成人預防保健、婦女子宮頸抹片檢查、孕婦產檢、定量免疫法糞便潛血檢查", "plans": "代謝症候群防治計畫、孕婦乙型鏈球菌篩檢補助服務方案、新生兒聽力篩檢補助服務方案", "flu": "否", "opd_fee": "院所未提供資料", "opd_fee_num": null, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["0900-1200", "1500-1800", "1900-2130"], ["0900-1200", "1500-1800", "1900-2130"], ["0900-1200", "1500-1800", "1900-2130"], ["0900-1200", "1500-1800", "1900-2130"], ["0900-1200", "1500-1800", "1900-2130"], ["0900-1200", "1500-1800", "休診"], ["休診", "休診", "休診"]], "open_sessions": 17, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3521010563"}, {"id": "3521013340", "name": "吳建民耳鼻喉科診所", "tel": "06-2884769", "addr": "臺南市東區崇明路３４３號１樓", "func_type": "耳鼻喉科(耳鼻喉頭頸外科)", "pre_srv": "-", "plans": "居家醫療整合照護計畫、氣喘醫療給付改善方案", "flu": "否", "opd_fee": "200元", "opd_fee_num": 200, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["0830-1200", "1600-1900", "1900-2100"], ["0830-1200", "1600-1900", "1900-2100"], ["0830-1200", "1600-1900", "休診"], ["0830-1200", "1600-1900", "1900-2100"], ["0830-1200", "1600-1900", "休診"], ["0830-1200", "休診", "休診"], ["休診", "休診", "休診"]], "open_sessions": 14, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3521013340"}, {"id": "3521011051", "name": "吳美華小兒科診所", "tel": "06-2740172", "addr": "臺南市東區凱旋路４２號", "func_type": "兒科", "pre_srv": "兒童預防保健", "plans": "兒童發展篩檢服務方案、兒童衛教指導服務方案、家庭醫師整合性照護計畫、居家醫療整合照護計畫", "flu": "是", "opd_fee": "200元", "opd_fee_num": 200, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["0800-1140", "休診", "1800-2045"], ["0800-1140", "休診", "1800-2045"], ["0800-1140", "休診", "1800-2045"], ["0801-1240", "休診", "1800-2045"], ["0800-1240", "休診", "1800-2045"], ["0800-1140", "休診", "休診"], ["休診", "休診", "休診"]], "open_sessions": 11, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3521011051"}, {"id": "3505320840", "name": "吳鴻均泌尿科診所", "tel": "06-2372288", "addr": "臺南市東區莊敬里莊敬路１５８巷１號１、２樓", "func_type": "泌尿科", "pre_srv": "成人預防保健、定量免疫法糞便潛血檢查", "plans": "代謝症候群防治計畫、家庭醫師整合性照護計畫、糖尿病及初期慢性腎臟病照護整合方案─初期慢性腎臟病", "flu": "否", "opd_fee": "150元", "opd_fee_num": 150, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["0900-1200", "1530-1730", "1800-2100"], ["0900-1200", "1530-1730", "1800-2100"], ["0900-1200", "休診", "1800-2100"], ["0900-1200", "休診", "1800-2100"], ["0900-1200", "1530-1730", "1800-2100"], ["0900-1200", "休診", "休診"], ["休診", "休診", "休診"]], "open_sessions": 14, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3505320840"}, {"id": "3521010956", "name": "呂怡璋小兒科診所", "tel": "06-2748014", "addr": "臺南市東區前鋒路４１號", "func_type": "兒科", "pre_srv": "兒童預防保健", "plans": "兒童發展篩檢服務方案、兒童衛教指導服務方案、居家醫療整合照護計畫", "flu": "是", "opd_fee": "150元", "opd_fee_num": 150, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["0745-1200", "休診", "看診"], ["0745-1200", "休診", "看診"], ["0745-1200", "休診", "看診"], ["0745-1200", "休診", "看診"], ["休診", "休診", "休診"], ["0745-1200", "1430-1830", "休診"], ["休診", "休診", "休診"]], "open_sessions": 10, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3521010956"}, {"id": "3521012745", "name": "喜樂小兒科診所", "tel": "06-2757869", "addr": "臺南市東區東光路１段１０６號１樓", "func_type": "兒科", "pre_srv": "兒童預防保健、成人預防保健", "plans": "兒童發展篩檢服務方案、兒童衛教指導服務方案、家庭醫師整合性照護計畫", "flu": "是", "opd_fee": "150元", "opd_fee_num": 150, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["看診", "看診", "看診"], ["看診", "看診", "看診"], ["看診", "看診", "看診"], ["看診", "休診", "休診"], ["看診", "看診", "看診"], ["看診", "休診", "休診"], ["休診", "休診", "休診"]], "open_sessions": 14, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3521012745"}, {"id": "3521013653", "name": "國光眼科診所", "tel": "06-3351666", "addr": "臺南市東區中華東路２段３３５號１樓", "func_type": "眼科", "pre_srv": "-", "plans": "-", "flu": "否", "opd_fee": "200元", "opd_fee_num": 200, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["0900-1200", "1530-1800", "1900-2100"], ["0900-1100", "1530-1800", "1900-2100"], ["0900-1200", "1530-1800", "1900-2100"], ["0900-1200", "1530-1800", "1900-2100"], ["0900-1200", "1530-1800", "1900-2100"], ["0900-1200", "1430-1730", "休診"], ["休診", "休診", "休診"]], "open_sessions": 17, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3521013653"}, {"id": "2621010028", "name": "國軍退除役官兵輔導委員會臺南榮譽國民之家附設診所", "tel": "06-2690418", "addr": "臺南市東區後甲里裕永路５５５號２樓", "func_type": "不分科", "pre_srv": "成人預防保健", "plans": "-", "flu": "否", "opd_fee": "0元", "opd_fee_num": 0, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": true, "has_night": false, "schedule": [["看診", "看診", "休診"], ["看診", "看診", "休診"], ["看診", "看診", "休診"], ["看診", "看診", "休診"], ["看診", "看診", "休診"], ["看診", "看診", "休診"], ["看診", "看診", "休診"]], "open_sessions": 14, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=2621010028"}, {"id": "3505320671", "name": "大東門讚診所", "tel": "06-2356000", "addr": "臺南市東區中西里東門路一段２５３號１－４樓", "func_type": "骨科、神經科、復健科", "pre_srv": "-", "plans": "家庭醫師整合性照護計畫", "flu": "否", "opd_fee": "200元", "opd_fee_num": 200, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["0830-1200", "1500-1900", "1500-1900"], ["0830-1200", "1500-1900", "1500-1900"], ["0830-1200", "1500-1900", "1500-1900"], ["0830-1200", "1500-1900", "1500-1900"], ["0830-1200", "1500-1900", "1500-1900"], ["0830-1200", "0130-1700", "休診"], ["休診", "休診", "休診"]], "open_sessions": 17, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3505320671"}, {"id": "3521013475", "name": "婦兒安診所", "tel": "06-2894488", "addr": "臺南市東區中華東路３段４６號", "func_type": "兒科、婦產科", "pre_srv": "婦女人類乳突病毒檢測服務、糞便抗原檢測胃幽門螺旋桿菌服務、兒童預防保健、成人預防保健、婦女子宮頸抹片檢查、孕婦產檢", "plans": "兒童發展篩檢服務方案、兒童衛教指導服務方案、孕婦乙型鏈球菌篩檢補助服務方案、家庭醫師整合性照護計畫、新生兒聽力篩檢補助服務方案", "flu": "是", "opd_fee": "150元", "opd_fee_num": 150, "emg_fee": "300元", "fee_remark": "急診只提供本院產檢孕婦24小時接生.急診", "fee_url": "-", "has_sat": true, "has_sun": true, "has_night": true, "schedule": [["看診", "看診", "看診"], ["看診", "看診", "看診"], ["看診", "看診", "看診"], ["休診", "休診", "休診"], ["看診", "看診", "看診"], ["看診", "看診", "休診"], ["看診", "休診", "看診"]], "open_sessions": 16, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3521013475"}, {"id": "3505320788", "name": "安佑家庭醫學科診所", "tel": "06-3358868", "addr": "臺南市東區崇德里崇善路４３８號１樓", "func_type": "家醫科", "pre_srv": "糞便抗原檢測胃幽門螺旋桿菌服務、兒童預防保健、成人預防保健、口腔黏膜檢查", "plans": "代謝症候群防治計畫、家庭醫師整合性照護計畫", "flu": "是", "opd_fee": "150元", "opd_fee_num": 150, "emg_fee": "院所未提供資料", "fee_remark": "01/01元旦有開診", "fee_url": "-", "has_sat": true, "has_sun": true, "has_night": true, "schedule": [["0730-1200", "1530-1830", "1830-2130"], ["0730-1200", "1531-1830", "1830-2130"], ["0800-1200", "1531-1830", "1830-2130"], ["0800-1200", "1531-1830", "1830-2130"], ["0730-1200", "1531-1830", "1830-2130"], ["0800-1200", "1531-1830", "休診"], ["0800-1200", "1531-1830", "休診"]], "open_sessions": 19, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3505320788"}, {"id": "3521011168", "name": "富田診所", "tel": "06-2683023", "addr": "臺南市東區裕農路５９４號", "func_type": "不分科、家醫科", "pre_srv": "糞便抗原檢測胃幽門螺旋桿菌服務、兒童預防保健、成人預防保健、口腔黏膜檢查、定量免疫法糞便潛血檢查", "plans": "代謝症候群防治計畫、家庭醫師整合性照護計畫", "flu": "否", "opd_fee": "150元", "opd_fee_num": 150, "emg_fee": "院所未提供資料", "fee_remark": "115.6.18 端午節 上午 8:00 -11:00 看診 , 下午晚上休診", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["0800-1200", "休診", "1630-2030"], ["0800-1200", "休診", "1630-2030"], ["0800-1200", "休診", "1630-2030"], ["0800-1200", "休診", "1630-2030"], ["0800-1200", "休診", "1630-2030"], ["0800-1200", "休診", "1630-2030"], ["休診", "休診", "休診"]], "open_sessions": 12, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3521011168"}, {"id": "3505320153", "name": "寶泰診所", "tel": "06-2896568", "addr": "臺南市東區東門路二段４３４號１樓", "func_type": "家醫科", "pre_srv": "兒童預防保健、成人預防保健、定量免疫法糞便潛血檢查", "plans": "代謝症候群防治計畫、家庭醫師整合性照護計畫、居家醫療整合照護計畫", "flu": "否", "opd_fee": "150元", "opd_fee_num": 150, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["看診", "看診", "1800-2000"], ["看診", "看診", "1818-2000"], ["看診", "看診", "1800-2000"], ["看診", "看診", "1800-2000"], ["看診", "看診", "1800-2000"], ["看診", "休診", "休診"], ["休診", "休診", "休診"]], "open_sessions": 16, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3505320153"}, {"id": "3521011113", "name": "尚儒大學眼科診所", "tel": "06-2757789", "addr": "臺南市東區中西里長榮路二段７３號２樓及７５號１－２樓", "func_type": "眼科", "pre_srv": "-", "plans": "-", "flu": "否", "opd_fee": "250元", "opd_fee_num": 250, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["0900-1230", "1430-1730", "1800-2100"], ["0900-1230", "1430-1730", "1800-2100"], ["0900-1230", "1430-1730", "1800-2100"], ["0900-1230", "1430-1730", "1800-2100"], ["0900-1230", "1430-1730", "1800-2100"], ["0900-1230", "1400-1730", "休診"], ["休診", "休診", "休診"]], "open_sessions": 17, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3521011113"}, {"id": "3505320322", "name": "崇光診所", "tel": "06-2906668", "addr": "臺南市東區崇明里中華東路三段３９９巷２１弄１１號１樓", "func_type": "外科", "pre_srv": "-", "plans": "家庭醫師整合性照護計畫", "flu": "否", "opd_fee": "150元", "opd_fee_num": 150, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": false, "has_sun": false, "has_night": true, "schedule": [["0830-1200", "1500-1800", "1800-2100"], ["0830-1200", "1500-1800", "1800-2100"], ["0830-1200", "1500-1800", "1800-2100"], ["0830-1200", "1500-1800", "1800-2100"], ["休診", "休診", "休診"], ["休診", "休診", "休診"], ["休診", "休診", "休診"]], "open_sessions": 12, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3505320322"}, {"id": "3505321169", "name": "崇德杏新耳鼻喉科診所", "tel": "06-2685555", "addr": "臺南市東區崇德里崇德路４７３號１樓", "func_type": "耳鼻喉科(耳鼻喉頭頸外科)", "pre_srv": "成人預防保健、口腔黏膜檢查、定量免疫法糞便潛血檢查", "plans": "家庭醫師整合性照護計畫", "flu": "否", "opd_fee": "150元", "opd_fee_num": 150, "emg_fee": "院所未提供資料", "fee_remark": "假日掛號費加收50", "fee_url": "https://www.mainpi.com/query?i=2801", "has_sat": true, "has_sun": true, "has_night": true, "schedule": [["0830-1200", "1500-1800", "1830-2130"], ["0830-1200", "1500-1800", "1830-2130"], ["0830-1200", "1500-1800", "1830-2130"], ["0830-1200", "1500-1800", "1830-2130"], ["0830-1200", "1500-1800", "1830-2130"], ["0830-1200", "1500-1800", "1830-2130"], ["0900-1200", "休診", "1800-2100"]], "open_sessions": 20, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3505321169"}, {"id": "3521010885", "name": "崇明診所", "tel": "06-2600042", "addr": "臺南市東區崇明路３４２號", "func_type": "外科、骨科", "pre_srv": "成人預防保健", "plans": "居家醫療整合照護計畫", "flu": "否", "opd_fee": "100元", "opd_fee_num": 100, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": true, "has_night": true, "schedule": [["看診", "看診", "看診"], ["看診", "看診", "看診"], ["看診", "看診", "看診"], ["看診", "看診", "看診"], ["看診", "看診", "看診"], ["看診", "看診", "休診"], ["看診", "休診", "休診"]], "open_sessions": 18, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3521010885"}, {"id": "3505320993", "name": "幸福安診所", "tel": "06-2081031", "addr": "臺南市東區龍山里長榮路一段２２７號地下１樓、地上１～３樓", "func_type": "兒科、婦產科", "pre_srv": "婦女人類乳突病毒檢測服務、糞便抗原檢測胃幽門螺旋桿菌服務、兒童預防保健、成人預防保健、婦女子宮頸抹片檢查、孕婦產檢、定量免疫法糞便潛血檢查", "plans": "兒童發展篩檢服務方案、兒童衛教指導服務方案、孕婦乙型鏈球菌篩檢補助服務方案、新生兒聽力篩檢補助服務方案", "flu": "是", "opd_fee": "200元", "opd_fee_num": 200, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["0830-1200", "1400-1700", "1800-2100"], ["0830-1200", "1400-1700", "1800-2100"], ["0830-1200", "1400-1700", "1800-2100"], ["0830-1200", "1400-1700", "1800-2100"], ["0830-1200", "1400-1700", "休診"], ["0830-1200", "1400-1700", "休診"], ["休診", "休診", "休診"]], "open_sessions": 16, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3505320993"}, {"id": "3521011328", "name": "幼馨診所", "tel": "06-2680208", "addr": "臺南市東區裕農路５８４之２號", "func_type": "家醫科、婦產科", "pre_srv": "婦女人類乳突病毒檢測服務、兒童預防保健、成人預防保健、婦女子宮頸抹片檢查、孕婦產檢、定量免疫法糞便潛血檢查", "plans": "代謝症候群防治計畫、家庭醫師整合性照護計畫", "flu": "否", "opd_fee": "100元", "opd_fee_num": 100, "emg_fee": "院所未提供資料", "fee_remark": "1/1 休診", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["0830-1200", "休診", "1700-2100"], ["0830-1200", "休診", "1700-2100"], ["0830-1200", "休診", "1700-2100"], ["0830-1200", "休診", "1700-2100"], ["0830-1200", "休診", "1700-2100"], ["0830-1200", "休診", "休診"], ["休診", "休診", "休診"]], "open_sessions": 11, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3521011328"}, {"id": "3505321221", "name": "康時診所", "tel": "06-2002215", "addr": "臺南市東區莊敬里莊敬路１００號１、２樓", "func_type": "內科、婦產科", "pre_srv": "婦女人類乳突病毒檢測服務、成人預防保健、婦女子宮頸抹片檢查、定量免疫法糞便潛血檢查", "plans": "C型肝炎全口服新藥健保給付執行計畫、代謝症候群防治計畫", "flu": "否", "opd_fee": "100元", "opd_fee_num": 100, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["0830-1200", "1500-1800", "1830-2130"], ["0830-1200", "1500-1800", "1830-2130"], ["0830-1200", "1500-1800", "1830-2130"], ["0830-1200", "1500-1800", "1830-2130"], ["0830-1200", "1500-1800", "1830-2130"], ["0830-1200", "1500-1800", "休診"], ["休診", "休診", "休診"]], "open_sessions": 17, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3505321221"}, {"id": "3521013582", "name": "康福內科診所", "tel": "06-2890910", "addr": "臺南市東區中華東路３段２０７號１樓", "func_type": "內科", "pre_srv": "成人預防保健", "plans": "-", "flu": "否", "opd_fee": "100元", "opd_fee_num": 100, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["0830-1200", "1520-", "看診"], ["0830-1200", "1417-", "休診"], ["0830-1200", "1520-", "看診"], ["0830-1200", "1417-", "休診"], ["0830-1200", "1520-", "看診"], ["0830-1200", "1416-", "休診"], ["休診", "休診", "休診"]], "open_sessions": 15, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3521013582"}, {"id": "3521010214", "name": "張俊元診所", "tel": "06-2371366", "addr": "臺南市東區裕農里裕農路３８８號", "func_type": "不分科", "pre_srv": "成人預防保健", "plans": "家庭醫師整合性照護計畫", "flu": "否", "opd_fee": "院所未提供資料", "opd_fee_num": null, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["看診", "休診", "看診"], ["看診", "休診", "看診"], ["看診", "休診", "看診"], ["看診", "休診", "看診"], ["看診", "休診", "看診"], ["看診", "休診", "看診"], ["休診", "休診", "休診"]], "open_sessions": 12, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3521010214"}, {"id": "3521013144", "name": "張宏任皮膚科診所", "tel": "06-2386682", "addr": "臺南市東區中西里東寧路１７８號１–２樓", "func_type": "皮膚科", "pre_srv": "-", "plans": "-", "flu": "否", "opd_fee": "200元", "opd_fee_num": 200, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["0930-1200", "1500-1730", "1830-2100"], ["0930-1200", "1500-1730", "1830-2100"], ["休診", "1500-1730", "1830-2100"], ["休診", "1500-1730", "1830-2100"], ["0930-1200", "1500-1730", "1830-2100"], ["0930-1200", "休診", "休診"], ["休診", "休診", "休診"]], "open_sessions": 14, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3521013144"}, {"id": "3521011257", "name": "張明木眼科診所", "tel": "06-2672941", "addr": "臺南市東區東門路二段３７２號", "func_type": "眼科", "pre_srv": "-", "plans": "-", "flu": "否", "opd_fee": "100元", "opd_fee_num": 100, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["看診", "看診", "看診"], ["看診", "看診", "看診"], ["看診", "看診", "看診"], ["看診", "看診", "看診"], ["看診", "看診", "看診"], ["看診", "看診", "看診"], ["休診", "休診", "休診"]], "open_sessions": 18, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3521011257"}, {"id": "3521013742", "name": "張育彰復健科診所", "tel": "06-2755572", "addr": "臺南市東區怡東路１７１號１－２樓", "func_type": "復健科", "pre_srv": "-", "plans": "-", "flu": "否", "opd_fee": "130元", "opd_fee_num": 130, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["0830-1130", "1530-1730", "1830-2030"], ["0830-1130", "1530-1730", "1830-2030"], ["0830-1130", "1530-1730", "1830-2030"], ["0830-1130", "休診", "1830-2030"], ["0830-1130", "1530-1730", "1830-2030"], ["0830-1130", "休診", "休診"], ["休診", "休診", "休診"]], "open_sessions": 15, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3521013742"}, {"id": "3505320037", "name": "彭亞萱小兒科診所", "tel": "06-2899047", "addr": "臺南市東區崇德里崇明路４７７號１樓", "func_type": "兒科", "pre_srv": "糞便抗原檢測胃幽門螺旋桿菌服務、兒童預防保健、成人預防保健、口腔黏膜檢查、定量免疫法糞便潛血檢查", "plans": "C型肝炎全口服新藥健保給付執行計畫、代謝症候群防治計畫、兒童發展篩檢服務方案、兒童衛教指導服務方案、家庭醫師整合性照護計畫、氣喘醫療給付改善方案", "flu": "是", "opd_fee": "180元", "opd_fee_num": 180, "emg_fee": "院所未提供資料", "fee_remark": "晚上最後掛號時間20:30/ 平日掛號費180/國定假日和星期日掛號費200(給健保局部份負擔50元另外計算)", "fee_url": "-", "has_sat": true, "has_sun": true, "has_night": true, "schedule": [["0800-1130", "1640-1800", "1800-2100"], ["0800-1130", "1640-1800", "1800-2100"], ["0800-1130", "1640-1800", "1800-2100"], ["0800-1130", "1640-1800", "1800-2100"], ["0800-1130", "1640-1800", "1800-2100"], ["0800-1200", "休診", "休診"], ["休診", "休診", "1730-2100"]], "open_sessions": 17, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3505320037"}, {"id": "3521011435", "name": "徐慶鐘小兒科診所", "tel": "06-2369954", "addr": "臺南市東區長榮路二段３０６號", "func_type": "不分科、兒科", "pre_srv": "兒童預防保健、成人預防保健", "plans": "兒童發展篩檢服務方案、兒童衛教指導服務方案", "flu": "是", "opd_fee": "150元", "opd_fee_num": 150, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": false, "schedule": [["0800-1200", "1600-1800", "休診"], ["0800-1200", "1600-1800", "休診"], ["0800-1200", "1600-1800", "休診"], ["0800-1200", "1600-1800", "休診"], ["0800-1200", "1600-1800", "休診"], ["0800-1200", "休診", "休診"], ["休診", "休診", "休診"]], "open_sessions": 11, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3521011435"}, {"id": "3505320715", "name": "德安眼科崇善診所", "tel": "06-2906806", "addr": "臺南市東區崇德里崇善路４７６號１樓", "func_type": "眼科", "pre_srv": "-", "plans": "-", "flu": "否", "opd_fee": "150元", "opd_fee_num": 150, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["0830-1200", "1530-1800", "1830-2100"], ["0830-1200", "1500-1730", "1830-2100"], ["0830-1200", "1500-1730", "1830-2100"], ["0830-1200", "1530-1800", "1830-2100"], ["0830-1200", "1530-1800", "1830-2100"], ["0830-1200", "1430-1730", "休診"], ["休診", "休診", "休診"]], "open_sessions": 17, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3505320715"}, {"id": "3505320171", "name": "德東診所", "tel": "06-2899616", "addr": "臺南市東區大智里德東街２３號１─２樓", "func_type": "家醫科、神經科", "pre_srv": "糞便抗原檢測胃幽門螺旋桿菌服務、成人預防保健、定量免疫法糞便潛血檢查", "plans": "C型肝炎全口服新藥健保給付執行計畫、代謝症候群防治計畫、家庭醫師整合性照護計畫", "flu": "是", "opd_fee": "150元", "opd_fee_num": 150, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["0800-1200", "1500-1800", "1830-2100"], ["0800-1200", "1500-1800", "1830-2100"], ["0800-1200", "1500-1800", "1830-2100"], ["0800-1200", "1500-1800", "1830-2100"], ["0800-1200", "1500-1800", "1830-2100"], ["0800-1200", "休診", "休診"], ["休診", "休診", "休診"]], "open_sessions": 16, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3505320171"}, {"id": "3505321105", "name": "心安耳鼻喉科診所", "tel": "06-2095626", "addr": "臺南市東區富裕里裕農路９８號１樓及夾層", "func_type": "耳鼻喉科(耳鼻喉頭頸外科)", "pre_srv": "糞便抗原檢測胃幽門螺旋桿菌服務、成人預防保健、定量免疫法糞便潛血檢查", "plans": "代謝症候群防治計畫", "flu": "否", "opd_fee": "150元", "opd_fee_num": 150, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": true, "has_night": true, "schedule": [["0830-1200", "1500-1800", "1830-2120"], ["0830-1200", "1500-1800", "1830-2120"], ["0830-1200", "1500-1800", "1830-2120"], ["0830-1200", "1500-1800", "1830-2120"], ["0830-1200", "1500-1800", "1830-2120"], ["0830-1200", "休診", "休診"], ["休診", "休診", "1700-2000"]], "open_sessions": 17, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3505321105"}, {"id": "3505320064", "name": "心樂活診所", "tel": "06-2383636", "addr": "臺南市東區凱旋路３９號１樓", "func_type": "精神科", "pre_srv": "-", "plans": "居家醫療整合照護計畫", "flu": "否", "opd_fee": "200元", "opd_fee_num": 200, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["0900-1200", "1430-1730", "1800-2100"], ["0900-1200", "1430-1730", "1800-2100"], ["0900-1200", "1430-1730", "1800-2100"], ["0900-1200", "1430-1730", "1800-2100"], ["0900-1200", "1430-1730", "1800-2100"], ["0900-1200", "休診", "休診"], ["休診", "休診", "休診"]], "open_sessions": 16, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3505320064"}, {"id": "3505320911", "name": "心自在身心診所", "tel": "06-2675725", "addr": "臺南市東區忠孝里崇明路３２號１、２及３樓", "func_type": "精神科", "pre_srv": "-", "plans": "-", "flu": "否", "opd_fee": "200元", "opd_fee_num": 200, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["0900-1200", "1430-1730", "1800-2100"], ["0900-1200", "1430-1730", "1800-2100"], ["0900-1200", "1430-1730", "1800-2100"], ["0900-1200", "1430-1730", "1800-2100"], ["0900-1200", "1430-1730", "1800-2100"], ["0900-1200", "休診", "休診"], ["休診", "休診", "休診"]], "open_sessions": 16, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3505320911"}, {"id": "3521013260", "name": "怡安復健科診所", "tel": "06-2350166", "addr": "臺南市東區怡東路１５號１、２樓", "func_type": "復健科", "pre_srv": "-", "plans": "-", "flu": "否", "opd_fee": "80元", "opd_fee_num": 80, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["看診", "看診", "看診"], ["看診", "看診", "休診"], ["看診", "看診", "看診"], ["看診", "看診", "休診"], ["看診", "看診", "看診"], ["看診", "休診", "休診"], ["休診", "休診", "休診"]], "open_sessions": 14, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3521013260"}, {"id": "3505320920", "name": "惠民診所", "tel": "06-2080195", "addr": "臺南市東區泉南里長榮路１段１５號１、２樓及１５號２樓之１", "func_type": "外科", "pre_srv": "成人預防保健、定量免疫法糞便潛血檢查", "plans": "-", "flu": "否", "opd_fee": "150元", "opd_fee_num": 150, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": true, "has_night": true, "schedule": [["0830-1200", "1400-1700", "1800-2130"], ["0830-1200", "1400-1700", "1800-2130"], ["0830-1200", "1400-1700", "1800-2130"], ["0830-1200", "1400-1700", "1800-2130"], ["0830-1200", "1400-1700", "1800-2130"], ["0830-1200", "1400-1700", "1800-2130"], ["休診", "1400-1700", "1800-2130"]], "open_sessions": 20, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3505320920"}, {"id": "3521013091", "name": "慶明眼科診所", "tel": "06-2381188", "addr": "臺南市東區龍山里林森路１段３７７號", "func_type": "眼科", "pre_srv": "-", "plans": "-", "flu": "否", "opd_fee": "150元", "opd_fee_num": 150, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["0800-1200", "1500-1800", "1900-2200"], ["0800-1200", "1500-1800", "1900-2200"], ["0800-1200", "1500-1800", "1900-2200"], ["0800-1200", "1500-1800", "1900-2200"], ["0800-1200", "1500-1800", "1900-2200"], ["0800-1200", "1400-1700", "休診"], ["休診", "休診", "休診"]], "open_sessions": 17, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3521013091"}, {"id": "3521012674", "name": "方耳鼻喉科診所", "tel": "06-2387222", "addr": "臺南市東區東寧路４２１號１樓", "func_type": "耳鼻喉科(耳鼻喉頭頸外科)", "pre_srv": "-", "plans": "家庭醫師整合性照護計畫、氣喘醫療給付改善方案", "flu": "是", "opd_fee": "院所未提供資料", "opd_fee_num": null, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["0830-1200", "1600-1800", "1800-2000"], ["0830-1200", "1600-1800", "1800-2000"], ["0830-1200", "1600-1800", "1800-2000"], ["0830-1200", "1600-1800", "1800-2000"], ["0830-1200", "1600-1800", "1800-2000"], ["0830-1200", "休診", "休診"], ["休診", "休診", "休診"]], "open_sessions": 16, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3521012674"}, {"id": "3505321141", "name": "昕晴診所", "tel": "06-2686668", "addr": "臺南市東區崇成里崇明二十四街１號１樓", "func_type": "內科", "pre_srv": "成人預防保健、定量免疫法糞便潛血檢查", "plans": "代謝症候群防治計畫、糖尿病及初期慢性腎臟病照護整合方案─初期慢性腎臟病、糖尿病及初期慢性腎臟病照護整合方案─糖尿病、糖尿病及初期慢性腎臟病照護整合方案─糖尿病合併初期慢性腎臟病", "flu": "否", "opd_fee": "150元", "opd_fee_num": 150, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["0800-1200", "1500-1800", "1800-2100"], ["0800-1200", "1500-1800", "1800-2100"], ["0800-1200", "1500-1800", "1800-2100"], ["0800-1200", "1500-1800", "1800-2100"], ["0800-1200", "1500-1800", "1800-2100"], ["0800-1200", "休診", "休診"], ["休診", "休診", "休診"]], "open_sessions": 16, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3505321141"}, {"id": "3505320046", "name": "春暉診所", "tel": "06-2690555", "addr": "臺南市東區德光里崇學路１３９之２號１－２樓", "func_type": "精神科", "pre_srv": "-", "plans": "家庭醫師整合性照護計畫", "flu": "否", "opd_fee": "200元", "opd_fee_num": 200, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["0900-1200", "1430-1730", "1800-2000"], ["0900-1200", "1430-1730", "1800-2100"], ["休診", "1430-1730", "1800-2100"], ["0900-1200", "1430-1730", "1800-2100"], ["0900-1200", "1430-1730", "1800-2100"], ["0900-1200", "休診", "休診"], ["休診", "休診", "休診"]], "open_sessions": 15, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3505320046"}, {"id": "3505320948", "name": "時時醫美診所", "tel": "06-2676888", "addr": "臺南市東區崇善里崇善路５２１號２樓", "func_type": "不分科", "pre_srv": "-", "plans": "-", "flu": "否", "opd_fee": "200元", "opd_fee_num": 200, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": false, "has_sun": false, "has_night": true, "schedule": [["休診", "1300-1600", "1600-1900"], ["休診", "1300-1600", "1600-1900"], ["休診", "1300-1600", "1600-1900"], ["休診", "1300-1600", "1600-1900"], ["休診", "1300-1600", "1600-1900"], ["休診", "休診", "休診"], ["休診", "休診", "休診"]], "open_sessions": 10, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3505320948"}, {"id": "3505320135", "name": "晉安復健科診所", "tel": "06-2685396", "addr": "臺南市東區崇善路６７０號１─４樓", "func_type": "復健科", "pre_srv": "成人預防保健", "plans": "家庭醫師整合性照護計畫", "flu": "否", "opd_fee": "150元", "opd_fee_num": 150, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["看診", "看診", "看診"], ["看診", "看診", "看診"], ["看診", "看診", "看診"], ["看診", "看診", "看診"], ["看診", "看診", "看診"], ["看診", "休診", "休診"], ["休診", "休診", "休診"]], "open_sessions": 16, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3505320135"}, {"id": "3521013064", "name": "曾立榮內科診所", "tel": "06-3353678", "addr": "臺南市東區中華東路二段３４１號１、２、３樓、３４３號１樓", "func_type": "內科", "pre_srv": "糞便抗原檢測胃幽門螺旋桿菌服務、成人預防保健、定量免疫法糞便潛血檢查", "plans": "C型肝炎全口服新藥健保給付執行計畫、代謝症候群防治計畫、家庭醫師整合性照護計畫、糖尿病及初期慢性腎臟病照護整合方案─初期慢性腎臟病、糖尿病及初期慢性腎臟病照護整合方案─糖尿病、糖尿病及初期慢性腎臟病照護整合方案─糖尿病合併初期慢性腎臟病、肝炎醫療給付改善方案", "flu": "否", "opd_fee": "200元", "opd_fee_num": 200, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["0800-1200", "1430-1800", "1800-2100"], ["0800-1200", "1430-1800", "1800-2100"], ["0800-1200", "1430-1800", "1800-2100"], ["0800-1200", "1430-1800", "1800-2100"], ["0800-1200", "1430-1800", "1800-2100"], ["0800-1200", "休診", "休診"], ["休診", "休診", "休診"]], "open_sessions": 16, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3521013064"}, {"id": "3521013028", "name": "李志超小兒科診所", "tel": "06-3314238", "addr": "臺南市東區裕信路４２１號", "func_type": "兒科", "pre_srv": "兒童預防保健", "plans": "兒童衛教指導服務方案", "flu": "否", "opd_fee": "150元", "opd_fee_num": 150, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["0900-1220", "休診", "1800-2100"], ["0900-1220", "休診", "1800-2100"], ["0900-1220", "休診", "1800-2100"], ["0900-1220", "休診", "1800-2100"], ["0900-1220", "休診", "1800-2100"], ["0900-1220", "休診", "休診"], ["休診", "休診", "休診"]], "open_sessions": 11, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3521013028"}, {"id": "3505321025", "name": "杏福內科診所", "tel": "06-3310009", "addr": "臺南市東區南聖里裕誠街５２６號１－４樓", "func_type": "內科", "pre_srv": "成人預防保健、定量免疫法糞便潛血檢查", "plans": "末期腎臟病前期（Pre-ESRD）之病人照護與衛教計畫、糖尿病及初期慢性腎臟病照護整合方案─初期慢性腎臟病", "flu": "否", "opd_fee": "150元", "opd_fee_num": 150, "emg_fee": "院所未提供資料", "fee_remark": "週三、週六、及國定假日，一般門診均休診。洗腎門診時間:周一至周六，謝謝您", "fee_url": "-", "has_sat": false, "has_sun": false, "has_night": false, "schedule": [["看診", "看診", "休診"], ["看診", "看診", "休診"], ["休診", "休診", "休診"], ["看診", "看診", "休診"], ["看診", "看診", "休診"], ["休診", "休診", "休診"], ["休診", "休診", "休診"]], "open_sessions": 8, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3505321025"}, {"id": "3521013368", "name": "杏禾小兒科診所", "tel": "06-2671658", "addr": "臺南市東區仁和路６７─５號１樓", "func_type": "兒科", "pre_srv": "兒童預防保健、成人預防保健", "plans": "代謝症候群防治計畫、兒童衛教指導服務方案、居家醫療整合照護計畫、氣喘醫療給付改善方案、糖尿病及初期慢性腎臟病照護整合方案─初期慢性腎臟病", "flu": "是", "opd_fee": "100元", "opd_fee_num": 100, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["看診", "看診", "看診"], ["看診", "看診", "看診"], ["看診", "休診", "休診"], ["看診", "看診", "看診"], ["看診", "看診", "看診"], ["看診", "休診", "休診"], ["休診", "休診", "休診"]], "open_sessions": 14, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3521013368"}, {"id": "3505320984", "name": "杰美學診所", "tel": "06-2688222", "addr": "臺南市東區龍山里林森路一段３６０號１、２樓", "func_type": "外科、整形外科", "pre_srv": "-", "plans": "-", "flu": "否", "opd_fee": "300元", "opd_fee_num": 300, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["看診", "看診", "休診"], ["看診", "看診", "看診"], ["看診", "看診", "看診"], ["看診", "看診", "看診"], ["看診", "看診", "看診"], ["看診", "看診", "看診"], ["休診", "休診", "休診"]], "open_sessions": 17, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3505320984"}, {"id": "3505320055", "name": "東仁診所", "tel": "06-2905533", "addr": "臺南市東區自強里中華東路二段３０５號２─４樓", "func_type": "骨科、復健科", "pre_srv": "-", "plans": "<a onClick='toINAE1070S02()' >急性後期整合照護計畫</a>", "flu": "否", "opd_fee": "150元", "opd_fee_num": 150, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["0830-1200", "休診", "1730-2100"], ["0830-1200", "休診", "1730-2100"], ["0830-1200", "休診", "1730-2100"], ["0830-1200", "休診", "1730-2100"], ["0830-1200", "休診", "1730-2100"], ["0830-1200", "休診", "休診"], ["休診", "休診", "休診"]], "open_sessions": 11, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3505320055"}, {"id": "3505320233", "name": "東安復健診所", "tel": "06-2371157", "addr": "臺南市東區東明里東安路９６號１樓", "func_type": "復健科", "pre_srv": "-", "plans": "-", "flu": "否", "opd_fee": "150元", "opd_fee_num": 150, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": false, "has_sun": false, "has_night": true, "schedule": [["休診", "1400-2030", "休診"], ["0900-1100", "休診", "1700-2030"], ["0900-1100", "1400-2030", "休診"], ["休診", "1400-2030", "休診"], ["0900-1100", "1400-2030", "休診"], ["休診", "休診", "休診"], ["休診", "休診", "休診"]], "open_sessions": 8, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3505320233"}, {"id": "3505320902", "name": "東寧身心診所", "tel": "06-2091090", "addr": "臺南市東區中西里東寧路２４－３號１樓", "func_type": "精神科", "pre_srv": "-", "plans": "家庭醫師整合性照護計畫", "flu": "否", "opd_fee": "150元", "opd_fee_num": 150, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["休診", "1500-1730", "1800-2030"], ["0900-1200", "休診", "1800-2030"], ["0900-1200", "1500-1730", "休診"], ["休診", "1500-1730", "1800-2030"], ["休診", "1500-1730", "1800-2030"], ["0900-1200", "休診", "休診"], ["休診", "休診", "休診"]], "open_sessions": 11, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3505320902"}, {"id": "3521013117", "name": "林一宏眼科診所", "tel": "06-2759922", "addr": "臺南市東區裕農路５８３號１、２樓", "func_type": "眼科", "pre_srv": "-", "plans": "-", "flu": "否", "opd_fee": "200元", "opd_fee_num": 200, "emg_fee": "200元", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["0900-1200", "1530-1830", "1900-2100"], ["0900-1200", "1530-1830", "1900-2100"], ["休診", "1530-1830", "1900-2100"], ["0900-1200", "1530-1830", "1900-2100"], ["0900-1200", "1530-1830", "1900-2100"], ["0900-1200", "1530-1830", "休診"], ["休診", "休診", "休診"]], "open_sessions": 16, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3521013117"}, {"id": "3505320215", "name": "林忠義診所", "tel": "06-3355886", "addr": "臺南市東區崇信街１３８號１樓", "func_type": "精神科", "pre_srv": "-", "plans": "-", "flu": "否", "opd_fee": "150元", "opd_fee_num": 150, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": false, "has_sun": false, "has_night": true, "schedule": [["0900-1200", "1500-1700", "1700-1900"], ["0900-1200", "1500-1700", "1700-1900"], ["0900-1200", "1500-1700", "1700-1900"], ["0900-1200", "1500-1700", "1700-1900"], ["0900-1200", "1500-1700", "1700-1900"], ["休診", "休診", "休診"], ["休診", "休診", "休診"]], "open_sessions": 15, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3505320215"}, {"id": "3505320331", "name": "楊博文耳鼻喉科診所", "tel": "06-2903911", "addr": "臺南市東區崇善里仁和路７６－８號１樓", "func_type": "耳鼻喉科(耳鼻喉頭頸外科)", "pre_srv": "成人預防保健、口腔黏膜檢查", "plans": "家庭醫師整合性照護計畫、居家醫療整合照護計畫、虛擬健保卡服務", "flu": "是", "opd_fee": "150元", "opd_fee_num": 150, "emg_fee": "院所未提供資料", "fee_remark": "09/24,09/25,09/26,09/27 全日休診. 09/28上午及下午休診,晚上開診", "fee_url": "-", "has_sat": true, "has_sun": true, "has_night": true, "schedule": [["0900-1200", "-1800", "1900-2100"], ["0900-1200", "-1800", "1900-2100"], ["0900-1200", "休診", "休診"], ["0900-1200", "-1800", "1900-2100"], ["0900-1200", "-1800", "1900-2100"], ["0900-1200", "-1800", "休診"], ["休診", "休診", "1900-2100"]], "open_sessions": 16, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3505320331"}, {"id": "3521010492", "name": "楊慧斌耳鼻喉科診所", "tel": "06-2369016", "addr": "臺南市東區東寧路３８９號", "func_type": "耳鼻喉科(耳鼻喉頭頸外科)", "pre_srv": "-", "plans": "-", "flu": "否", "opd_fee": "150元", "opd_fee_num": 150, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": false, "schedule": [["0830-1150", "1500-1850", "休診"], ["0830-1150", "1500-1850", "休診"], ["0830-1150", "1500-1850", "休診"], ["休診", "1500-1850", "休診"], ["0830-1150", "1500-1850", "休診"], ["0900-1200", "休診", "休診"], ["休診", "休診", "休診"]], "open_sessions": 10, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3521010492"}, {"id": "3505321070", "name": "樂而康診所", "tel": "06-2607799", "addr": "臺南市東區東智里崇德路８８０號１樓", "func_type": "精神科", "pre_srv": "糞便抗原檢測胃幽門螺旋桿菌服務、成人預防保健、定量免疫法糞便潛血檢查", "plans": "-", "flu": "否", "opd_fee": "100元", "opd_fee_num": 100, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": true, "has_night": false, "schedule": [["0800-1200", "1600-2000", "休診"], ["0800-1200", "1600-2000", "休診"], ["0800-1200", "1600-2000", "休診"], ["休診", "休診", "休診"], ["0800-1200", "1600-2000", "休診"], ["0800-1200", "休診", "休診"], ["0800-1200", "休診", "休診"]], "open_sessions": 10, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3505321070"}, {"id": "3505320448", "name": "欣姿診所", "tel": "06-2903977", "addr": "臺南市東區龍山里東門路二段３００號１－４樓", "func_type": "內科", "pre_srv": "成人預防保健", "plans": "-", "flu": "否", "opd_fee": "院所未提供資料", "opd_fee_num": null, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": false, "schedule": [["看診", "看診", "休診"], ["看診", "看診", "休診"], ["看診", "看診", "休診"], ["看診", "看診", "休診"], ["看診", "看診", "休診"], ["看診", "看診", "休診"], ["休診", "休診", "休診"]], "open_sessions": 12, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3505320448"}, {"id": "3505321061", "name": "正和骨科診所", "tel": "06-2607200", "addr": "臺南市東區和平里仁和路９５號１、２樓", "func_type": "骨科", "pre_srv": "-", "plans": "-", "flu": "否", "opd_fee": "150元", "opd_fee_num": 150, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["0830-1200", "1400-1700", "1800-2100"], ["0830-1200", "1400-1700", "1800-2100"], ["0830-1200", "1400-1700", "1800-2100"], ["0830-1200", "1400-1700", "1800-2100"], ["0830-1200", "1400-1700", "1800-2100"], ["0830-1200", "1400-1700", "休診"], ["休診", "休診", "休診"]], "open_sessions": 17, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3505321061"}, {"id": "3505320733", "name": "毅安診所", "tel": "06-2685818", "addr": "臺南市東區崇善里崇善路７６５號１、２樓及７６７號１樓", "func_type": "復健科", "pre_srv": "-", "plans": "-", "flu": "否", "opd_fee": "100元", "opd_fee_num": 100, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["0830-1130", "1430-1730", "1830-2030"], ["0830-1130", "1430-1730", "1830-2030"], ["0830-1130", "1430-1730", "1830-2030"], ["0830-1130", "1430-1730", "1830-2030"], ["0830-1130", "1430-1730", "1830-2030"], ["0830-1130", "休診", "休診"], ["休診", "休診", "休診"]], "open_sessions": 16, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3505320733"}, {"id": "3521013546", "name": "江錫輝診所", "tel": "06-2748888", "addr": "臺南市東區龍山里林森路１段３６３號１樓", "func_type": "神經科、復健科", "pre_srv": "成人預防保健、定量免疫法糞便潛血檢查", "plans": "家庭醫師整合性照護計畫、居家醫療整合照護計畫、糖尿病及初期慢性腎臟病照護整合方案─初期慢性腎臟病、糖尿病及初期慢性腎臟病照護整合方案─糖尿病、糖尿病及初期慢性腎臟病照護整合方案─糖尿病合併初期慢性腎臟病", "flu": "否", "opd_fee": "150元", "opd_fee_num": 150, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["0800-1200", "1400-1800", "1800-2100"], ["0800-1200", "1400-1800", "1800-2100"], ["0800-1200", "1400-1800", "1800-2100"], ["0800-1200", "1400-1800", "1800-2100"], ["0800-1200", "1400-1800", "1800-2100"], ["0800-1200", "休診", "休診"], ["休診", "休診", "休診"]], "open_sessions": 16, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3521013546"}, {"id": "3505321016", "name": "波士頓診所", "tel": "06-2527333", "addr": "臺南市東區崇善里中華東路三段１３７號１、２樓", "func_type": "耳鼻喉科(耳鼻喉頭頸外科)", "pre_srv": "-", "plans": "虛擬健保卡服務", "flu": "否", "opd_fee": "150元", "opd_fee_num": 150, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": false, "schedule": [["看診", "看診", "休診"], ["看診", "看診", "休診"], ["看診", "看診", "休診"], ["看診", "看診", "休診"], ["看診", "看診", "休診"], ["看診", "看診", "休診"], ["休診", "休診", "休診"]], "open_sessions": 12, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3505321016"}, {"id": "3521013073", "name": "活水神經內科診所", "tel": "06-3357513", "addr": "臺南市東區德光里崇明路２０５號１－２樓", "func_type": "神經科", "pre_srv": "成人預防保健、定量免疫法糞便潛血檢查", "plans": "代謝症候群防治計畫、居家醫療整合照護計畫、糖尿病及初期慢性腎臟病照護整合方案─糖尿病", "flu": "否", "opd_fee": "200元", "opd_fee_num": 200, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["0810-1100", "1445-1630", "1810-2030"], ["0810-1130", "1410-1630", "1810-2030"], ["0810-1130", "1410-1630", "1810-2030"], ["0810-1130", "1410-1630", "1810-2030"], ["0810-1130", "1410-1630", "1810-2030"], ["0810-1130", "休診", "休診"], ["休診", "休診", "休診"]], "open_sessions": 16, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3521013073"}, {"id": "3505321203", "name": "澄心診所", "tel": "06-3002001", "addr": "臺南市東區南聖里裕農路９７２號１－２樓", "func_type": "家醫科", "pre_srv": "糞便抗原檢測胃幽門螺旋桿菌服務、成人預防保健、口腔黏膜檢查、定量免疫法糞便潛血檢查", "plans": "代謝症候群防治計畫、家庭醫師整合性照護計畫、居家醫療整合照護計畫、糖尿病及初期慢性腎臟病照護整合方案─初期慢性腎臟病、肝炎醫療給付改善方案", "flu": "否", "opd_fee": "100元", "opd_fee_num": 100, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["0830-1200", "休診", "1700-2100"], ["0830-1200", "休診", "1700-2100"], ["0830-1200", "休診", "1700-2100"], ["0830-1200", "休診", "1700-2100"], ["0830-1200", "休診", "1700-2100"], ["0830-1200", "休診", "休診"], ["休診", "休診", "休診"]], "open_sessions": 11, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3505321203"}, {"id": "3521010572", "name": "王孟文眼科診所", "tel": "06-2903276", "addr": "臺南市東區崇明路２９８號", "func_type": "眼科", "pre_srv": "-", "plans": "-", "flu": "否", "opd_fee": "100元", "opd_fee_num": 100, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["0900-1150", "1530-1800", "1840-2030"], ["0900-1150", "1530-1800", "1840-2030"], ["0900-1150", "1530-1800", "1840-2030"], ["0900-1150", "1530-1800", "1840-2030"], ["0900-1150", "1530-1800", "1840-2030"], ["0900-1150", "休診", "休診"], ["休診", "休診", "休診"]], "open_sessions": 16, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3521010572"}, {"id": "3521012870", "name": "王正賜診所", "tel": "06-2008992", "addr": "臺南市東區東明里東安路４８巷３４號１－２樓", "func_type": "不分科", "pre_srv": "成人預防保健、定量免疫法糞便潛血檢查", "plans": "代謝症候群防治計畫、家庭醫師整合性照護計畫、糖尿病及初期慢性腎臟病照護整合方案─初期慢性腎臟病", "flu": "否", "opd_fee": "100元", "opd_fee_num": 100, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["0800-1200", "1530-1730", "1800-1930"], ["0800-1200", "1530-1730", "1800-1930"], ["0800-1200", "1530-1730", "1800-1930"], ["0800-1200", "1530-1730", "1800-1930"], ["0800-1200", "休診", "休診"], ["0800-1200", "休診", "休診"], ["休診", "休診", "休診"]], "open_sessions": 14, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3521012870"}, {"id": "3521013788", "name": "王盈彬精神科診所", "tel": "06-2600661", "addr": "臺南市東區崇善路４０６號１樓", "func_type": "精神科", "pre_srv": "-", "plans": "-", "flu": "否", "opd_fee": "200元", "opd_fee_num": 200, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": false, "has_sun": false, "has_night": true, "schedule": [["0900-1200", "1600-1945", "1600-1945"], ["0900-1200", "休診", "休診"], ["0900-1200", "1600-1945", "1600-1945"], ["0900-1200", "休診", "休診"], ["0900-1200", "1600-1945", "1600-1945"], ["休診", "休診", "休診"], ["休診", "休診", "休診"]], "open_sessions": 11, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3521013788"}, {"id": "3521010554", "name": "王肇陽皮膚科診所", "tel": "06-2891634", "addr": "臺南市東區德光里崇明路７９號", "func_type": "家醫科、內科、皮膚科", "pre_srv": "糞便抗原檢測胃幽門螺旋桿菌服務、成人預防保健、口腔黏膜檢查、定量免疫法糞便潛血檢查", "plans": "C型肝炎全口服新藥健保給付執行計畫、代謝症候群防治計畫、家庭醫師整合性照護計畫、居家醫療整合照護計畫、提供預立醫療照護諮商醫療機構(同衛生福利部名單)、糖尿病及初期慢性腎臟病照護整合方案─初期慢性腎臟病、糖尿病及初期慢性腎臟病照護整合方案─糖尿病、糖尿病及初期慢性腎臟病照護整合方案─糖尿病合併初期慢性腎臟病、虛擬健保卡服務", "flu": "否", "opd_fee": "150元", "opd_fee_num": 150, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["0830-1200", "1430-1800", "1800-2100"], ["0830-1200", "1430-1800", "1800-2100"], ["0830-1200", "1430-1800", "1800-2100"], ["0830-1200", "1430-1800", "1800-2100"], ["0830-1200", "1430-1800", "1800-2100"], ["0830-1200", "1430-1800", "休診"], ["休診", "休診", "休診"]], "open_sessions": 17, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3521010554"}, {"id": "3521013046", "name": "王舒岳兒科診所", "tel": "06-2902816", "addr": "臺南市東區生產路２８１號", "func_type": "兒科", "pre_srv": "兒童預防保健、成人預防保健", "plans": "兒童衛教指導服務方案", "flu": "是", "opd_fee": "150元", "opd_fee_num": 150, "emg_fee": "200元", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["看診", "看診", "看診"], ["看診", "看診", "看診"], ["看診", "看診", "看診"], ["看診", "看診", "看診"], ["看診", "看診", "看診"], ["看診", "看診", "休診"], ["休診", "休診", "休診"]], "open_sessions": 17, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3521013046"}, {"id": "3521013662", "name": "璺到底皮膚專科診所", "tel": "06-2882555", "addr": "臺南市東區德光里崇明路１５３之１號１樓", "func_type": "皮膚科", "pre_srv": "-", "plans": "家庭醫師整合性照護計畫、居家醫療整合照護計畫", "flu": "否", "opd_fee": "200元", "opd_fee_num": 200, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "https://careonline.com.tw/clinic/3521013662", "has_sat": true, "has_sun": true, "has_night": true, "schedule": [["休診", "1500-1800", "1830-2130"], ["0900-1200", "1500-1800", "1830-2130"], ["休診", "休診", "休診"], ["休診", "休診", "2000-2100"], ["0900-1200", "1500-1800", "1830-2130"], ["休診", "1500-1800", "休診"], ["休診", "1500-1900", "休診"]], "open_sessions": 11, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3521013662"}, {"id": "3521011480", "name": "石荃小兒科診所", "tel": "06-3363558", "addr": "臺南市東區文聖里裕農１街１５８號１樓", "func_type": "兒科", "pre_srv": "糞便抗原檢測胃幽門螺旋桿菌服務、兒童預防保健、成人預防保健、定量免疫法糞便潛血檢查", "plans": "代謝症候群防治計畫、兒童發展篩檢服務方案、兒童衛教指導服務方案、家庭醫師整合性照護計畫、糖尿病及初期慢性腎臟病照護整合方案─初期慢性腎臟病", "flu": "是", "opd_fee": "200元", "opd_fee_num": 200, "emg_fee": "院所未提供資料", "fee_remark": "65歲以上長者掛號費:80元", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": false, "schedule": [["0830-1200", "1630-2000", "休診"], ["0830-1200", "1630-2000", "休診"], ["休診", "1630-2000", "休診"], ["0830-1200", "1630-2000", "休診"], ["0830-1200", "1630-2000", "休診"], ["0830-1200", "休診", "休診"], ["休診", "休診", "休診"]], "open_sessions": 10, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3521011480"}, {"id": "3521013135", "name": "祐明眼科診所", "tel": "06-2678996", "addr": "臺南市東區崇德里崇明路５０３號１樓", "func_type": "內科、眼科", "pre_srv": "-", "plans": "-", "flu": "否", "opd_fee": "150元", "opd_fee_num": 150, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": false, "has_sun": false, "has_night": false, "schedule": [["0830-1130", "1600-1800", "休診"], ["0830-1130", "1600-1800", "休診"], ["0830-1130", "休診", "休診"], ["0830-1130", "1600-1800", "休診"], ["0830-1130", "休診", "休診"], ["休診", "休診", "休診"], ["休診", "休診", "休診"]], "open_sessions": 8, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3521013135"}, {"id": "3505321178", "name": "禾樂復健科診所", "tel": "06-2606656", "addr": "臺南市東區崇成里崇明路６０９號１、２樓", "func_type": "復健科", "pre_srv": "-", "plans": "-", "flu": "否", "opd_fee": "150元", "opd_fee_num": 150, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["0830-1200", "休診", "1730-2030"], ["0830-1200", "1400-1700", "1730-2030"], ["0830-1200", "休診", "1730-2030"], ["0830-1200", "1400-1700", "1730-2030"], ["0830-1200", "休診", "1730-2030"], ["0830-1200", "休診", "休診"], ["休診", "休診", "休診"]], "open_sessions": 13, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3505321178"}, {"id": "3521012594", "name": "立福內科診所", "tel": "06-2883537", "addr": "臺南市東區崇善里崇善路４０１、４０３號１樓", "func_type": "內科", "pre_srv": "成人預防保健", "plans": "-", "flu": "否", "opd_fee": "100元", "opd_fee_num": 100, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": false, "has_sun": false, "has_night": false, "schedule": [["0900-1200", "1400-1630", "休診"], ["0900-1200", "1400-1630", "休診"], ["0900-1200", "1400-1630", "休診"], ["0900-1200", "1400-1630", "休診"], ["0900-1200", "1400-1630", "休診"], ["休診", "休診", "休診"], ["休診", "休診", "休診"]], "open_sessions": 10, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3521012594"}, {"id": "3505321196", "name": "綻亮眼科診所", "tel": "06-2087988", "addr": "臺南市東區富強里東門路二段３８５號１樓", "func_type": "眼科", "pre_srv": "-", "plans": "-", "flu": "否", "opd_fee": "150元", "opd_fee_num": 150, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["0830-1200", "1400-1700", "1800-2100"], ["0830-1200", "休診", "休診"], ["休診", "1400-1700", "1800-2100"], ["0830-1200", "1400-1700", "休診"], ["休診", "1400-1700", "1800-2100"], ["0830-1200", "休診", "休診"], ["休診", "休診", "休診"]], "open_sessions": 11, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3505321196"}, {"id": "3521011444", "name": "羅國賢診所", "tel": "06-2159966", "addr": "臺南市東區大德里大同路二段１６１號", "func_type": "婦產科", "pre_srv": "成人預防保健、婦女子宮頸抹片檢查、孕婦產檢", "plans": "-", "flu": "否", "opd_fee": "院所未提供資料", "opd_fee_num": null, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["0900-1200", "休診", "1800-2030"], ["0900-1200", "休診", "1800-2030"], ["0900-1200", "休診", "1800-2030"], ["0900-1200", "休診", "1800-2030"], ["0900-1200", "休診", "1800-2030"], ["0900-1200", "休診", "休診"], ["休診", "休診", "休診"]], "open_sessions": 11, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3521011444"}, {"id": "3505320975", "name": "群安診所", "tel": "06-2082373", "addr": "臺南市東區富裕里裕豐街１１號１、２樓", "func_type": "內科", "pre_srv": "-", "plans": "-", "flu": "否", "opd_fee": "0元", "opd_fee_num": 0, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": false, "schedule": [["0900-1200", "1400-1600", "休診"], ["0900-1200", "1400-1600", "休診"], ["0900-1200", "1400-1600", "休診"], ["0900-1200", "1400-1600", "休診"], ["0900-1200", "1400-1600", "休診"], ["0900-1200", "1400-1600", "休診"], ["休診", "休診", "休診"]], "open_sessions": 12, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3505320975"}, {"id": "3521013500", "name": "胡崇元活泉診所", "tel": "06-2681600", "addr": "臺南市東區崇德路２之１號１樓", "func_type": "精神科", "pre_srv": "-", "plans": "-", "flu": "否", "opd_fee": "200元", "opd_fee_num": 200, "emg_fee": "院所未提供資料", "fee_remark": "初診掛號費300元,初診掛號時間最晚為11:00與19:00,門診時間早上09:00~11:45;下午16:00~19:45;;國定假日休診;遇颱風天請來電詢問", "fee_url": "-", "has_sat": false, "has_sun": false, "has_night": false, "schedule": [["0900-1145", "1600-1945", "休診"], ["0900-1145", "1600-1945", "休診"], ["0900-1145", "1600-1945", "休診"], ["0900-1145", "1600-1945", "休診"], ["0900-1145", "休診", "休診"], ["休診", "休診", "休診"], ["休診", "休診", "休診"]], "open_sessions": 9, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3521013500"}, {"id": "2321010013", "name": "臺南市東區衛生所", "tel": "06-2673613", "addr": "臺南市東區龍山里林森路１段４１８號", "func_type": "不分科", "pre_srv": "婦女人類乳突病毒檢測服務、糞便抗原檢測胃幽門螺旋桿菌服務、兒童預防保健、成人預防保健、婦女子宮頸抹片檢查、口腔黏膜檢查、定量免疫法糞便潛血檢查", "plans": "代謝症候群防治計畫、兒童發展篩檢服務方案、糖尿病及初期慢性腎臟病照護整合方案─糖尿病", "flu": "是", "opd_fee": "院所未提供資料", "opd_fee_num": null, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": false, "has_sun": false, "has_night": false, "schedule": [["休診", "休診", "休診"], ["0830-1100", "休診", "休診"], ["休診", "休診", "休診"], ["0900-1100", "1400-1600", "休診"], ["休診", "休診", "休診"], ["休診", "休診", "休診"], ["休診", "休診", "休診"]], "open_sessions": 3, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=2321010013"}, {"id": "3521013519", "name": "良田蔡明峻小兒科診所", "tel": "06-2607698", "addr": "臺南市東區崇明路２０１號１樓", "func_type": "兒科", "pre_srv": "糞便抗原檢測胃幽門螺旋桿菌服務、兒童預防保健、成人預防保健、定量免疫法糞便潛血檢查", "plans": "代謝症候群防治計畫、兒童發展篩檢服務方案、兒童衛教指導服務方案、家庭醫師整合性照護計畫、氣喘醫療給付改善方案、糖尿病及初期慢性腎臟病照護整合方案─初期慢性腎臟病", "flu": "是", "opd_fee": "150元", "opd_fee_num": 150, "emg_fee": "院所未提供資料", "fee_remark": "星期四下午暫時停診,優免對象視對象身分掛號費減為0至120元不等", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["0800-1150", "1530-1750", "1830-2050"], ["0800-1150", "1530-1750", "1830-2050"], ["0800-1150", "1530-1750", "1830-2050"], ["0800-1150", "休診", "1805-2050"], ["0800-1150", "1530-1750", "1830-2050"], ["0830-1150", "休診", "休診"], ["休診", "休診", "休診"]], "open_sessions": 15, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3521013519"}, {"id": "3521012549", "name": "華恆輝家庭醫學科診所", "tel": "06-3358088", "addr": "臺南市東區崇善路６１６號１樓", "func_type": "家醫科、婦產科", "pre_srv": "兒童預防保健、成人預防保健、婦女子宮頸抹片檢查", "plans": "代謝症候群防治計畫、家庭醫師整合性照護計畫", "flu": "否", "opd_fee": "院所未提供資料", "opd_fee_num": null, "emg_fee": "院所未提供資料", "fee_remark": "5月1日5月2日休診, 5月3日下午正常看診", "fee_url": "-", "has_sat": false, "has_sun": true, "has_night": true, "schedule": [["0900-1200", "1630-2030", "休診"], ["0900-1200", "1630-2030", "休診"], ["0900-1200", "休診", "休診"], ["休診", "1630-2030", "休診"], ["0900-1200", "1630-2030", "看診"], ["休診", "休診", "休診"], ["休診", "1630-2030", "休診"]], "open_sessions": 10, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3521012549"}, {"id": "3521010625", "name": "葉倍宏小兒科診所", "tel": "06-2381332", "addr": "臺南市東區中西里東門路１段２７３號１樓", "func_type": "兒科", "pre_srv": "兒童預防保健、定量免疫法糞便潛血檢查", "plans": "兒童衛教指導服務方案、家庭醫師整合性照護計畫、氣喘醫療給付改善方案", "flu": "是", "opd_fee": "院所未提供資料", "opd_fee_num": null, "emg_fee": "院所未提供資料", "fee_remark": "115/1/1元旦,早上開診", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["看診", "看診", "看診"], ["看診", "看診", "看診"], ["看診", "看診", "看診"], ["看診", "看診", "看診"], ["看診", "看診", "看診"], ["看診", "看診", "看診"], ["休診", "休診", "休診"]], "open_sessions": 18, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3521010625"}, {"id": "3521011211", "name": "葉明宏外科診所", "tel": "06-2385870", "addr": "臺南市東區中西里長榮路２段１０１號１樓及夾層", "func_type": "外科", "pre_srv": "成人預防保健、定量免疫法糞便潛血檢查", "plans": "家庭醫師整合性照護計畫", "flu": "否", "opd_fee": "150元", "opd_fee_num": 150, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["0900-1200", "休診", "1730-2030"], ["休診", "1500-1730", "1730-2030"], ["0900-1200", "休診", "1730-2000"], ["0900-1200", "休診", "休診"], ["0900-1200", "1500-1730", "1730-2000"], ["0900-1200", "休診", "休診"], ["休診", "休診", "休診"]], "open_sessions": 11, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3521011211"}, {"id": "3521011266", "name": "葉正傑家庭醫學科診所", "tel": "06-2689599", "addr": "臺南市東區崇學路１４４號２樓", "func_type": "家醫科", "pre_srv": "兒童預防保健、成人預防保健、孕婦產檢", "plans": "家庭醫師整合性照護計畫", "flu": "否", "opd_fee": "150元", "opd_fee_num": 150, "emg_fee": "院所未提供資料", "fee_remark": "門診時間:上午09:00-12:00 晚上18:30-21:30 星期日和國訂假日全日休診.", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["0900-1200", "休診", "1830-2130"], ["0900-1200", "休診", "1830-2130"], ["0900-1200", "休診", "1830-2130"], ["0900-1200", "休診", "1830-2130"], ["0900-1200", "休診", "1830-2130"], ["0900-1200", "休診", "休診"], ["休診", "休診", "休診"]], "open_sessions": 11, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3521011266"}, {"id": "3521010983", "name": "葉能貴婦產科診所", "tel": "06-2906699", "addr": "臺南市東區崇明路９１號", "func_type": "婦產科", "pre_srv": "婦女人類乳突病毒檢測服務、糞便抗原檢測胃幽門螺旋桿菌服務、成人預防保健、婦女子宮頸抹片檢查、孕婦產檢、定量免疫法糞便潛血檢查", "plans": "孕婦乙型鏈球菌篩檢補助服務方案、家庭醫師整合性照護計畫、虛擬健保卡服務", "flu": "否", "opd_fee": "150元", "opd_fee_num": 150, "emg_fee": "300元", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["看診", "看診", "看診"], ["看診", "看診", "看診"], ["看診", "休診", "看診"], ["看診", "看診", "看診"], ["看診", "看診", "看診"], ["看診", "看診", "休診"], ["休診", "休診", "休診"]], "open_sessions": 16, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3521010983"}, {"id": "3521011364", "name": "蕭文勝診所", "tel": "06-2755088", "addr": "臺南市東區東門路二段２０５號", "func_type": "內科、精神科", "pre_srv": "成人預防保健", "plans": "代謝症候群防治計畫、家庭醫師整合性照護計畫、思覺失調症醫療給付改善方案", "flu": "否", "opd_fee": "院所未提供資料", "opd_fee_num": null, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["看診", "看診", "看診"], ["看診", "看診", "看診"], ["看診", "看診", "看診"], ["看診", "看診", "看診"], ["看診", "看診", "看診"], ["看診", "看診", "休診"], ["休診", "休診", "休診"]], "open_sessions": 17, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3521011364"}, {"id": "3521013199", "name": "蕭耳鼻喉科診所", "tel": "06-2756088", "addr": "臺南市東區裕農路２７－１３號１樓", "func_type": "耳鼻喉科(耳鼻喉頭頸外科)", "pre_srv": "定量免疫法糞便潛血檢查", "plans": "-", "flu": "否", "opd_fee": "90元", "opd_fee_num": 90, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": true, "has_night": true, "schedule": [["0840-1200", "1640-1830", "1940-2100"], ["0840-1200", "1640-1830", "1940-2100"], ["0840-1200", "1640-1830", "1940-2100"], ["0840-1200", "1640-1830", "1940-2100"], ["0840-1200", "1640-1830", "1940-2100"], ["0840-1200", "1640-1830", "1940-2100"], ["0840-1130", "休診", "休診"]], "open_sessions": 19, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3521013199"}, {"id": "3521011024", "name": "薛澤杰復健科診所", "tel": "06-2386150", "addr": "臺南市東區東門路１段２９８號１樓Ｂ樓", "func_type": "復健科", "pre_srv": "-", "plans": "家庭醫師整合性照護計畫、居家醫療整合照護計畫", "flu": "否", "opd_fee": "150元", "opd_fee_num": 150, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["0830-1130", "1430-1730", "1900-2100"], ["0830-1130", "1430-1730", "1900-2100"], ["0830-1130", "1430-1730", "1900-2100"], ["0830-1130", "1430-1730", "1900-2100"], ["0830-1130", "1430-1730", "1900-2100"], ["0830-1130", "休診", "休診"], ["休診", "休診", "休診"]], "open_sessions": 16, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3521011024"}, {"id": "3505320395", "name": "藝群中華診所", "tel": "06-3352945", "addr": "臺南市東區崇信里中華東路３段７０號１樓", "func_type": "不分科", "pre_srv": "-", "plans": "-", "flu": "否", "opd_fee": "150元", "opd_fee_num": 150, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "https://reurl.cc/Q5EXrO", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["0900-1200", "1400-1730", "1800-2100"], ["0900-1200", "1400-1730", "1800-2100"], ["0900-1200", "1400-1730", "1800-2100"], ["0900-1200", "1400-1730", "1800-2100"], ["0900-1200", "1400-1730", "1800-2100"], ["0900-1200", "1400-1730", "1800-2100"], ["休診", "休診", "休診"]], "open_sessions": 18, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3505320395"}, {"id": "3505320304", "name": "藝群皮膚科診所", "tel": "06-3316222", "addr": "臺南市東區裕聖里裕義路３３２號１、２、３、４樓", "func_type": "皮膚科", "pre_srv": "-", "plans": "-", "flu": "否", "opd_fee": "100元", "opd_fee_num": 100, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["0900-1200", "1400-1800", "1800-2100"], ["0900-1200", "1400-1800", "1800-2100"], ["0900-1200", "1400-1800", "1800-2100"], ["0900-1200", "1400-1800", "1800-2100"], ["0900-1200", "1400-1800", "1800-2100"], ["0900-1200", "1400-1800", "1800-2100"], ["休診", "休診", "休診"]], "open_sessions": 18, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3505320304"}, {"id": "3521010134", "name": "蘇內科診所", "tel": "06-2375731", "addr": "臺南市東區泉北里東門路１段８３號", "func_type": "內科", "pre_srv": "成人預防保健", "plans": "-", "flu": "否", "opd_fee": "100元", "opd_fee_num": 100, "emg_fee": "院所未提供資料", "fee_remark": "9/25下午晚上休診", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["看診", "看診", "看診"], ["看診", "看診", "看診"], ["看診", "看診", "看診"], ["看診", "看診", "看診"], ["看診", "看診", "看診"], ["看診", "休診", "休診"], ["休診", "休診", "休診"]], "open_sessions": 16, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3521010134"}, {"id": "3505320886", "name": "裕東診所", "tel": "06-3318108", "addr": "臺南市東區裕聖里裕孝路８５１號１樓及裕孝３街６號２樓", "func_type": "復健科", "pre_srv": "成人預防保健", "plans": "家庭醫師整合性照護計畫", "flu": "否", "opd_fee": "院所未提供資料", "opd_fee_num": null, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": false, "has_sun": false, "has_night": true, "schedule": [["0830-1200", "1400-1700", "1800-2100"], ["0830-1200", "1400-1700", "1800-2100"], ["0830-1200", "1400-1700", "1800-2100"], ["0830-1200", "1400-1700", "1800-2100"], ["0830-1200", "1400-1700", "休診"], ["休診", "休診", "休診"], ["休診", "休診", "休診"]], "open_sessions": 14, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3505320886"}, {"id": "3521012905", "name": "許乃仁皮膚科診所", "tel": "06-2893766", "addr": "臺南市東區崇德里崇德路５６３、５６３之１號１樓", "func_type": "皮膚科", "pre_srv": "-", "plans": "-", "flu": "否", "opd_fee": "150元", "opd_fee_num": 150, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["0900-1200", "1530-1830", "1830-2100"], ["0900-1200", "1530-1830", "1830-2100"], ["0900-1200", "1530-1830", "1830-2100"], ["0900-1200", "1730-1830", "1830-2100"], ["0900-1200", "1530-2100", "1830-2100"], ["0900-1200", "1530-2100", "1830-2100"], ["休診", "休診", "休診"]], "open_sessions": 18, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3521012905"}, {"id": "3505320224", "name": "詠心診所", "tel": "06-2089877", "addr": "臺南市東區東光里東光路一段１３０號１樓", "func_type": "內科", "pre_srv": "成人預防保健、定量免疫法糞便潛血檢查", "plans": "家庭醫師整合性照護計畫、糖尿病及初期慢性腎臟病照護整合方案─初期慢性腎臟病", "flu": "否", "opd_fee": "150元", "opd_fee_num": 150, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["0900-1200", "1500-1800", "1900-2030"], ["0900-1200", "休診", "休診"], ["0900-1200", "1500-1800", "1919-2030"], ["0900-1200", "1500-1800", "1919-2030"], ["0900-1200", "1500-1800", "1919-2030"], ["0900-1200", "休診", "休診"], ["休診", "休診", "休診"]], "open_sessions": 14, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3505320224"}, {"id": "3505320877", "name": "諾雅整形外科診所", "tel": "06-2088113", "addr": "臺南市東區東光里東光路１段５７號１－３樓", "func_type": "整形外科、麻醉科", "pre_srv": "-", "plans": "-", "flu": "否", "opd_fee": "200元", "opd_fee_num": 200, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["看診", "看診", "看診"], ["看診", "看診", "看診"], ["看診", "看診", "看診"], ["看診", "看診", "看診"], ["看診", "看診", "看診"], ["看診", "看診", "休診"], ["休診", "休診", "休診"]], "open_sessions": 17, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3505320877"}, {"id": "3521011097", "name": "謝明憲內科診所", "tel": "06-2086360", "addr": "臺南市東區中西里長榮路２段９３號", "func_type": "內科", "pre_srv": "成人預防保健", "plans": "代謝症候群防治計畫、家庭醫師整合性照護計畫、居家醫療整合照護計畫、糖尿病及初期慢性腎臟病照護整合方案─糖尿病", "flu": "否", "opd_fee": "院所未提供資料", "opd_fee_num": null, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": false, "schedule": [["0830-1200", "1500-1930", "休診"], ["0830-1200", "1500-1930", "休診"], ["0830-1200", "1500-1930", "休診"], ["0830-1200", "1500-1930", "休診"], ["0830-1200", "1500-1930", "休診"], ["0830-1200", "休診", "休診"], ["休診", "休診", "休診"]], "open_sessions": 11, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3521011097"}, {"id": "3521013297", "name": "賴登增內科診所", "tel": "06-2698105", "addr": "臺南市東區東門路２段３４６號１樓", "func_type": "內科", "pre_srv": "成人預防保健、定量免疫法糞便潛血檢查", "plans": "家庭醫師整合性照護計畫、氣喘醫療給付改善方案", "flu": "否", "opd_fee": "150元", "opd_fee_num": 150, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["0800-1200", "1600-1800", "1830-2100"], ["0800-1200", "1600-1800", "1823-2100"], ["0800-1200", "休診", "休診"], ["0800-1200", "1600-1800", "1823-2100"], ["0800-1200", "1600-1800", "1823-2100"], ["0800-1200", "休診", "休診"], ["休診", "休診", "休診"]], "open_sessions": 14, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3521013297"}, {"id": "3521010349", "name": "趙眼科診所", "tel": "06-2383867", "addr": "臺南市東區東門路一段３４０號", "func_type": "眼科", "pre_srv": "-", "plans": "-", "flu": "否", "opd_fee": "0元", "opd_fee_num": 0, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": false, "schedule": [["看診", "看診", "休診"], ["看診", "看診", "休診"], ["看診", "看診", "休診"], ["看診", "看診", "休診"], ["看診", "看診", "休診"], ["看診", "休診", "休診"], ["休診", "休診", "休診"]], "open_sessions": 11, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3521010349"}, {"id": "3521011275", "name": "路加小兒科診所", "tel": "06-2883000", "addr": "臺南市東區中華東路二段１８５巷２６，２８號", "func_type": "兒科、泌尿科", "pre_srv": "糞便抗原檢測胃幽門螺旋桿菌服務、兒童預防保健、成人預防保健、口腔黏膜檢查、定量免疫法糞便潛血檢查", "plans": "C型肝炎全口服新藥健保給付執行計畫、代謝症候群防治計畫、兒童發展篩檢服務方案、兒童衛教指導服務方案、家庭醫師整合性照護計畫、居家醫療整合照護計畫、慢性阻塞性肺病醫療給付改善方案、氣喘醫療給付改善方案、糖尿病及初期慢性腎臟病照護整合方案─初期慢性腎臟病、肝炎醫療給付改善方案、虛擬健保卡服務", "flu": "是", "opd_fee": "200元", "opd_fee_num": 200, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["0900-1200", "1500-1800", "1800-2000"], ["0000-1200", "0900-1200", "1818-2000"], ["0000-1200", "0900-1200", "1800-2000"], ["0000-1200", "0900-1200", "1800-2000"], ["0000-1200", "0900-1200", "1800-2000"], ["0900-1200", "休診", "休診"], ["休診", "休診", "休診"]], "open_sessions": 16, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3521011275"}, {"id": "3505321258", "name": "迦德診所", "tel": "06-2002223", "addr": "臺南市東區富裕里東門路２段２５９號１樓、２６１號１樓", "func_type": "內科", "pre_srv": "成人預防保健、定量免疫法糞便潛血檢查", "plans": "代謝症候群防治計畫、糖尿病及初期慢性腎臟病照護整合方案─初期慢性腎臟病、糖尿病及初期慢性腎臟病照護整合方案─糖尿病、糖尿病及初期慢性腎臟病照護整合方案─糖尿病合併初期慢性腎臟病", "flu": "否", "opd_fee": "150元", "opd_fee_num": 150, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["0800-1200", "1430-1730", "休診"], ["0800-1200", "休診", "休診"], ["0800-1200", "1430-1730", "休診"], ["0800-1200", "休診", "1800-2030"], ["0800-1200", "1430-1730", "休診"], ["0800-0930", "休診", "休診"], ["休診", "休診", "休診"]], "open_sessions": 10, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3505321258"}, {"id": "3505320555", "name": "達俊診所", "tel": "06-2361337", "addr": "臺南市東區圍下里青年路４３４號１－２樓", "func_type": "內科", "pre_srv": "糞便抗原檢測胃幽門螺旋桿菌服務、成人預防保健、定量免疫法糞便潛血檢查", "plans": "C型肝炎全口服新藥健保給付執行計畫、代謝症候群防治計畫、家庭醫師整合性照護計畫、糖尿病及初期慢性腎臟病照護整合方案─初期慢性腎臟病、糖尿病及初期慢性腎臟病照護整合方案─糖尿病、糖尿病及初期慢性腎臟病照護整合方案─糖尿病合併初期慢性腎臟病、肝炎醫療給付改善方案", "flu": "否", "opd_fee": "200元", "opd_fee_num": 200, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["0830-1200", "1430-1730", "1800-2100"], ["0830-1200", "1430-1730", "1800-2100"], ["0830-1200", "1430-1730", "1800-2100"], ["0830-1200", "1430-1730", "1800-2100"], ["0830-1200", "1430-1730", "1800-2100"], ["0830-1200", "休診", "休診"], ["休診", "休診", "休診"]], "open_sessions": 16, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3505320555"}, {"id": "3505320608", "name": "邵柏洲骨科診所", "tel": "06-2672179", "addr": "臺南市東區崇文里崇善路６１０號１－２樓", "func_type": "骨科", "pre_srv": "成人預防保健", "plans": "家庭醫師整合性照護計畫", "flu": "否", "opd_fee": "150元", "opd_fee_num": 150, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["0830-1200", "1500-1800", "1900-2100"], ["0830-1200", "1500-1800", "1900-2100"], ["0830-1200", "1500-1800", "1900-2100"], ["0830-1200", "1500-1800", "1900-2100"], ["0830-1200", "1500-1800", "1900-2100"], ["0830-1200", "休診", "休診"], ["休診", "休診", "休診"]], "open_sessions": 16, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3505320608"}, {"id": "3521013555", "name": "郭碩宗耳鼻喉科診所", "tel": "06-2892868", "addr": "臺南市東區崇德路５６１號１樓", "func_type": "耳鼻喉科(耳鼻喉頭頸外科)", "pre_srv": "-", "plans": "-", "flu": "否", "opd_fee": "院所未提供資料", "opd_fee_num": null, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": true, "has_night": true, "schedule": [["0830-1200", "1500-1800", "1830-2100"], ["0830-1200", "1500-1800", "1830-2100"], ["休診", "休診", "休診"], ["0830-1200", "1500-1800", "1830-2100"], ["0830-1200", "1500-1800", "1830-2100"], ["0830-1200", "1500-1800", "1830-2100"], ["0830-1200", "1500-1800", "1800-2100"]], "open_sessions": 18, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3521013555"}, {"id": "3521012914", "name": "鄭明豐診所", "tel": "06-2883104", "addr": "臺南市東區仁和路１２９號", "func_type": "不分科", "pre_srv": "成人預防保健、婦女子宮頸抹片檢查", "plans": "-", "flu": "否", "opd_fee": "100元", "opd_fee_num": 100, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["看診", "看診", "看診"], ["看診", "看診", "看診"], ["看診", "休診", "休診"], ["看診", "看診", "看診"], ["看診", "看診", "看診"], ["看診", "休診", "休診"], ["休診", "休診", "休診"]], "open_sessions": 14, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3521012914"}, {"id": "3505320706", "name": "銓莘診所", "tel": "06-2691066", "addr": "臺南市東區崇學里中華東路三段２９０、２９２號１－２樓", "func_type": "內科", "pre_srv": "成人預防保健", "plans": "-", "flu": "否", "opd_fee": "100元", "opd_fee_num": 100, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": false, "schedule": [["0900-1200", "1500-1700", "休診"], ["休診", "休診", "休診"], ["0900-1200", "1500-1600", "休診"], ["0900-1200", "1500-1600", "休診"], ["0900-1200", "1500-1600", "休診"], ["0900-1200", "休診", "休診"], ["休診", "休診", "休診"]], "open_sessions": 9, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3505320706"}, {"id": "3505320564", "name": "長榮骨外科診所", "tel": "06-2351599", "addr": "臺南市東區中西里林森路二段９３號１－２樓、９５號１－２樓", "func_type": "外科、骨科", "pre_srv": "成人預防保健", "plans": "代謝症候群防治計畫、家庭醫師整合性照護計畫", "flu": "否", "opd_fee": "50元", "opd_fee_num": 50, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": true, "has_night": false, "schedule": [["0800-1200", "1500-2000", "休診"], ["0800-1200", "1500-2000", "休診"], ["0800-1200", "1500-1800", "休診"], ["0800-1200", "1500-2000", "休診"], ["0800-1212", "1500-1500", "休診"], ["0800-1200", "休診", "休診"], ["看診", "1600-2000", "休診"]], "open_sessions": 13, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3505320564"}, {"id": "3521013108", "name": "陳勃旭耳鼻喉科診所", "tel": "06-3358868", "addr": "臺南市東區崇德里崇善路４３８號１樓", "func_type": "家醫科、耳鼻喉科(耳鼻喉頭頸外科)", "pre_srv": "成人預防保健、口腔黏膜檢查、定量免疫法糞便潛血檢查", "plans": "代謝症候群防治計畫、家庭醫師整合性照護計畫、居家醫療整合照護計畫", "flu": "是", "opd_fee": "150元", "opd_fee_num": 150, "emg_fee": "院所未提供資料", "fee_remark": "01/01元旦有開診", "fee_url": "-", "has_sat": true, "has_sun": true, "has_night": true, "schedule": [["0730-1200", "1530-1830", "1830-2130"], ["0730-1200", "1530-1830", "1830-2130"], ["0800-1200", "1530-1830", "1830-2130"], ["0800-1200", "1530-1830", "1830-2130"], ["0730-1200", "1530-1830", "1830-2130"], ["0800-1200", "1530-1830", "休診"], ["0800-1200", "1530-1830", "休診"]], "open_sessions": 19, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3521013108"}, {"id": "3521010090", "name": "陳友二小兒科內科診所", "tel": "06-2373497", "addr": "臺南市東區東門里青年路３６２號", "func_type": "內科、兒科", "pre_srv": "兒童預防保健、成人預防保健", "plans": "-", "flu": "否", "opd_fee": "100元", "opd_fee_num": 100, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["0830-1200", "1430-1800", "1900-2100"], ["0830-1200", "1430-1800", "1900-2100"], ["0830-1200", "1430-1800", "1900-2100"], ["0830-1200", "1430-1800", "1900-2100"], ["0830-1200", "1430-1800", "1900-2100"], ["0830-1200", "休診", "休診"], ["休診", "休診", "休診"]], "open_sessions": 16, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3521010090"}, {"id": "3505320797", "name": "陳嘉鴻泌尿科診所", "tel": "06-2673709", "addr": "臺南市東區龍山里崇學路２８１號１、２樓", "func_type": "泌尿科", "pre_srv": "成人預防保健", "plans": "家庭醫師整合性照護計畫", "flu": "否", "opd_fee": "150元", "opd_fee_num": 150, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["0830-1140", "1430-1720", "1800-2030"], ["0830-1140", "1430-1720", "1800-2030"], ["0830-1140", "休診", "1800-2030"], ["0830-1140", "1400-1600", "1800-2030"], ["0830-1140", "1430-1720", "1800-2030"], ["0830-1140", "休診", "休診"], ["休診", "休診", "休診"]], "open_sessions": 15, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3505320797"}, {"id": "3521013206", "name": "陳文毅骨科診所", "tel": "06-2692100", "addr": "臺南市東區崇文里崇德１９街１９號１樓", "func_type": "骨科", "pre_srv": "-", "plans": "-", "flu": "否", "opd_fee": "200元", "opd_fee_num": 200, "emg_fee": "院所未提供資料", "fee_remark": "醫生出國9/2晚診休診至9/11晚診開始看診", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["0900-1200", "休診", "1900-2100"], ["0900-1200", "休診", "1900-2100"], ["0900-1200", "休診", "1900-2100"], ["0900-1200", "休診", "1900-2100"], ["0900-1200", "休診", "1900-2100"], ["0900-1200", "休診", "休診"], ["休診", "休診", "休診"]], "open_sessions": 11, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3521013206"}, {"id": "3505320680", "name": "陳昱傑骨科診所", "tel": "06-2678159", "addr": "臺南市東區崇學里崇善路２１８號１－２樓", "func_type": "骨科", "pre_srv": "-", "plans": "-", "flu": "否", "opd_fee": "150元", "opd_fee_num": 150, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["0800-1200", "1400-1700", "1800-2100"], ["0800-1200", "1400-1700", "1800-2100"], ["0800-1200", "1400-1700", "1800-2100"], ["0800-1200", "1400-1700", "1800-2100"], ["0800-1200", "1400-1700", "1800-2100"], ["0800-1200", "休診", "休診"], ["休診", "休診", "休診"]], "open_sessions": 16, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3505320680"}, {"id": "3505320439", "name": "陳沛植診所", "tel": "06-2080298", "addr": "臺南市東區富強里裕農路３０２號１、２樓", "func_type": "內科", "pre_srv": "成人預防保健", "plans": "代謝症候群防治計畫、家庭醫師整合性照護計畫、虛擬健保卡服務", "flu": "否", "opd_fee": "200元", "opd_fee_num": 200, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["0830-1200", "1500-1800", "1830-2030"], ["0830-1200", "休診", "休診"], ["0830-1200", "1500-1800", "1830-2030"], ["0830-1200", "休診", "休診"], ["0830-1200", "1500-1800", "1830-2030"], ["0830-1200", "休診", "休診"], ["休診", "休診", "休診"]], "open_sessions": 12, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3505320439"}, {"id": "3521012567", "name": "陳淑玲林原弘小兒科診所", "tel": "06-2900255", "addr": "臺南市東區崇學路２２９號", "func_type": "兒科", "pre_srv": "兒童預防保健", "plans": "兒童發展篩檢服務方案、兒童衛教指導服務方案、家庭醫師整合性照護計畫、新生兒聽力篩檢補助服務方案", "flu": "是", "opd_fee": "150元", "opd_fee_num": 150, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["0800-1200", "1500-1800", "1800-2100"], ["0800-1200", "1500-1800", "1800-2100"], ["0800-1200", "1500-1800", "1800-2100"], ["0800-1200", "1500-1800", "1800-2100"], ["0800-1200", "1500-1800", "1800-2100"], ["0800-1200", "1500-1800", "休診"], ["休診", "休診", "休診"]], "open_sessions": 17, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3521012567"}, {"id": "3521010616", "name": "陳煌奇耳鼻喉科診所", "tel": "06-2680472", "addr": "臺南市東區龍山里崇學路２７１號之４ １樓及２７１號之５ １樓　", "func_type": "內科、耳鼻喉科(耳鼻喉頭頸外科)", "pre_srv": "成人預防保健、口腔黏膜檢查、定量免疫法糞便潛血檢查", "plans": "家庭醫師整合性照護計畫、居家醫療整合照護計畫、糖尿病及初期慢性腎臟病照護整合方案─初期慢性腎臟病、糖尿病及初期慢性腎臟病照護整合方案─糖尿病、糖尿病及初期慢性腎臟病照護整合方案─糖尿病合併初期慢性腎臟病", "flu": "是", "opd_fee": "150元", "opd_fee_num": 150, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["看診", "看診", "看診"], ["看診", "休診", "休診"], ["看診", "看診", "看診"], ["看診", "看診", "看診"], ["看診", "看診", "看診"], ["看診", "休診", "休診"], ["休診", "休診", "休診"]], "open_sessions": 14, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3521010616"}, {"id": "3521010312", "name": "陳眼科耳鼻喉科診所", "tel": "06-2362759", "addr": "臺南市東區東門路二段３７號", "func_type": "耳鼻喉科(耳鼻喉頭頸外科)、眼科", "pre_srv": "口腔黏膜檢查", "plans": "-", "flu": "否", "opd_fee": "100元", "opd_fee_num": 100, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["0730-0900", "1200-1400", "1730-2130"], ["0730-0900", "1200-1400", "1730-2130"], ["0730-0900", "1200-1400", "1730-2130"], ["0730-0900", "1200-1400", "1730-2130"], ["0730-0900", "1200-1400", "1730-2130"], ["0730-0900", "1200-1400", "1730-2130"], ["休診", "休診", "休診"]], "open_sessions": 18, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3521010312"}, {"id": "3521011239", "name": "陳錦標診所", "tel": "06-2350889", "addr": "臺南市東區東門路二段２１３號", "func_type": "內科", "pre_srv": "成人預防保健、口腔黏膜檢查、定量免疫法糞便潛血檢查", "plans": "代謝症候群防治計畫、家庭醫師整合性照護計畫", "flu": "否", "opd_fee": "50元", "opd_fee_num": 50, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["0800-1200", "休診", "1600-2100"], ["0800-1200", "休診", "1600-2100"], ["0800-1200", "休診", "1600-2100"], ["0800-1200", "休診", "1600-2100"], ["0800-1200", "休診", "1600-2100"], ["0800-1200", "休診", "1600-2100"], ["休診", "休診", "休診"]], "open_sessions": 12, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3521011239"}, {"id": "3505321114", "name": "靜心診所", "tel": "06-2688582", "addr": "臺南市東區崇文里崇善路６８２號１樓", "func_type": "精神科", "pre_srv": "定量免疫法糞便潛血檢查", "plans": "-", "flu": "否", "opd_fee": "150元", "opd_fee_num": 150, "emg_fee": "院所未提供資料", "fee_remark": "115年4月1日調整為150", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["0900-1200", "1530-1730", "1800-2100"], ["休診", "1530-1730", "1800-2100"], ["0900-1200", "1530-1730", "1800-2100"], ["0900-1200", "休診", "休診"], ["0900-1200", "1530-1730", "1800-2100"], ["0900-1200", "休診", "休診"], ["休診", "休診", "休診"]], "open_sessions": 13, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3505321114"}, {"id": "3505320340", "name": "項國威內科診所", "tel": "06-2691567", "addr": "臺南市東區德光里崇學路１４１號１、２樓", "func_type": "內科", "pre_srv": "成人預防保健、定量免疫法糞便潛血檢查", "plans": "C型肝炎全口服新藥健保給付執行計畫、代謝症候群防治計畫、家庭醫師整合性照護計畫、糖尿病及初期慢性腎臟病照護整合方案─初期慢性腎臟病、糖尿病及初期慢性腎臟病照護整合方案─糖尿病、糖尿病及初期慢性腎臟病照護整合方案─糖尿病合併初期慢性腎臟病、肝炎醫療給付改善方案", "flu": "否", "opd_fee": "院所未提供資料", "opd_fee_num": null, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["0800-1200", "休診", "1500-2000"], ["0800-1200", "休診", "1500-2000"], ["0800-1200", "休診", "1500-2000"], ["0800-1200", "休診", "1500-2000"], ["0800-1200", "休診", "1500-2000"], ["0800-1200", "休診", "休診"], ["休診", "休診", "休診"]], "open_sessions": 11, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3505320340"}, {"id": "3505320368", "name": "高愛文內科專科診所", "tel": "06-2353789", "addr": "臺南市東區東光里怡東路１５７號１、２樓", "func_type": "內科", "pre_srv": "糞便抗原檢測胃幽門螺旋桿菌服務、成人預防保健", "plans": "C型肝炎全口服新藥健保給付執行計畫、代謝症候群防治計畫、家庭醫師整合性照護計畫、居家醫療整合照護計畫、肝炎醫療給付改善方案", "flu": "否", "opd_fee": "200元", "opd_fee_num": 200, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["0830-1200", "1400-1700", "1730-2000"], ["0830-1200", "1400-1700", "1730-2000"], ["0830-1200", "1400-1700", "1730-2000"], ["0830-1200", "1400-1700", "休診"], ["0830-1200", "1400-1700", "1730-2000"], ["0830-1200", "1400-1700", "休診"], ["休診", "休診", "休診"]], "open_sessions": 16, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3505320368"}, {"id": "3521011382", "name": "高榮志家庭醫學科診所", "tel": "06-2763456", "addr": "臺南市東區東光里東安路５０號１樓", "func_type": "家醫科", "pre_srv": "兒童預防保健、成人預防保健、定量免疫法糞便潛血檢查", "plans": "代謝症候群防治計畫、家庭醫師整合性照護計畫、居家醫療整合照護計畫", "flu": "是", "opd_fee": "150元", "opd_fee_num": 150, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["0830-1215", "1530-1800", "1830-2100"], ["0830-1215", "1530-1800", "1830-2100"], ["0830-1215", "休診", "1830-2100"], ["0830-1215", "1530-1800", "1830-2100"], ["0830-1215", "1530-1800", "1830-2100"], ["0830-1215", "休診", "休診"], ["休診", "休診", "休診"]], "open_sessions": 15, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3521011382"}, {"id": "3521012736", "name": "麥鎮平皮膚科診所", "tel": "06-2342219", "addr": "臺南市東區長榮路三段１２９號", "func_type": "皮膚科", "pre_srv": "-", "plans": "-", "flu": "否", "opd_fee": "150元", "opd_fee_num": 150, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["看診", "看診", "看診"], ["看診", "看診", "休診"], ["看診", "看診", "休診"], ["看診", "休診", "看診"], ["看診", "看診", "休診"], ["看診", "休診", "休診"], ["休診", "休診", "休診"]], "open_sessions": 12, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3521012736"}, {"id": "3521011248", "name": "黃昭彰婦產科診所", "tel": "06-2907979", "addr": "臺南市東區崇學里崇學路７０號１、２樓及７２號", "func_type": "婦產科", "pre_srv": "婦女人類乳突病毒檢測服務、成人預防保健、婦女子宮頸抹片檢查、孕婦產檢、定量免疫法糞便潛血檢查", "plans": "孕婦乙型鏈球菌篩檢補助服務方案", "flu": "否", "opd_fee": "院所未提供資料", "opd_fee_num": null, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": true, "has_night": true, "schedule": [["0900-1200", "1500-1800", "1930-2130"], ["0900-1200", "1500-1800", "1930-2130"], ["0900-1200", "1500-1800", "休診"], ["0900-1200", "1500-1800", "1930-2130"], ["0900-1200", "1500-1800", "1930-2130"], ["0900-1200", "1500-1800", "休診"], ["0900-1200", "休診", "休診"]], "open_sessions": 17, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3521011248"}, {"id": "3521011220", "name": "黃智毅耳鼻喉科診所", "tel": "06-2603659", "addr": "臺南市東區德光里崇學路１４９之１號", "func_type": "耳鼻喉科(耳鼻喉頭頸外科)", "pre_srv": "-", "plans": "家庭醫師整合性照護計畫", "flu": "是", "opd_fee": "130元", "opd_fee_num": 130, "emg_fee": "院所未提供資料", "fee_remark": "-", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["0830-1200", "1600-1800", "1830-2100"], ["0830-1200", "1600-1800", "1830-2100"], ["0830-1200", "1600-1800", "1830-2100"], ["0830-1200", "1600-1800", "1830-2100"], ["0830-1200", "1600-1800", "1830-2100"], ["0830-1200", "1600-1800", "1830-2100"], ["休診", "休診", "休診"]], "open_sessions": 18, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3521011220"}, {"id": "3521010947", "name": "黃輝鵬皮膚科診所", "tel": "06-2682696", "addr": "臺南市東區崇德路２８３號", "func_type": "皮膚科", "pre_srv": "-", "plans": "家庭醫師整合性照護計畫", "flu": "否", "opd_fee": "150元", "opd_fee_num": 150, "emg_fee": "院所未提供資料", "fee_remark": "星期六上午正常門診，星期日全日休，國定假日以診所公告為準", "fee_url": "-", "has_sat": true, "has_sun": false, "has_night": true, "schedule": [["看診", "看診", "看診"], ["看診", "看診", "看診"], ["看診", "看診", "看診"], ["看診", "看診", "看診"], ["看診", "看診", "看診"], ["看診", "休診", "休診"], ["休診", "休診", "休診"]], "open_sessions": 16, "qty_url": "https://info.nhi.gov.tw/INAE1000/Query3Link?HospID=3521010947"}];
+        const SPECIALTIES = [["內科", 27], ["兒科", 18], ["家醫科", 15], ["耳鼻喉科(耳鼻喉頭頸外科)", 14], ["眼科", 13], ["復健科", 12], ["不分科", 10], ["精神科", 10], ["婦產科", 9], ["骨科", 8], ["皮膚科", 7], ["外科", 6], ["神經科", 5], ["泌尿科", 3], ["整形外科", 2], ["麻醉科", 1]];
+        const PRE_SRVS = [["成人預防保健", 76], ["-", 50], ["定量免疫法糞便潛血檢查", 48], ["兒童預防保健", 28], ["糞便抗原檢測胃幽門螺旋桿菌服務", 23], ["口腔黏膜檢查", 17], ["婦女子宮頸抹片檢查", 12], ["婦女人類乳突病毒檢測服務", 8], ["孕婦產檢", 8]];
+        const TOTAL_COUNT = 134;
+        const REGION_CITY = "臺南市";
+        const REGION_TOWN = "東區";
+        const REGION_ZIP = "701";
+        const REGION_KEY = "701";
+        const QUERY_MONTH = "2026-09";
+        const ROC_MONTH = "民國 115 年 9 月";
+        const ONLINE_URL = `https://weilyjen.github.io/nhi-gp/${REGION_ZIP}/index.html`;
+
+        // 複合篩選狀態模型 (支援複選)
+        const state = {
+            keyword: "",
+            selectedSpecialties: new Set(),
+            periodQuick: "all", // all, open_now, sat, sun, night, weekday_day
+            selectedDays: new Set(), // 0..6 (0=Mon, ..., 6=Sun)
+            selectedSlots: new Set(), // 0..2 (0=早, 1=午, 2=晚)
+            selectedPreSrv: new Set(),
+            feeRange: "all",    // all, free, le150, le200, le250, ge250
+            sortBy: "default",  // default, fee_asc, fee_desc, sessions_desc, name_asc
+            viewMode: "cards"   // cards, table
+        };
+
+        // DOM 元素快取
+        const searchInput = document.getElementById("searchInput");
+        const clearSearchBtn = document.getElementById("clearSearch");
+        const cardsContainer = document.getElementById("clinicsContainer");
+        const tableContainer = document.getElementById("tableContainer");
+        const tableBody = document.getElementById("tableBody");
+        const matchCountEl = document.getElementById("matchCount");
+        const activeTagsContainer = document.getElementById("activeTagsContainer");
+        const feeSelect = document.getElementById("feeSelect");
+        const sortSelect = document.getElementById("sortSelect");
+        const specialtyChipsContainer = document.getElementById("specialtyChips");
+        const preSrvChipsContainer = document.getElementById("preSrvChips");
+        const dayMultiChipsContainer = document.getElementById("dayMultiChips");
+        const slotMultiChipsContainer = document.getElementById("slotMultiChips");
+
+        const DAY_NAMES = ['週一', '週二', '週三', '週四', '週五', '週六', '週日'];
+        const SLOT_NAMES = [
+            { id: 0, name: '🌅 上午診 (早 07:30~12:30)' },
+            { id: 1, name: '☀️ 下午診 (午 12:30~17:30)' },
+            { id: 2, name: '🌙 夜間診 (晚 17:30~22:30)' }
+        ];
+
+        // 初始化/渲染星期複選標籤
+        function initDayChips() {
+            let html = '';
+            DAY_NAMES.forEach((dayName, idx) => {
+                const isSelected = state.selectedDays.has(idx);
+                html += `<button class="chip-btn ${isSelected ? 'active' : ''}" onclick="toggleDay(${idx})">${dayName}</button>`;
+            });
+            dayMultiChipsContainer.innerHTML = html;
+        }
+
+        // 初始化/渲染時段複選標籤
+        function initSlotChips() {
+            let html = '';
+            SLOT_NAMES.forEach(slot => {
+                const isSelected = state.selectedSlots.has(slot.id);
+                html += `<button class="chip-btn ${isSelected ? 'active' : ''}" onclick="toggleSlot(${slot.id})">${slot.name}</button>`;
+            });
+            slotMultiChipsContainer.innerHTML = html;
+        }
+
+        // 初始化/渲染診療科別標籤 (支援複選)
+        function initSpecialtyChips() {
+            const isAll = state.selectedSpecialties.size === 0;
+            let html = `<button class="chip-btn ${isAll ? 'active' : ''}" onclick="clearSpecialties()">全部科別 <span class="chip-count">${TOTAL_COUNT}</span></button>`;
+            SPECIALTIES.forEach(([name, count]) => {
+                const isSelected = state.selectedSpecialties.has(name);
+                html += `<button class="chip-btn ${isSelected ? 'active' : ''}" onclick="toggleSpecialty('${name}')">${name} <span class="chip-count">${count}</span></button>`;
+            });
+            specialtyChipsContainer.innerHTML = html;
+        }
+
+        // 初始化/渲染預防保健與服務標籤 (支援複選)
+        function initPreSrvChips() {
+            const isAll = state.selectedPreSrv.size === 0;
+            let html = `<button class="chip-btn ${isAll ? 'active' : ''}" onclick="clearPreSrv()">全部服務</button>`;
+            const fluActive = state.selectedPreSrv.has('flu');
+            const chronicActive = state.selectedPreSrv.has('chronic');
+            html += `<button class="chip-btn ${fluActive ? 'active' : ''}" onclick="togglePreSrv('flu')" style="border-color:#38bdf8; color:#7dd3fc;">💉 流感疫苗專責</button>`;
+            html += `<button class="chip-btn ${chronicActive ? 'active' : ''}" onclick="togglePreSrv('chronic')" style="border-color:#a855f7; color:#d8b4fe;">🩺 健保慢病照護網</button>`;
+            PRE_SRVS.forEach(([name, count]) => {
+                const isSelected = state.selectedPreSrv.has(name);
+                html += `<button class="chip-btn ${isSelected ? 'active' : ''}" onclick="togglePreSrv('${name}')">${name} <span class="chip-count">${count}</span></button>`;
+            });
+            preSrvChipsContainer.innerHTML = html;
+        }
+
+        // 判斷當前是否營業中 (Open Now)
+        function isOpenNow(schedule) {
+            const now = new Date();
+            const jsDay = now.getDay(); // 0:Sun, 1:Mon, ..., 6:Sat
+            const schedDay = jsDay === 0 ? 6 : jsDay - 1; // 0:Mon, ..., 6:Sun
+            const timeNum = now.getHours() * 100 + now.getMinutes();
+
+            let slot = -1;
+            if (timeNum >= 730 && timeNum < 1230) slot = 0;
+            else if (timeNum >= 1230 && timeNum < 1730) slot = 1;
+            else if (timeNum >= 1730 && timeNum <= 2230) slot = 2;
+
+            if (slot === -1) return false;
+            const val = schedule[schedDay][slot];
+            return Boolean(val && val !== '休診');
+        }
+
+        // 核心複合篩選與排序邏輯
+        function getFilteredClinics() {
+            let list = CLINICS.filter(c => {
+                // 1. 關鍵字搜尋 (診所名稱、代碼、科別、地址、電話、備註、方案、預防保健)
+                if (state.keyword) {
+                    const q = state.keyword.toLowerCase();
+                    const target = (c.name + ' ' + c.id + ' ' + c.func_type + ' ' + c.addr + ' ' + c.tel + ' ' + (c.fee_remark || '') + ' ' + (c.plans || '') + ' ' + (c.pre_srv || '')).toLowerCase();
+                    if (!target.includes(q)) return false;
+                }
+
+                // 2. 科別複選篩選 (選中多個科別時，只要符合其中任一個即可)
+                if (state.selectedSpecialties.size > 0) {
+                    const match = Array.from(state.selectedSpecialties).some(sp => c.func_type.includes(sp));
+                    if (!match) return false;
+                }
+
+                // 3. 快捷情境時段篩選
+                if (state.periodQuick === 'open_now' && !isOpenNow(c.schedule)) return false;
+                if (state.periodQuick === 'sat' && !c.has_sat) return false;
+                if (state.periodQuick === 'sun' && !c.has_sun) return false;
+                if (state.periodQuick === 'night' && !c.has_night) return false;
+                if (state.periodQuick === 'weekday_day') {
+                    let hasWeekdayDay = false;
+                    for (let d = 0; d < 5; d++) {
+                        if ((c.schedule[d][0] && c.schedule[d][0] !== '休診') || (c.schedule[d][1] && c.schedule[d][1] !== '休診')) {
+                            hasWeekdayDay = true;
+                            break;
+                        }
+                    }
+                    if (!hasWeekdayDay) return false;
+                }
+
+                // 4. 星期複選與時段複選交叉比對
+                const daysSelected = state.selectedDays.size > 0;
+                const slotsSelected = state.selectedSlots.size > 0;
+
+                if (daysSelected && slotsSelected) {
+                    // 必須在選取的星期與選取的時段交叉組合中，至少有一個時段有開診
+                    let hasMatch = false;
+                    for (const d of state.selectedDays) {
+                        for (const s of state.selectedSlots) {
+                            const val = c.schedule[d][s];
+                            if (val && val !== '休診') {
+                                hasMatch = true;
+                                break;
+                            }
+                        }
+                        if (hasMatch) break;
+                    }
+                    if (!hasMatch) return false;
+                } else if (daysSelected && !slotsSelected) {
+                    // 只有選星期：選取的星期中，至少有任一時段有開診
+                    let hasMatch = false;
+                    for (const d of state.selectedDays) {
+                        for (let s = 0; s < 3; s++) {
+                            const val = c.schedule[d][s];
+                            if (val && val !== '休診') {
+                                hasMatch = true;
+                                break;
+                            }
+                        }
+                        if (hasMatch) break;
+                    }
+                    if (!hasMatch) return false;
+                } else if (!daysSelected && slotsSelected) {
+                    // 只有選時段：在選取的時段中，一週內至少有任一天有開診
+                    let hasMatch = false;
+                    for (let d = 0; d < 7; d++) {
+                        for (const s of state.selectedSlots) {
+                            const val = c.schedule[d][s];
+                            if (val && val !== '休診') {
+                                hasMatch = true;
+                                break;
+                            }
+                        }
+                        if (hasMatch) break;
+                    }
+                    if (!hasMatch) return false;
+                }
+
+                // 5. 預防保健與專案服務複選
+                if (state.selectedPreSrv.size > 0) {
+                    let hasMatch = false;
+                    for (const ps of state.selectedPreSrv) {
+                        if (ps === 'flu' && c.flu === '是') { hasMatch = true; break; }
+                        if (ps === 'chronic' && c.plans && c.plans.length > 0) { hasMatch = true; break; }
+                        if (c.pre_srv && c.pre_srv.includes(ps)) { hasMatch = true; break; }
+                    }
+                    if (!hasMatch) return false;
+                }
+
+                // 6. 掛號費範圍
+                if (state.feeRange !== 'all') {
+                    const fee = c.opd_fee_num;
+                    if (state.feeRange === 'free') {
+                        if (fee !== 0 && !c.opd_fee.includes('免')) return false;
+                    } else if (state.feeRange === 'le150') {
+                        if (fee === null || fee > 150) return false;
+                    } else if (state.feeRange === 'le200') {
+                        if (fee === null || fee > 200) return false;
+                    } else if (state.feeRange === 'le250') {
+                        if (fee === null || fee > 250) return false;
+                    } else if (state.feeRange === 'ge250') {
+                        if (fee === null || fee < 250) return false;
+                    }
+                }
+
+                return true;
+            });
+
+            // 7. 排序處理
+            if (state.sortBy === 'fee_asc') {
+                list.sort((a, b) => (a.opd_fee_num ?? 9999) - (b.opd_fee_num ?? 9999));
+            } else if (state.sortBy === 'fee_desc') {
+                list.sort((a, b) => (b.opd_fee_num ?? -1) - (a.opd_fee_num ?? -1));
+            } else if (state.sortBy === 'sessions_desc') {
+                list.sort((a, b) => b.open_sessions - a.open_sessions);
+            } else if (state.sortBy === 'name_asc') {
+                list.sort((a, b) => a.name.localeCompare(b.name, 'zh-Hant'));
+            }
+
+            return list;
+        }
+
+        // 渲染更新全部畫面
+        function render() {
+            const filtered = getFilteredClinics();
+            matchCountEl.textContent = filtered.length;
+
+            renderActiveFilterTags();
+
+            if (state.viewMode === 'cards') {
+                cardsContainer.style.display = 'grid';
+                tableContainer.style.display = 'none';
+                renderCards(filtered);
+            } else {
+                cardsContainer.style.display = 'none';
+                tableContainer.style.display = 'block';
+                renderTable(filtered);
+            }
+        }
+
+        // 渲染卡片視圖
+        function renderCards(clinics) {
+            if (clinics.length === 0) {
+                cardsContainer.innerHTML = `
+                    <div class="empty-state">
+                        <h3>🔍 沒有找到符合條件的診所</h3>
+                        <p>請嘗試清除關鍵字、放寬科別、或更換看診時段篩選條件</p>
+                        <button class="card-btn" onclick="resetAllFilters()" style="margin-top:16px; background:#0284c7;">↺ 清除所有條件</button>
+                    </div>`;
+                return;
+            }
+
+            const days = ['一', '二', '三', '四', '五', '六', '日'];
+            const periods = ['早', '午', '晚'];
+
+            cardsContainer.innerHTML = clinics.map(c => {
+                let tableHtml = '<table class="timetable"><thead><tr><th>時段</th>';
+                for (let d = 0; d < 7; d++) tableHtml += `<th>週${days[d]}</th>`;
+                tableHtml += '</tr></thead><tbody>';
+
+                for (let p = 0; p < 3; p++) {
+                    tableHtml += `<tr><th>${periods[p]}</th>`;
+                    for (let d = 0; d < 7; d++) {
+                        const timeVal = c.schedule[d][p];
+                        if (timeVal && timeVal !== '休診') {
+                            tableHtml += `<td class="t-open" title="${timeVal}">${timeVal.length > 9 ? timeVal.substring(0,4) : timeVal}</td>`;
+                        } else {
+                            tableHtml += '<td class="t-close">-</td>';
+                        }
+                    }
+                    tableHtml += '</tr>';
+                }
+                tableHtml += '</tbody></table>';
+
+                const specTags = c.func_type.split('、').map(s => s.trim()).filter(Boolean).map(s => 
+                    `<span class="spec-tag" onclick="toggleSpecialty('${s}')" title="點擊切換篩選【${s}】">${s}</span>`
+                ).join('');
+
+                const preTags = c.pre_srv.split('、').map(p => p.trim()).filter(p => p && p !== '無提供').map(p => 
+                    `<span class="pre-tag" onclick="togglePreSrv('${p}')" title="點擊切換篩選【${p}】">${p}</span>`
+                ).join('');
+
+                return `
+                    <div class="clinic-card">
+                        <div class="card-top">
+                            <div class="card-header">
+                                <a href="${c.qty_url}" target="_blank" class="clinic-name" title="前往健保醫療品質公開網">${c.name}</a>
+                                <div class="card-badges">
+                                    <span class="fee-badge">掛號費: ${c.opd_fee}</span>
+                                    <span class="sessions-badge" title="每週開診總診次">🕒 ${c.open_sessions} 診/週</span>
+                                </div>
+                            </div>
+                            <div class="clinic-id">
+                                <span>醫事機構代碼: ${c.id}</span>
+                                ${c.flu === '是' ? '<span style="color:#38bdf8; font-weight:600;">• 💉 流感疫苗專責</span>' : ''}
+                                ${c.plans ? `<span style="color:#c084fc;">• 🩺 ${c.plans}</span>` : ''}
+                            </div>
+                            <div class="info-row">
+                                <span>📞 電話：</span>
+                                <a href="tel:${c.tel}">${c.tel}</a>
+                            </div>
+                            <div class="info-row">
+                                <span>📍 地址：</span>
+                                <a href="https://www.google.com/maps/search/${encodeURIComponent(c.addr)}" target="_blank">${c.addr}</a>
+                            </div>
+                            ${c.fee_remark ? `<div class="info-row" style="color:#fcd34d; font-size:12px;"><span>💡 備註：</span><span>${c.fee_remark}</span></div>` : ''}
+                            
+                            <div class="tags-wrapper">
+                                ${specTags}
+                                ${preTags}
+                            </div>
+
+                            ${tableHtml}
+                        </div>
+
+                        <div class="card-footer">
+                            <span style="color:var(--text-muted);">健保特約基層西醫</span>
+                            <div style="display:flex; gap:8px;">
+                                <a href="tel:${c.tel}" class="card-btn" style="background:rgba(16, 185, 129, 0.15); border-color:rgba(16, 185, 129, 0.3); color:#34d399;">撥號</a>
+                                <a href="https://www.google.com/maps/search/${encodeURIComponent(c.name + ' ' + c.addr)}" target="_blank" class="card-btn">導航</a>
+                                <a href="${c.qty_url}" target="_blank" class="card-btn" style="background:#0284c7;">品質指標</a>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // 渲染表格視圖
+        function renderTable(clinics) {
+            if (clinics.length === 0) {
+                tableBody.innerHTML = `<tr><td colspan="12" style="text-align:center; padding:40px; color:var(--text-muted);">沒有符合條件的診所</td></tr>`;
+                return;
+            }
+
+            tableBody.innerHTML = clinics.map((c, idx) => {
+                const satTag = c.has_sat ? '<span class="check-badge check-yes">是</span>' : '<span class="check-badge check-no">否</span>';
+                const sunTag = c.has_sun ? '<span class="check-badge check-yes">是</span>' : '<span class="check-badge check-no">否</span>';
+                const nightTag = c.has_night ? '<span class="check-badge check-yes">是</span>' : '<span class="check-badge check-no">否</span>';
+
+                return `
+                    <tr>
+                        <td style="color:var(--text-muted);">${idx + 1}</td>
+                        <td style="font-weight:700;"><a href="${c.qty_url}" target="_blank" style="color:#fff; text-decoration:none;">${c.name}</a></td>
+                        <td style="color:var(--text-sub); font-family:monospace;">${c.id}</td>
+                        <td><a href="tel:${c.tel}" style="color:#38bdf8; text-decoration:none;">${c.tel}</a></td>
+                        <td style="max-width:200px; overflow:hidden; text-overflow:ellipsis;" title="${c.func_type}">${c.func_type}</td>
+                        <td style="font-weight:600; color:#34d399;">${c.opd_fee}</td>
+                        <td>${satTag}</td>
+                        <td>${sunTag}</td>
+                        <td>${nightTag}</td>
+                        <td style="font-weight:600; color:#a5b4fc;">${c.open_sessions} 診</td>
+                        <td style="max-width:220px; overflow:hidden; text-overflow:ellipsis; font-size:12px; color:var(--text-sub);" title="${c.pre_srv}">${c.pre_srv}</td>
+                        <td>
+                            <div style="display:flex; gap:6px;">
+                                <a href="https://www.google.com/maps/search/${encodeURIComponent(c.name + ' ' + c.addr)}" target="_blank" class="card-btn" style="padding:4px 8px; font-size:11px;">導航</a>
+                                <a href="${c.qty_url}" target="_blank" class="card-btn" style="padding:4px 8px; font-size:11px; background:#0284c7;">品質</a>
+                            </div>
+                        </td>
+                    </tr>
+                `;
+            }).join('');
+        }
+
+        // 渲染已套用的篩選條件標籤
+        function renderActiveFilterTags() {
+            const tags = [];
+
+            if (state.keyword) {
+                tags.push(`關鍵字: "${state.keyword}"<span class="tag-remove" onclick="clearSearchInput()">✕</span>`);
+            }
+            if (state.selectedSpecialties.size > 0) {
+                const spStr = Array.from(state.selectedSpecialties).join('、');
+                tags.push(`科別: ${spStr}<span class="tag-remove" onclick="clearSpecialties()">✕</span>`);
+            }
+            if (state.periodQuick !== 'all') {
+                const map = {
+                    open_now: '🟢 現在開診中',
+                    sat: '週六有開',
+                    sun: '週日有開',
+                    night: '夜間看診',
+                    weekday_day: '平日白天'
+                };
+                tags.push(`時段快選: ${map[state.periodQuick] || state.periodQuick}<span class="tag-remove" onclick="setPeriodQuick('all')">✕</span>`);
+            }
+            if (state.selectedDays.size > 0) {
+                const dayStr = Array.from(state.selectedDays).sort().map(d => DAY_NAMES[d]).join('、');
+                tags.push(`星期: ${dayStr}<span class="tag-remove" onclick="selectDaysPreset('none')">✕</span>`);
+            }
+            if (state.selectedSlots.size > 0) {
+                const slotShort = ['早診', '午診', '晚診'];
+                const slotStr = Array.from(state.selectedSlots).sort().map(s => slotShort[s]).join('、');
+                tags.push(`時段: ${slotStr}<span class="tag-remove" onclick="selectSlotsPreset('none')">✕</span>`);
+            }
+            if (state.selectedPreSrv.size > 0) {
+                const psNames = Array.from(state.selectedPreSrv).map(p => p === 'flu' ? '流感疫苗' : (p === 'chronic' ? '慢病網' : p)).join('、');
+                tags.push(`服務: ${psNames}<span class="tag-remove" onclick="clearPreSrv()">✕</span>`);
+            }
+            if (state.feeRange !== 'all') {
+                const fMap = {
+                    free: '免收掛號費',
+                    le150: '150元以下',
+                    le200: '200元以下',
+                    le250: '250元以下',
+                    ge250: '250元以上'
+                };
+                tags.push(`掛號費: ${fMap[state.feeRange]}<span class="tag-remove" onclick="onFeeChange('all')">✕</span>`);
+            }
+
+            activeTagsContainer.innerHTML = tags.map(t => `<span class="filter-tag-chip">${t}</span>`).join('');
+        }
+
+        // 搜尋操作函式
+        function executeSearch() {
+            state.keyword = searchInput.value.trim();
+            clearSearchBtn.style.display = state.keyword ? "block" : "none";
+            render();
+        }
+
+        function clearSearchInput() {
+            state.keyword = "";
+            searchInput.value = "";
+            clearSearchBtn.style.display = "none";
+            render();
+        }
+
+        // 星期與時段複選操作
+        function toggleDay(d) {
+            if (state.selectedDays.has(d)) {
+                state.selectedDays.delete(d);
+            } else {
+                state.selectedDays.add(d);
+            }
+            initDayChips();
+            render();
+        }
+
+        function selectDaysPreset(type) {
+            if (type === 'weekday') {
+                state.selectedDays = new Set([0, 1, 2, 3, 4]);
+            } else if (type === 'weekend') {
+                state.selectedDays = new Set([5, 6]);
+            } else if (type === 'all') {
+                state.selectedDays = new Set([0, 1, 2, 3, 4, 5, 6]);
+            } else if (type === 'none') {
+                state.selectedDays.clear();
+            }
+            initDayChips();
+            render();
+        }
+
+        function toggleSlot(s) {
+            if (state.selectedSlots.has(s)) {
+                state.selectedSlots.delete(s);
+            } else {
+                state.selectedSlots.add(s);
+            }
+            initSlotChips();
+            render();
+        }
+
+        function selectSlotsPreset(type) {
+            if (type === 'all') {
+                state.selectedSlots = new Set([0, 1, 2]);
+            } else if (type === 'none') {
+                state.selectedSlots.clear();
+            }
+            initSlotChips();
+            render();
+        }
+
+        // 科別複選操作
+        function toggleSpecialty(sp) {
+            if (state.selectedSpecialties.has(sp)) {
+                state.selectedSpecialties.delete(sp);
+            } else {
+                state.selectedSpecialties.add(sp);
+            }
+            initSpecialtyChips();
+            render();
+        }
+
+        function clearSpecialties() {
+            state.selectedSpecialties.clear();
+            initSpecialtyChips();
+            render();
+        }
+
+        // 預防保健複選操作
+        function togglePreSrv(ps) {
+            if (state.selectedPreSrv.has(ps)) {
+                state.selectedPreSrv.delete(ps);
+            } else {
+                state.selectedPreSrv.add(ps);
+            }
+            initPreSrvChips();
+            render();
+        }
+
+        function clearPreSrv() {
+            state.selectedPreSrv.clear();
+            initPreSrvChips();
+            render();
+        }
+
+        // 時段快捷與其他操作
+        function setPeriodQuick(p) {
+            state.periodQuick = p;
+            document.querySelectorAll("#periodQuickChips .chip-btn").forEach(btn => {
+                btn.classList.toggle("active", btn.dataset.period === p);
+            });
+            render();
+        }
+
+        function onFeeChange(val) {
+            state.feeRange = val;
+            feeSelect.value = val;
+            render();
+        }
+
+        function onSortChange(val) {
+            state.sortBy = val;
+            sortSelect.value = val;
+            render();
+        }
+
+        function switchView(mode) {
+            state.viewMode = mode;
+            document.getElementById("btnViewCards").classList.toggle("active", mode === 'cards');
+            document.getElementById("btnViewTable").classList.toggle("active", mode === 'table');
+            render();
+        }
+
+        function resetAllFilters() {
+            state.keyword = "";
+            state.selectedSpecialties.clear();
+            state.periodQuick = "all";
+            state.selectedDays.clear();
+            state.selectedSlots.clear();
+            state.selectedPreSrv.clear();
+            state.feeRange = "all";
+            state.sortBy = "default";
+
+            searchInput.value = "";
+            clearSearchBtn.style.display = "none";
+            feeSelect.value = "all";
+            sortSelect.value = "default";
+
+            initDayChips();
+            initSlotChips();
+            initSpecialtyChips();
+            initPreSrvChips();
+            document.querySelectorAll("#periodQuickChips .chip-btn").forEach(btn => {
+                btn.classList.toggle("active", btn.dataset.period === 'all');
+            });
+            render();
+        }
+
+        function quickSetPeriod(p) {
+            setPeriodQuick(p);
+            cardsContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        function quickFeeSort() {
+            state.sortBy = 'fee_asc';
+            sortSelect.value = 'fee_asc';
+            render();
+            cardsContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        // 按讚機制
+        let isLiked = localStorage.getItem("nhigp_liked_" + REGION_KEY) === "true";
+        let likeCount = parseInt(localStorage.getItem("nhigp_likes_" + REGION_KEY) || "16");
+
+        function initLikes() {
+            updateLikeUI();
+            fetch(`https://api.counterapi.dev/v1/nhigp_${encodeURIComponent(REGION_KEY)}/likes`)
+                .then(res => res.json())
+                .then(data => {
+                    if (data && typeof data.count === 'number') {
+                        likeCount = Math.max(likeCount, data.count);
+                        updateLikeUI();
+                    }
+                }).catch(() => {});
+        }
+
+        function updateLikeUI() {
+            const btn = document.getElementById("likeBtn");
+            const countEl = document.getElementById("likeCount");
+            const textEl = document.getElementById("likeText");
+            if (!btn || !countEl) return;
+            countEl.textContent = likeCount;
+            if (isLiked) {
+                btn.classList.add("liked");
+                textEl.textContent = "已讚";
+            } else {
+                btn.classList.remove("liked");
+                textEl.textContent = "讚";
+            }
+        }
+
+        function toggleLike() {
+            isLiked = !isLiked;
+            localStorage.setItem("nhigp_liked_" + REGION_KEY, isLiked);
+            if (isLiked) {
+                likeCount += 1;
+                fetch(`https://api.counterapi.dev/v1/nhigp_${encodeURIComponent(REGION_KEY)}/likes/up`).catch(() => {});
+                showToast("❤️ 感謝您的按讚支持！");
+            } else {
+                likeCount = Math.max(0, likeCount - 1);
+                showToast("已取消按讚");
+            }
+            localStorage.setItem("nhigp_likes_" + REGION_KEY, likeCount);
+            updateLikeUI();
+        }
+
+        // 社群分享機制 (保證安全無字串換行語法錯誤)
+        function handleShare() {
+            const shareTitle = `🏥 【${REGION_ZIP}】${REGION_CITY} ${REGION_TOWN} 健保西醫基層診所門診全覽 (${ROC_MONTH})`;
+            const shareIntro = `查詢【${REGION_ZIP}】${REGION_CITY} ${REGION_TOWN} 基層門診科別、掛號費行情、預防保健與 7 天看診時段：`;
+            const shareText = [shareIntro, ONLINE_URL].join(String.fromCharCode(10));
+
+            if (navigator.share) {
+                navigator.share({
+                    title: shareTitle,
+                    text: shareText,
+                    url: ONLINE_URL
+                }).catch(() => {
+                    openShareModal();
+                });
+            } else {
+                openShareModal();
+            }
+        }
+
+        function openShareModal() {
+            document.getElementById("shareModal").style.display = "flex";
+        }
+
+        function closeShareModal(e) {
+            if (!e || e.target.id === "shareModal" || e.target.classList.contains("modal-close")) {
+                document.getElementById("shareModal").style.display = "none";
+            }
+        }
+
+        function shareToLine() {
+            const shareTitle = `🏥 ${REGION_CITY} ${REGION_TOWN} 健保西醫基層診所門診全覽 (${ROC_MONTH})`;
+            const fullText = [shareTitle, ONLINE_URL].join(String.fromCharCode(10));
+            window.open("https://social-plugins.line.me/lineit/share?url=" + encodeURIComponent(ONLINE_URL) + "&text=" + encodeURIComponent(fullText), "_blank");
+        }
+
+        function shareToFB() {
+            window.open("https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(ONLINE_URL), "_blank");
+        }
+
+        function shareToTG() {
+            const shareTitle = `🏥 ${REGION_CITY} ${REGION_TOWN} 健保西醫基層診所門診全覽 (${ROC_MONTH})`;
+            window.open(`https://t.me/share/url?url=${encodeURIComponent(ONLINE_URL)}&text=${encodeURIComponent(shareTitle)}`, "_blank");
+        }
+
+        function copyShareUrl() {
+            navigator.clipboard.writeText(ONLINE_URL).then(() => {
+                showToast("🔗 已複製網頁連結，快分享給親友！");
+                closeShareModal();
+            }).catch(() => {
+                prompt("請複製以下網頁連結：", ONLINE_URL);
+            });
+        }
+
+        function showToast(msg) {
+            const toast = document.getElementById("toast");
+            if (!toast) return;
+            toast.textContent = msg;
+            toast.className = "toast show";
+            setTimeout(() => { toast.className = toast.className.replace("show", ""); }, 3000);
+        }
+
+        // 監聽搜尋輸入 (即時輸入即時篩選)
+        searchInput.addEventListener("input", (e) => {
+            state.keyword = e.target.value.trim();
+            clearSearchBtn.style.display = state.keyword ? "block" : "none";
+            render();
+        });
+
+        // 初始化執行
+        window.addEventListener("DOMContentLoaded", () => {
+            initDayChips();
+            initSlotChips();
+            initSpecialtyChips();
+            initPreSrvChips();
+            initLikes();
+            render();
+        });
+    </script>
+</body>
+</html>
