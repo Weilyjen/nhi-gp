@@ -80,6 +80,16 @@
     "updated_at": "2026-09-27"
   },
   {
+    "zipcode": "300",
+    "city": "新竹市",
+    "town": "東區",
+    "clinics_count": 141,
+    "roc_month": "民國 115 年 9 月",
+    "features": "週六開診 128 家 • 週日開診 22 家 • 平日夜診 125 家",
+    "path": "300/index.html",
+    "updated_at": "2026-09-27"
+  },
+  {
     "zipcode": "325",
     "city": "桃園市",
     "town": "龍潭區",
