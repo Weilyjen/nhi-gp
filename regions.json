@@ -190,6 +190,16 @@
     "updated_at": "2026-09-27"
   },
   {
+    "zipcode": "411",
+    "city": "臺中市",
+    "town": "太平區",
+    "clinics_count": 88,
+    "roc_month": "民國 115 年 9 月",
+    "features": "週六開診 78 家 • 週日開診 14 家 • 平日夜診 79 家",
+    "path": "411/index.html",
+    "updated_at": "2026-09-28"
+  },
+  {
     "zipcode": "413",
     "city": "臺中市",
     "town": "霧峰區",
