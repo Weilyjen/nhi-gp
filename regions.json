@@ -260,6 +260,16 @@
     "updated_at": "2026-09-27"
   },
   {
+    "zipcode": "820",
+    "city": "高雄市",
+    "town": "岡山區",
+    "clinics_count": 60,
+    "roc_month": "民國 115 年 9 月",
+    "features": "週六開診 59 家 • 週日開診 8 家 • 平日夜診 49 家",
+    "path": "820/index.html",
+    "updated_at": "2026-09-28"
+  },
+  {
     "zipcode": "900",
     "city": "屏東縣",
     "town": "屏東市",
