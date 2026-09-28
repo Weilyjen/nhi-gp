@@ -170,6 +170,16 @@
     "updated_at": "2026-09-27"
   },
   {
+    "zipcode": "330",
+    "city": "桃園市",
+    "town": "桃園區",
+    "clinics_count": 241,
+    "roc_month": "民國 115 年 9 月",
+    "features": "週六開診 218 家 • 週日開診 49 家 • 平日夜診 209 家",
+    "path": "330/index.html",
+    "updated_at": "2026-09-29"
+  },
+  {
     "zipcode": "334",
     "city": "桃園市",
     "town": "八德區",
