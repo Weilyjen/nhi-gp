@@ -80,6 +80,16 @@
     "updated_at": "2026-09-27"
   },
   {
+    "zipcode": "231",
+    "city": "新北市",
+    "town": "新店區",
+    "clinics_count": 110,
+    "roc_month": "民國 115 年 9 月",
+    "features": "週六開診 98 家 • 週日開診 15 家 • 平日夜診 102 家",
+    "path": "231/index.html",
+    "updated_at": "2026-09-28"
+  },
+  {
     "zipcode": "234",
     "city": "新北市",
     "town": "永和區",
