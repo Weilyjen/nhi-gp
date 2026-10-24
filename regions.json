@@ -230,6 +230,16 @@
     "updated_at": "2026-09-28"
   },
   {
+    "zipcode": "500",
+    "city": "彰化縣",
+    "town": "彰化市",
+    "clinics_count": 120,
+    "roc_month": "民國 115 年 10 月",
+    "features": "週六開診 110 家 • 週日開診 14 家 • 平日夜診 103 家",
+    "path": "500/index.html",
+    "updated_at": "2026-10-24"
+  },
+  {
     "zipcode": "624",
     "city": "嘉義縣",
     "town": "義竹鄉",
